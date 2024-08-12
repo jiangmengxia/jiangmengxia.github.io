@@ -1,11 +1,3 @@
-<!--
- * @Author: jiangmengxia jiangmengxia@nnuo.com
- * @Date: 2024-08-12 11:05:04
- * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-12 18:00:42
- * @FilePath: \jiangmengxia.github.io\SUMMARY.md
- * @Description: Description
--->
 # Table of contents
 
 * [Welcome](README.md)
@@ -24,12 +16,9 @@
 * [OpenAPI](basics/openapi.md)
 * [Integrations](basics/integrations.md)
 
-## 面试集锦
+## 浏览器问题
 
-### 浏览器问题
-* [概述](面试集锦/浏览器概述.md)
-* [浏览器渲染](面试集锦/浏览器渲染.md)
-* [浏览器安全问题](面试集锦/浏览器安全问题.md)
-* [浏览器跨域方案](面试集锦/浏览器跨域.md)
- 
-
+* [概述](liu-lan-qi-wen-ti/gai-shu.md)
+* [浏览器渲染](liu-lan-qi-wen-ti/liu-lan-qi-xuan-ran.md)
+* [浏览器安全问题](liu-lan-qi-wen-ti/liu-lan-qi-an-quan-wen-ti.md)
+* [浏览器跨域方案](liu-lan-qi-wen-ti/liu-lan-qi-kua-yu-fang-an.md)
