@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-12 11:05:04
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-12 18:00:42
+ * @LastEditTime: 2024-08-12 18:12:15
  * @FilePath: \jiangmengxia.github.io\SUMMARY.md
  * @Description: Description
 -->
@@ -27,9 +27,10 @@
 ## 面试集锦
 
 ### 浏览器问题
-* [概述](面试集锦/浏览器概述.md)
-* [浏览器渲染](面试集锦/浏览器渲染.md)
-* [浏览器安全问题](面试集锦/浏览器安全问题.md)
-* [浏览器跨域方案](面试集锦/浏览器跨域.md)
+
+* [概述](面试题集锦/浏览器概述.md)
+* [浏览器渲染](面试题集锦/浏览器渲染.md)
+* [浏览器安全问题](面试题集锦/浏览器安全问题.md)
+* [浏览器跨域方案](面试题集锦/浏览器跨域.md)
  
 
