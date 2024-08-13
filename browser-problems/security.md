@@ -46,7 +46,7 @@ Access-Control-Max-Age：这是一个HTTP响应头，它指定了预检请求的
 例如，Access-Control-Max-Age: 86400表示预检请求的结果可以缓存一天。
 ```
 
-1. 内容安全策略（Content-Security-Policy）：内容安全策略是一种安全策略，它允许网站管理员通过指定允许加载的内容类型和来源，来防止跨站脚本攻击（XSS）和其他网络攻击。CSP可以通过HTTP头或meta标签来指定。 以下是一些常见的CSP配置：
+3. 内容安全策略（Content-Security-Policy）：内容安全策略是一种安全策略，它允许网站管理员通过指定允许加载的内容类型和来源，来防止跨站脚本攻击（XSS）和其他网络攻击。CSP可以通过HTTP头或meta标签来指定。 以下是一些常见的CSP配置：
 
 ```
  default-src：这是一个默认的源，用于指定所有资源的默认可信任来源。
@@ -70,13 +70,13 @@ Access-Control-Max-Age：这是一个HTTP响应头，它指定了预检请求的
  form-action：这是一个表单的可信任动作，用于指定可信任的表单提交目标。
 ```
 
-1. 以上是一些常见的CSP配置，开发者可以根据需要设置这些源，以保护网站的安全。&#x20;
+&#x20;      以上是一些常见的CSP配置，开发者可以根据需要设置这些源，以保护网站的安全。&#x20;
 
 &#x20;       更多参考：https://cloud.tencent.com/developer/section/1189870
 
-2. X-Frame-Options：X-Frame-Options是一种HTTP响应头，它用于防止点击劫持攻击。它可以指定浏览器是否允许页面在iframe、frame或object中加载。
-3. X-XSS-Protection：X-XSS-Protection是一种HTTP响应头，它用于启用浏览器内置的XSS过滤器。它可以防止跨站脚本攻击（XSS）。
-4. X-Content-Type-Options：X-Content-Type-Options是一种HTTP响应头，它用于防止浏览器将MIME类型错误的资源作为JavaScript执行。它可以防止跨站脚本攻击（XSS）。
-5. X-Download-Options：X-Download-Options是一种HTTP响应头，它用于防止浏览器将页面作为下载文件处理。它可以防止点击劫持攻击。
-6. X-Permitted-Cross-Domain-Policies：X-Permitted-Cross-Domain-Policies是一种HTTP响应头，它用于指定允许跨域资源共享（CORS）的策略。它可以防止跨站脚本攻击（XSS）和其他网络攻击。
-7. X-Content-Type-Nosniff：X-Content-Type-Nosniff是一种HTTP响应头，它用于防止浏览器将MIME类型错误的资源作为JavaScript执行。它可以防止跨站脚本攻击（XSS）。
+4. X-Frame-Options：X-Frame-Options是一种HTTP响应头，它用于防止点击劫持攻击。它可以指定浏览器是否允许页面在iframe、frame或object中加载。
+5. X-XSS-Protection：X-XSS-Protection是一种HTTP响应头，它用于启用浏览器内置的XSS过滤器。它可以防止跨站脚本攻击（XSS）。
+6. X-Content-Type-Options：X-Content-Type-Options是一种HTTP响应头，它用于防止浏览器将MIME类型错误的资源作为JavaScript执行。它可以防止跨站脚本攻击（XSS）。
+7. X-Download-Options：X-Download-Options是一种HTTP响应头，它用于防止浏览器将页面作为下载文件处理。它可以防止点击劫持攻击。
+8. X-Permitted-Cross-Domain-Policies：X-Permitted-Cross-Domain-Policies是一种HTTP响应头，它用于指定允许跨域资源共享（CORS）的策略。它可以防止跨站脚本攻击（XSS）和其他网络攻击。
+9. X-Content-Type-Nosniff：X-Content-Type-Nosniff是一种HTTP响应头，它用于防止浏览器将MIME类型错误的资源作为JavaScript执行。它可以防止跨站脚本攻击（XSS）。
