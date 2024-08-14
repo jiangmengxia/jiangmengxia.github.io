@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-12 18:13:02
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-14 13:17:28
+ * @LastEditTime: 2024-08-14 17:29:22
  * @FilePath: \jiangmengxia.github.io\SUMMARY.md
  * @Description: Description
 -->
@@ -13,6 +13,7 @@
 
 ## 前端术语
 
+* [术语](terms/terms.md)
 
 
 ## 浏览器
