@@ -1,9 +1,9 @@
 <!--
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-14 13:18:18
- * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-14 17:26:01
- * @FilePath: \jiangmengxia.github.io\terms\terms.md
+ * @LastEditors: jiangmengxia jiangmengxia@qq.com
+ * @LastEditTime: 2024-08-14 22:24:17
+ * @FilePath: /jiangmengxia.github.io/terms/terms.md
  * @Description: Description
 -->
 # 术语
@@ -123,6 +123,14 @@ compose执行，会把传进来的函数预先存起来，也就是上面的add�
 4. 函数防抖和节流
 5. 函数组合
 6. 高阶组件等
+
+## 副作用
+在编程中，副作用（Side Effects）是指那些不直接返回值，而是对程序状态或外部环境产生影响的操作。这些操作通常包括但不限于：
+1. 获取DOM元素：通过操作DOM（Document Object Model）来获取或修改网页上的元素。
+2. 为DOM元素添加事件：为网页元素绑定事件处理器，如点击、滚动等。
+3. 设置定时器：使用setTimeout、setInterval等函数来安排代码在未来的某个时间点执行。
+4. 发送AJAX请求：通过XMLHttpRequest或fetch等API与服务器进行数据交换。
+这些操作可能会改变程序的状态，或者与外部系统（如数据库、文件系统、网络等）进行交互，因此被认为是副作用。在函数式编程中，尽量减少副作用是保持代码纯度和可预测性的重要原则
 
 
 
