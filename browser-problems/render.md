@@ -175,9 +175,9 @@ css 的同步加载和异步加载
 
 ● initial Connect & Connection Start：都表示浏览器开始建立与服务器的连接的时间。两者差异是：
 
-○ initial Connect：这个指标表示浏览器开始建立与服务器的连接的时间，包括DNS解析、TCP连接和TLS握手等步骤。这个指标可以帮助开发者了解网络连接的建立速度，从而优化网页的加载性能。
+&#x20; initial Connect：这个指标表示浏览器开始建立与服务器的连接的时间，包括DNS解析、TCP连接和TLS握手等步骤。这个指标可以帮助开发者了解网络连接的建立速度，从而优化网页的加载性能。
 
-○ Connection Start：这个指标表示浏览器开始建立与服务器的连接的时间，但不包括DNS解析和TCP连接等步骤。这个指标可以帮助开发者了解网络连接的建立速度，但可能不如 initial Connect 准确。
+&#x20;Connection Start：这个指标表示浏览器开始建立与服务器的连接的时间，但不包括DNS解析和TCP连接等步骤。这个指标可以帮助开发者了解网络连接的建立速度，但可能不如 initial Connect 准确。
 
 总的来说，initial Connect 和 Connection Start 都是衡量网络连接建立速度的重要指标，但 initial Connect 的范围更广，可能更准确。在优化网页的加载性能时，开发者可以根据需要选择使用这两个指标。
 
