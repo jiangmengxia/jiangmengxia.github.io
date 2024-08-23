@@ -1,14 +1,15 @@
 <!--
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-15 15:05:25
- * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-23 13:53:43
- * @FilePath: \jiangmengxia.github.io\SUMMARY.md
+ * @LastEditors: jiangmengxia jiangmengxia@qq.com
+ * @LastEditTime: 2024-08-23 20:52:57
+ * @FilePath: /jiangmengxia.github.io/SUMMARY.md
  * @Description: Description
 -->
 # Table of contents
 
 * [Welcome](README.md)
+* [个人简历](jianli.md)
 
 ## 前端术语
 
