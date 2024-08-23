@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-08-23 20:22:11
  * @LastEditors: jiangmengxia jiangmengxia@qq.com
- * @LastEditTime: 2024-08-23 20:49:57
+ * @LastEditTime: 2024-08-23 20:51:05
  * @FilePath: /jiangmengxia.github.io/jianli.md
  * @Description: Description
 -->
@@ -13,7 +13,7 @@
 <table style='border:none'>
     <tr style='border:none'>
         <td style='border:none'>
-            <img src="image.png" style='width:128px' alt='个人照片'>
+            <img src="image.png" style='width:128px; border-radius:20px;' alt='个人照片'>
         </td>
         <td style='border:none'>
             姓名：姜梦霞<br/>
