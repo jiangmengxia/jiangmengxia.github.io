@@ -2,13 +2,24 @@
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-08-23 20:22:11
  * @LastEditors: jiangmengxia jiangmengxia@qq.com
- * @LastEditTime: 2024-08-23 20:51:05
+ * @LastEditTime: 2024-08-24 08:35:16
  * @FilePath: /jiangmengxia.github.io/jianli.md
  * @Description: Description
 -->
-<div style='width:800px; color:#222; font-size:16px; margin:auto;border:1px solid #eee;padding:16px'>
 
-## 个人简历
+<style>
+    @media print{
+        @page{
+            margin-top:60px;
+            margin-bottom:60px;
+            margin-left:40px;
+            margin-right:40px;
+        }
+    }
+</style>
+<div style='width:800px; color:#222; font-size:16px; margin:auto;padding:32px;'>
+
+## <div style='text-align:center;'>个人简历</div>
 
 <table style='border:none'>
     <tr style='border:none'>
@@ -25,8 +36,7 @@
     </tr>
 </table>
 
-
-## <img src="jyjl.png" style='width:30px; vertical-align:top;' alt=''> <span style='color:#1677ff;'>教育经历</span>
+## <img src="jyjl.png" style='width:30px; display:inline-block; vertical-align:top;' alt=''> <span style='color:#1677ff;'>教育经历</span>
 
 #### 南京航空航天大学 - 研究生 - 2012.09 ~ 2015.06
 计算机科学与技术专业
@@ -37,7 +47,7 @@
 曾荣获多次校二等奖学金、国家二级奖学金，荣获计算机学院“优秀毕业生”称号
 
 
-## <img src="zyjn.png" style='width:28px; vertical-align:top; margin-top:3px;' alt=''> <span style='color:#1677ff;'>专业技能</span>
+## <img src="zyjn.png" style='width:28px; display:inline-block; vertical-align:top; margin-top:3px;' alt=''> <span style='color:#1677ff;'>专业技能</span>
 
 * 计算机基础扎实，熟练掌握基础技能和常用设计模式
 * 精通 JavaScript、CSS、HTML 前端三剑客，熟练掌握 CSS 扩展语言 LESS、SASS，具备原子样式开发能力
@@ -53,7 +63,7 @@
 
 
 
-## <img src="gzjl.png" style='width:32px; vertical-align:top; margin-top:2px;' alt=''>  <span style='color:#1677ff;'>工作经历</span>
+## <img src="gzjl.png" style='width:32px; display:inline-block; vertical-align:top; margin-top:2px;' alt=''>  <span style='color:#1677ff;'>工作经历</span>
 
 
 #### 浙江诺诺网络科技有限公司
@@ -78,7 +88,7 @@
 
 
 
-## <img src="xmjy.png" style='width:28px; vertical-align:top; margin-top:6px;' alt=''>  <span style='color:#1677ff;'>项目经验</span>
+## <img src="xmjy.png" style='width:28px; display:inline-block; vertical-align:top; margin-top:6px;' alt=''>  <span style='color:#1677ff;'>项目经验</span>
 
 
 #### 税务管理系统的开发 - 浙江诺诺网络科技有限公司
@@ -109,14 +119,12 @@
     ‌puppeteer、Petite-Vue、egg、mysql、docker等
 
 
-## <img src="zwpj.png" style='width:27px; vertical-align:top; margin-top:4px;' alt=''>  <span style='color:#1677ff;'>自我评价</span>
+## <img src="zwpj.png" style='width:27px; display:inline-block; vertical-align:top; margin-top:4px;' alt=''>  <span style='color:#1677ff;'>自我评价</span>
 
 * 具有良好的团队合作精神和沟通能力，能够与团队成员紧密合作，共同完成项目
 * 对新技术保持热情，愿意学习和尝试新的技术和工具
 * 具有较强的自我驱动力和解决问题的能力，能够在压力下保持高效工作
 * 对前端开发充满热情，致力于不断提升自己的技能和知识，为团队和公司创造价值
-
-<div style="position:fixed; bottom:40px; color:#dedede; left:50%; transform:translateX(-50%)">thanks for notice, good luck to you ~ ~</div>
 
 </div>
 
