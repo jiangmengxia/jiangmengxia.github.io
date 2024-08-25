@@ -37,7 +37,7 @@
 ## 实用方法
 
 * [加解密隐藏](utilities/encode-decode.md)
-* [localstorage](utilities/localstorage.md)
+* [监听localstorage变化](utilities/localstorage-change.md)
 * [js设置css变量的方法](utilities/js-set-css-variable.md)
 * [字符串截取问题](utilities/string-slice-bug.md)
 
