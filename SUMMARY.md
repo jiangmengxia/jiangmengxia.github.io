@@ -1,11 +1,3 @@
-<!--
- * @Author: jiangmengxia jiangmengxia@nnuo.com
- * @Date: 2024-08-15 15:05:25
- * @LastEditors: jiangmengxia jiangmengxia@qq.com
- * @LastEditTime: 2024-08-25 19:02:42
- * @FilePath: /jiangmengxia.github.io/SUMMARY.md
- * @Description: Description
--->
 # Table of contents
 
 * [Welcome](README.md)
@@ -39,6 +31,8 @@
 
 * [性能指标工具](tools/performance-index.md)
 * [console-importer插件](tools/console-importer.md)
+* [depcheck插件](tools/depcheck.md)
+* [localstorage](tools/localstorage.md)
 
 ## 实用方法
 
