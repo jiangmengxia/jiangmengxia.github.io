@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-08-23 20:22:11
  * @LastEditors: jiangmengxia jiangmengxia@qq.com
- * @LastEditTime: 2024-08-24 08:35:16
+ * @LastEditTime: 2024-08-25 17:29:25
  * @FilePath: /jiangmengxia.github.io/jianli.md
  * @Description: Description
 -->
@@ -28,7 +28,7 @@
         </td>
         <td style='border:none'>
             姓名：姜梦霞<br/>
-            岗位：前端工程师（201506其从事前端工作）<br/>
+            岗位：前端工程师（9年工作经验）<br/>
             学历：研究生<br/>
             专业：计算机科学与技术<br/>
             邮箱：jiangmengxia198909@gmail.com<br/>
@@ -42,14 +42,14 @@
 计算机科学与技术专业
 获全额奖学金，曾在校期间有测试开发实习经验<br/><br/>
 
-#### 江苏理工学院 - 本科生 - 2009.09 ~ 2012.06
+#### 江苏理工学院 - 本科生 - 2008.09 ~ 2012.06
 计算机科学与技术专业
 曾荣获多次校二等奖学金、国家二级奖学金，荣获计算机学院“优秀毕业生”称号
 
 
 ## <img src="zyjn.png" style='width:28px; display:inline-block; vertical-align:top; margin-top:3px;' alt=''> <span style='color:#1677ff;'>专业技能</span>
 
-* 计算机基础扎实，熟练掌握基础技能和常用设计模式
+<!-- * 计算机基础扎实，熟练掌握基础技能和常用设计模式
 * 精通 JavaScript、CSS、HTML 前端三剑客，熟练掌握 CSS 扩展语言 LESS、SASS，具备原子样式开发能力
 * 精通 React + Redux 状态管理库进行模块化开发单页应用，熟悉 Vue + Vuex、Angular、jQuery 等其他前端框架的使用
 * 熟练掌握PC端、移动端、h5、小程序、微信公众号、钉钉小程序开发技能，熟练使用小程序开发框架Taro、Remax或原生框架
@@ -59,7 +59,19 @@
 * 具备一定的前端服务系统架构能力和公共组件提取和开发能力
 * 项目中使用过的其他技术或框架：如qiankun微架构、spreadjs、puppeteer、Iframe、websocket、webworker、hbuilder、ionic等
 * 熟悉其他相关技术，如webComponent、TailwindCss、StoryBook、gitbook等
-* PMP证书
+* PMP证书 -->
+
+* 前端开发：精通 JavaScript、CSS、HTML 前端三剑客，熟练掌握 CSS 扩展语言 LESS、SASS，具备原子样式开发能力。精通 React + Redux 状态管理库进行模块化开发单页应用，熟悉 Vue + Vuex、Angular、jQuery 等其他前端框架的使用。熟练掌握 PC 端、移动端、H5、小程序、微信公众号、钉钉小程序开发技能，熟练使用小程序开发框架 Taro、Remax 或原生框架。
+
+* 后端开发：熟悉 Node.js + Egg.js 框架，具备搭建后端服务和业务开发的能力。熟悉 MySQL、ES 等数据库的使用。
+
+* 性能优化：熟悉 HTTP 协议、浏览器原理，掌握常见 Web 性能优化方案。熟练掌握前端工程化与模块化工具 Webpack 及其打包优化方案。
+
+* 其他技术：熟悉 qiankun 微架构、spreadjs、puppeteer、Iframe、websocket、webworker、hbuilder、ionic 等技术或框架。熟悉 webComponent、TailwindCss、StoryBook、gitbook 等其他相关技术。
+
+* 项目管理：持有 PMP 证书，具备一定的项目管理和团队协作能力。
+
+* 其他：具备一定的前端服务系统架构能力和公共组件提取和开发能力。对新技术保持热情，愿意学习和尝试新的技术和工具。
 
 
 
@@ -67,6 +79,7 @@
 
 
 #### 浙江诺诺网络科技有限公司
+2022/03-至今       &nbsp;&nbsp;前端工程师
 * 负责公司财税业务线的前端业务开发，使用React、Redux等框架开发
 * 负责前端项目测试用例脚本的编写、测试覆盖率指标的完成，使用jest、Mocha等测试工具
 * 负责组内业务组件的组件文档的编写和持续迭代，使用gitbook工具
@@ -76,6 +89,7 @@
 * 负责通道前端项目、税务系统二开前端项目的框架搭建、业务开发、部署等
 
 #### 浙江精准学科技有限公司
+2018/07-2022/02    &nbsp;&nbsp;前端工程师
 * 负责公司学习机app应用、教研管理系统等前端系统的开发，使用React、Redux等框架开发
 * 负责公司微信小程序、活动页等前端业务开发，使用html5、Remax、Taro等技术
 * 负责公司渲染服务、看板服务的开发，使用nodejs、egg、‌Puppeteer、Mysql、ES等技术
@@ -85,6 +99,11 @@
 * 负责校验管理后台的需求收集、原型制作、需求评审、接口设计、功能开发等
 * 负责一些教研数据的爬取、数据上传等工作
 * 负责渲染服务、看板服务的技术方案设计、业务开发、部署等
+
+#### 杭州战鱼网络科技有限公司  
+2015/06 - 2018/06   &nbsp;&nbsp;前端工程师
+* 负责公司直播业务、官网、活动页等业务开发
+* 使用技术angular、vue、jquery、zepto、ionic、hbuilder等
 
 
 
