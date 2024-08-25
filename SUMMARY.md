@@ -32,11 +32,14 @@
 * [性能指标工具](tools/performance-index.md)
 * [console-importer插件](tools/console-importer.md)
 * [depcheck插件](tools/depcheck.md)
-* [localstorage](tools/localstorage.md)
+
 
 ## 实用方法
 
 * [加解密隐藏](utilities/encode-decode.md)
+* [localstorage](tools/localstorage.md)
+* [js设置css变量的方法](tools/js-set-css-variable.md)
+* [字符串截取问题](tools/string-slice-bug.md)
 
 ## 面试集锦
 * [假如有几十个请求，如何去控制并发？](interview-highlights/interface-concurrency.md)
