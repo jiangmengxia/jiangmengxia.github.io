@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-08-23 20:22:11
  * @LastEditors: jiangmengxia jiangmengxia@qq.com
- * @LastEditTime: 2024-08-25 17:29:25
+ * @LastEditTime: 2024-08-25 17:54:07
  * @FilePath: /jiangmengxia.github.io/jianli.md
  * @Description: Description
 -->
@@ -32,6 +32,9 @@
             学历：研究生<br/>
             专业：计算机科学与技术<br/>
             邮箱：jiangmengxia198909@gmail.com<br/>
+            联系电话：17794573144<br/>
+            gitbook随笔:https://jiangmengxia.gitbook.io/aihuli/<br/>
+            掘金账号:爱狐狸<br/>
         </td>
     </tr>
 </table>
