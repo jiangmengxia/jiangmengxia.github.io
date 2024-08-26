@@ -1,9 +1,9 @@
 <!--
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-08-25 18:30:54
- * @LastEditors: jiangmengxia jiangmengxia@qq.com
- * @LastEditTime: 2024-08-25 18:39:37
- * @FilePath: /jiangmengxia.github.io/iterview-highlights/deepclone.md
+ * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
+ * @LastEditTime: 2024-08-26 10:12:23
+ * @FilePath: \jiangmengxia.github.io\interview-highlights\deep-copy.md
  * @Description: Description
 -->
 
@@ -20,17 +20,24 @@ function clone(obj) {
 ## 使用递归实现深拷贝，可以处理循环引用问题
 
 ```js
-function deepClone(obj, map = new Map()) {
-  if (typeof obj !== 'object' || obj === null) {
-    return obj;
+function deepClone(value) {
+  if(Array.isArray(value)){
+    const cloneArray = new Array(value.length)
+    for(let i=0;i<value.length;i++){
+      cloneArray[i] = deepClone(value[i])
+    }
+    return cloneArray
   }
-  if (map.has(obj)) {
-    return map.get(obj);
+  if(typeof value ==='object' && value!==null){
+    const cloneArray = {}
+    for(let key in value){
+      cloneArray[key] = deepClone(value[key])
+    }
+    return cloneArray
   }
-  let cloneObj = Array.isArray(obj) ? [] : {};
-  map.set(obj, cloneObj);
-  for (let key in obj) {
+  return value
 }
+ 
 ```
 
 ## 使用MessageChannel实现深拷贝，可以处理循环引用问题

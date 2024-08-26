@@ -46,3 +46,5 @@
 * [如何让 var [a, b] = {a 1, b 2} 解构赋值成功？](interview-highlights/deconstruction-object-to-array.md)
 * [深拷贝的循环引用问题](interview-highlights/deep-copy.md)
 * [大整数相加](interview-highlights/big-number-add.md)
+* [css权重比较问题](interview-highlights/css-selector-weight.md)
+* [如何不借助第三方变量完成上面的交换](interview-highlights/exchange-variable.md)
