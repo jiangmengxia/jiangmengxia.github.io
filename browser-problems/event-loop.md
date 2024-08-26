@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-26 13:16:31
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-26 16:30:21
+ * @LastEditTime: 2024-08-26 16:55:47
  * @FilePath: \jiangmengxia.github.io\browser-problems\event-loop.md
  * @Description: Description
 -->
@@ -16,7 +16,7 @@
 运行程序都有它自己的内存空间，可以把这块内存空间简单的理解为进程（当然不仅仅是一块内存）。
 每个进程都有自己的内存空间、文件描述符、进程ID等资源，可以独立地执行应用程序、维护自身的状态，进程间也可以通信。
 每个应用至少有一个进程，进程之间相互独立、隔离，即便要通信，也需要双方同意。
-
+![alt text](process.svg)
 
 ### 什么是线程？
 
@@ -252,8 +252,13 @@ https://html.spec.whatwg.org/multipage/webappapis.html#perform-a-microtask-check
    1. 计算机硬件没有原子钟，无法做到精确计时
    2. 操作系统计时函数本身就有少量偏差，而JS的计时器最终调用的就是操作系统的计时器，就携带了偏差
    3. 按照W3C的标准，浏览器实现计时器时，如果嵌套层级超过5层，则会带有4ms的最少时间，这样在计时时间少于4ms时，又带来了偏差。
+   4. 受事件循环的影响，计时器的回调函数只能在主线程空闲时执行，因此肯定不会准时执行。
 </blockquote>
 
 
+
+总结：
+* 单线程是异步产生的原因
+* 事件循环是异步的实现方式
 
 
