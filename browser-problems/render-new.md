@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-27 09:09:07
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-27 16:40:12
+ * @LastEditTime: 2024-08-27 16:43:22
  * @FilePath: \jiangmengxia.github.io\browser-problems\render-new.md
  * @Description: Description
 -->
@@ -171,42 +171,17 @@ css属性值的计算过程
 ![alt text](9renderflow.svg)
 
 
-## 重排（reflow）
-重绘本质是重新计算<b>layout</b>树。
-当进行了会影响布局树的操作后，需要重新计算布局树，引发layout。
-
-为了避免连续多次操作导致布局树反复计算，浏览器会合并这些操作，当js代码全部完成后，在进行一次统一计算，所以改动属性造成的reflow是异步完成的。
-
-也同样因为如此，当js获取布局属性时，就可能造成无法获取到最新的布局信息。
-
-浏览器在权衡利弊下，最终决定获取属性立即reflow，也就是产生了同步任务。
-
-![alt text](10reflow.svg)
-
-## 重绘（repaint）
-
-重绘的本质就是重新根据分层信息计算<b>绘制指令</b>。
-
-当改动了可见样式后，也就需要重新计算，会引发重绘。
-
-由于元素的布局信息也属于可见样式，因此重排一定会引起重绘。
-
-
-## 为什么transform效率高
-
-因为transform 既不会影响布局，也不会影响绘制指令，它只影响渲染流程的最后一个【draw】阶段。
-
-由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。
 
 
 
 
 
+## 面试题
 
 <blockqueto style='padding:20px'>
 
     面试题： 浏览器是如何渲染页面的？
-
+    
     当浏览器的网络线程收到 html 文档后，会产生一个渲染任务，并将其加入到渲染主线程的消息队列。
     在事件循环机制的作用下，渲染主线程取出消息队列中的渲染任务，开启渲染流程。
 
@@ -280,4 +255,43 @@ css属性值的计算过程
 
     至此，整个渲染流程结束。
     
+</blockqueto>
+
+<blockqueto style='padding:20px'>
+    
+    面试题：什么是重排（reflow）？
+    重绘本质是重新计算<b>layout</b>树。
+    当进行了会影响布局树的操作后，需要重新计算布局树，引发layout。
+
+    为了避免连续多次操作导致布局树反复计算，浏览器会合并这些操作，当js代码全部完成后，在进行一次统一计算，所以改动属性造成的reflow是异步完成的。
+
+    也同样因为如此，当js获取布局属性时，就可能造成无法获取到最新的布局信息。
+
+    浏览器在权衡利弊下，最终决定获取属性立即reflow，也就是产生了同步任务。
+
+</blockqueto>
+
+![alt text](10reflow.svg)
+
+<blockqueto style='padding:20px'>
+
+    面试题：什么是重绘（repaint）？
+
+    重绘的本质就是重新根据分层信息计算<b>绘制指令</b>。
+
+    当改动了可见样式后，也就需要重新计算，会引发重绘。
+
+    由于元素的布局信息也属于可见样式，因此重排一定会引起重绘。
+
+</blockqueto>
+
+
+<blockqueto style='padding:20px'>
+
+    面试题：为什么transform效率高？
+
+    因为transform 既不会影响布局，也不会影响绘制指令，它只影响渲染流程的最后一个【draw】阶段。
+
+    由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。
+
 </blockqueto>
