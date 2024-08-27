@@ -13,8 +13,8 @@
 <figure><img src="image.png" alt=""><figcaption><p>CSSOM树结构-document.styleSheets</p></figcaption></figure>
 
 8. 解析JS: 在解析html文件的过程中，如果遇到script标签，会同步加载js文件，阻塞html解析，执行js代码，如果js代码中有修改DOM的操作，会重新构建DOM树，如果js代码中有修改CSS的操作，会重新构建CSSOM树，然后重新构建渲染树，重新布局，重新绘制
-9. attachment: 计算出DOM树中每个节点的具体样式
-10. Layout (构建渲染树RenderTree/LayoutTree)：将DOM树和CSSOM树合并成一个渲染树，渲染树只包含需要显示的节点和这些节点的样式信息，不包含隐藏的节点和样式信息
+9. Attachment: 计算出DOM树中每个节点的具体样式，生成计算树（ComputedStyle）。
+10. Layout (构建LayoutTree)：计算每个需要显示的节点和这些节点的几何信息，包括位置和大小。
 11. Layer (布局渲染树LayerTree)：通过渲染树，进行分层（根据定位属性、透明属性、transform属性等）生产图层树。查看layout的方式如下，能看到各个分层：&#x20;
 
     <figure><img src="image-1.png" alt=""><figcaption></figcaption></figure>
@@ -26,11 +26,13 @@
 
 <figure><img src="image-2.png" alt=""><figcaption></figcaption></figure>
 
-&#x20;      以上的指令列表，最终会交给“合成线程”处理，合成线程将图层按一定规则切分成小的图块，然后进行栅格化处理，生成位图。 这里栅格化也是由合成线程处理的，有专门进行栅格化的线程来处理待栅格化任务的队列。 ○ 11.2 Display (显示)：然后将位图交给GPU进程进行绘制，生成最终的页面  &#x20;
+&#x20;      以上的指令列表，最终会交给“合成线程”处理，合成线程将图层按一定规则切分成小的图块，然后进行栅格化处理，生成位图。 这里栅格化也是由合成线程处理的，有专门进行栅格化的线程来处理待栅格化任务的队列。 
+
+13. Display (显示)：然后将位图交给GPU进程进行绘制，生成最终的页面  &#x20;
 
 <figure><img src="image-4.png" alt=""><figcaption></figcaption></figure>
 
-13. 用户操作后，事件监听，执行js代码，修改样式、修改DOM的操作，会重新构建渲染树，重新布局，重新绘制，则重新执行：修改DOM树、CSSOM树、9-12步骤
+14. 用户操作后，事件监听，执行js代码，修改样式、修改DOM的操作，会重新构建渲染树，重新布局，重新绘制，则重新执行：修改DOM树、CSSOM树、9-13步骤
 
 拓展： js 的同步加载和异步加载
 

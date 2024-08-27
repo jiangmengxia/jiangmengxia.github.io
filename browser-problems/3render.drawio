@@ -1,0 +1,76 @@
+<mxfile host="65bd71144e">
+    <diagram id="uSjLprJMEOQ9cbOwyjOw" name="第 1 页">
+        <mxGraphModel dx="982" dy="536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="54" y="60" width="606" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=#333333;fontColor=#000000;" edge="1" parent="1" source="3" target="8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="解析HTML" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCCCFF;fontColor=#000000;strokeColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="120" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;dashed=1;strokeColor=#333333;" edge="1" parent="1" source="4" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="HTML字符串" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="120" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="triangle;whiteSpace=wrap;html=1;fontColor=#000000;fillColor=#CCCCFF;strokeColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="130" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=none;html=1;dashed=1;strokeColor=#333333;fontColor=#000000;" edge="1" parent="1" source="8" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="样式计算" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCCCFF;fontColor=#000000;strokeColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="120" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="edgeStyle=none;html=1;dashed=1;strokeColor=#333333;fontColor=#000000;" edge="1" parent="1" source="9" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="布局" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCCCFF;fontColor=#000000;strokeColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="120" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;dashed=1;strokeColor=#333333;fontColor=#000000;" edge="1" parent="1" source="12" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="分层" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCCCFF;fontColor=#000000;strokeColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="210" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=none;html=1;dashed=1;strokeColor=#333333;fontColor=#000000;" edge="1" parent="1" source="13" target="14">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="绘制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCCCFF;fontColor=#000000;strokeColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="210" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=#333333;fontColor=#000000;" edge="1" parent="1" source="14" target="15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="分块" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCCCFF;fontColor=#000000;strokeColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="210" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=none;html=1;dashed=1;strokeColor=#333333;fontColor=#000000;" edge="1" parent="1" source="15" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="光栅化&lt;br&gt;（栅格化）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCCCFF;fontColor=#000000;strokeColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="310" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" style="edgeStyle=none;html=1;dashed=1;strokeColor=#333333;fontColor=#000000;" edge="1" parent="1" source="16" target="25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="画&lt;br&gt;（draw)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCCCFF;fontColor=#000000;strokeColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="310" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="像素信息" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontColor=#000000;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="310" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="triangle;whiteSpace=wrap;html=1;fontColor=#000000;fillColor=#CCCCFF;strokeColor=#9999FF;direction=west;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="320" width="20" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
