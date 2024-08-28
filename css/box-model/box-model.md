@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-28 16:40:08
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-28 18:23:39
+ * @LastEditTime: 2024-08-28 18:25:19
  * @FilePath: \jiangmengxia.github.io\css\box-model\box-model.md
  * @Description: Description
 -->
@@ -168,7 +168,7 @@ A collapsed margin is considered adjoining to another margin if any of its compo
 
 <a target="_blank" href='./box-model-example.html'>案例效果查看</a>
 
-<!-- <iframe src='./box-model-example.html' width='100%' height='100%'></iframe> -->
+<iframe src='./box-model-example.html' width='100%' height='100%'></iframe>
 
 
 
