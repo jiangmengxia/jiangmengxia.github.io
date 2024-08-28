@@ -72,13 +72,7 @@ styleSheet.deleteRule(0);
 ![alt text](5computedStyle.svg)
 
 
-css属性值的计算过程
-层叠
-继承
 
-视觉格式化模型
-盒模型
-包含块
 
 
 ### 布局（Layout）
