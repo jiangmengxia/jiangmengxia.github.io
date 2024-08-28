@@ -2,13 +2,14 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-28 14:42:42
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-28 16:25:18
+ * @LastEditTime: 2024-08-28 16:37:54
  * @FilePath: \jiangmengxia.github.io\css\inline-formatting-contexts.md
  * @Description: Description
 -->
-# i不知道的 CSS 之 IFC
+# 你不知道的 CSS 之 IFC
 
 Inline Formatting Context（IFC，内联格式化上下文）是CSS中的一个概念，它决定了内联元素如何布局和渲染。
+
 IFC是一个独立的渲染区域，它内部的元素会按照水平方向排列，形成一个新的IFC。
 
 ```
@@ -122,8 +123,8 @@ Margins, borders, padding, or text decorations have no visible effect after spli
 <b>如何触发IFC？</b>
 
 1. 一个块级元素（block-level element）包含内联级元素（inline-level elements）。
-
-
+   内联级元素：display属性的以下值构成内联级别的元素：inline、inline-table和inline-block。
+   块级元素：display属性的以下值构成块级别的元素：block、list-item、table、table-caption、table-header-group、table-footer-group、table-row、table-cell、table-column、table-column-group、table-row-group、flex、grid、flow-root、ruby、ruby-base、ruby-text、ruby-base-container、ruby-text-container。
 
 <b>IFC布局规则</b>
 

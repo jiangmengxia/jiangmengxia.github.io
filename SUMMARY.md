@@ -9,6 +9,7 @@
 
 ## css
 * [你不知道的 CSS 之包含块](css/property-descriptor.md)
+* [盒模型](css/box-model/box-model.md)
 * [你不知道的 CSS 之 BFC](css/block-formatting-context.md)
 * [你不知道的 CSS 之 IFC](css/block-formatting-context.md)
 

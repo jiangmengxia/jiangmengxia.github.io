@@ -1,0 +1,88 @@
+<!--
+ * @Author: jiangmengxia jiangmengxia@nnuo.com
+ * @Date: 2024-08-28 17:36:05
+ * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
+ * @LastEditTime: 2024-08-28 18:22:23
+ * @FilePath: \jiangmengxia.github.io\css\box-model\box-model-example.html
+ * @Description: Description
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .drawer {
+        border: 1px solid #dedede;
+      }
+      .c-grey {
+        color: #545454;
+      }
+      .bfc {
+        overflow: hidden;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background: #dedede;
+      }
+      .parent-box {
+        margin-top: 40px;
+        background: #dedede;
+        width: 200px;
+        height: 200px;
+        /* 通过将父元素设置为BFC可以解决margin重叠问题 */
+        /* overflow: hidden; */
+      }
+      .child-box {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background: #fcc;
+      }
+
+      .none-bfc {
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h4>
+      案例1：
+      垂直相邻div，margin上下都是20，实际渲染出来两者margin距离只有20(按间隙最大的来计算)
+    </h4>
+    <div class="drawer">
+      <div class="box">sss</div>
+      <div class="box">222</div>
+    </div>
+    <h4>
+      案例2：两个div中间插入一个无内容（或者实际渲染高度为0）的div，margin仍被折叠
+    </h4>
+    <p class="c-grey">
+      可以通过将中间的div(.middle-box)设置成BFC，可以解决margin重叠问题
+    </p>
+    <div class="drawer">
+      <div class="box">sss</div>
+      <div class="middle-box" style="height: 0"></div>
+      <div class="box">222</div>
+    </div>
+    <h4>
+      案例3：父子div，父div设置marginTop，子div设置margin，marginTop变成两者之间的较大的值。
+    </h4>
+    <p class="c-grey">可以通过将父div设置成BFC解决margin重叠问题</p>
+    <div class="drawer">
+      <div class="parent-box">
+        <div class="child-box"></div>
+      </div>
+    </div>
+
+    <h4>
+      案例4：非BFC盒子，
+      marginTop和marginBottom会重叠，这里渲染的margin高度等于两者中较大值，也就是整体高度等于两者中较大值
+    </h4>
+    <p class="c-grey">可以通过将div设置成BFC解决margin重叠问题</p>
+    <div class="drawer">
+      <div class="none-bfc"></div>
+    </div>
+  </body>
+</html>
