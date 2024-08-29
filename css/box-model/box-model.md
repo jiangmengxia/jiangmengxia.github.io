@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-28 16:40:08
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-28 18:30:23
+ * @LastEditTime: 2024-08-29 17:26:55
  * @FilePath: \jiangmengxia.github.io\css\box-model\box-model.md
  * @Description: Description
 -->
@@ -14,7 +14,7 @@
   css的盒模型描述DOM tree中为元素生成的矩形box，并且它根据视觉格式模型进行布局。
 
 
-## 盒子尺寸（Box dimensions）
+## 1. 盒子尺寸（Box dimensions）
 
 每个盒子都有：
 * 内容区域
@@ -56,7 +56,255 @@ margin边缘围绕盒子的margin。如果margin宽度为0，则margin边缘与b
 
 盒子的内容、填充和边框区域的前景样式由生成元素的背景属性指定（border样式由border属性决定）。margin背景总是透明的。
 
-### 折叠的或塌陷的margins（Collapsing margins）
+## 2. margin
+
+margin 可以设置固定宽度、百分比、auto（See the section on calculating widths and margins for behavior. https://drafts.csswg.org/css2/#Computing_widths_and_margins）。
+
+适用于：
+* table格式： 除了table-caption、table、inline-table支持，其他table格式的都不支持
+* inline不支持
+* 其他格式均支持
+
+<style>
+  .td-box{
+    background:#dedede;
+    overflow:hidden;
+  }
+</style>
+<table>
+  <tr>
+    <td>1</td>
+    <td>block</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:block; margin:20px;'>
+         display:block;margin:20px;
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>inline</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline; margin:20px;'>
+         display:inline;margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>inline-block</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline-block; margin:20px;'>
+          display:inline-block;margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>flex</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:flex; margin:20px;'>
+          display:flex;margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+   <tr>
+    <td>5</td>
+    <td>inline-flex</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline-flex; margin:20px;'>
+          display:inline-flex;margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+   <tr>
+    <td>6</td>
+    <td>grid</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:grid; margin:20px;'>
+          display:grid;margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+   <tr>
+    <td>7</td>
+    <td>inline-grid</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline-grid; margin:20px;'>
+          display:inline-grid;margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>table</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table; margin:20px;'>
+          display:table; margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>inline-table</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline-table; margin:20px;'>
+          display:inline-table; margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>table-row</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-row; margin:20px;'>
+          display:table-row; margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>table-row-group</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-row-group; margin:20px;'>
+          display:table-row-group; margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>table-cell</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-cell; margin:20px;'>
+          display:table-cell; margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+   <tr>
+    <td>13</td>
+    <td>table-caption</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-caption; margin:20px; width:300px;'>
+          display:table-caption; margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>table-header-group</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-header-group; margin:20px;'>
+          display:table-header-group; margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>table-footer-group</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-footer-group; margin:20px;'>
+          display:table-footer-group; margin:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>table-column</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-column; margin:20px;'>
+          display:table-column; margin:20px;
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>table-column-group</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-column-group; margin:20px;'>
+          display:table-column-group; margin:20px;
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>list-item</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:list-item; margin:20px;'>
+          display:list-item; margin:20px;
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>run-in</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:run-in; margin:20px;'>
+          display:run-in; margin:20px;
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+</table>
+
+
+
+### 2.1 折叠的或塌陷的margins（Collapsing margins）
 
 > 在CSS中，两个或多个相邻的盒子（可能是兄弟节点）的margin可以合并成一个单一的margin。以这种方式合并margin被称为折叠，合并后的margin称为折叠的margin。
 
@@ -81,7 +329,84 @@ A collapsed margin is considered adjoining to another margin if any of its compo
 如果折叠边距的任何组成边距与另一个边距相邻，则认为折叠边距与该边距相邻。
 
 
-### Margin collapsing example
+产生折叠的情况：
+* 相邻的块级元素：当两个或多个相邻的块级元素之间的外边距相遇时，它们的外边距会折叠。这里的“相邻”是指没有内边距、边框或行内内容将它们分隔开。
+
+* 父子元素：当一个块级元素的顶部外边距和其第一个子元素的顶部外边距相遇时，它们的外边距会折叠。同样，当一个块级元素的底部外边距和其最后一个子元素的底部外边距相遇时，它们的外边距会折叠。这里的“父子元素”是指父元素和其第一个或最后一个子元素。
+
+* 空的块级元素：当一个块级元素为空，并且其顶部外边距和底部外边距相遇时，它们的外边距会折叠。这里的“空的块级元素”是指没有内容、内边距、边框或行内内容的块级元素。
+
+* 外边距合并：外边距合并是指两个或多个相邻的外边距合并为一个外边距，这个外边距的大小是两个外边距中较大的那个。
+
+
+
+### 2.2 Margin collapsing example
+
+#### 2.2.1 案例1  垂直相邻块级元素
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background: #dedede;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="drawer">
+      <div class="box">sss</div>
+      <div class="box">222</div>
+    </div>
+  </body>
+</html>
+```
+ <style>
+      .drawer {
+        border: 1px solid #dedede;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background: #dedede;
+      }
+    </style>
+  <div style='display:flex'>
+    <div style='width:50%'>
+      <p style='padding:8px'><a>预期结果：</a>box2的顶部距离box1的底部40px</p>
+     <div class="drawer" >
+        <div class="box" style='margin-bottom:0'>box1</div>
+        <div class="box" style='margin-top:40px'>box2</div>
+    </div>
+    </div>
+    <div style='width:50%'>
+      <p style='padding:8px'><a>实际结果：</a>两者margin距离只有20(按间隙最大的来计算)</p>
+      <div class="drawer">
+          <div class="box">box1</div>
+          <div class="box">box2</div>
+      </div>
+    </div>
+  </div>
+
+  <a>修正方法：</a>将box设置为非block-level box，比如inline-block，两者间加一个换行符如下：
+
+  ```html
+      <div class="drawer">
+          <div class="box" style='display:inline-block'>box1</div><br/>
+          <div class="box" style='display:inline-block'>box2</div>
+      </div>
+  ```
+<a>修正后效果：</a>
+  <div class="drawer">
+      <div class="box" style='display:inline-block'>box1</div><br/>
+      <div class="box" style='display:inline-block'>box2</div>
+  </div>
+
+#### 2.2.2 案例2 两个垂直div，间隔一个或多个空div
 
 ```html
 <!DOCTYPE html>
@@ -91,20 +416,74 @@ A collapsed margin is considered adjoining to another margin if any of its compo
       .drawer {
         border: 1px solid #dedede;
       }
-      .c-grey {
-        color: #545454;
-      }
-      .bfc {
-        overflow: hidden;
-      }
       .box {
         width: 100px;
         height: 100px;
         margin: 20px;
         background: #dedede;
       }
+    </style>
+  </head>
+  <body>
+    <div class="drawer">
+      <div class="box">box1</div>
+      <div class="middle-box" style="height: 0; margin-top:20px;"></div>
+      <div class="middle-box" style="height: 0; margin-top:20px;"></div>
+      <div class="box">box2</div>
+    </div>
+  </body>
+</html>
+```
+  <div style='display:flex'>
+    <div style='width:50%'>
+      <p style='padding:8px'><a>预期结果：</a>box2的顶部距离box1的底部80px</p>
+     <div class="drawer" >
+        <div class="box" style='margin-bottom:0'>box1</div>
+        <div class="box" style='margin-top:80px'>box2</div>
+    </div>
+    </div>
+    <div style='width:50%'>
+      <p style='padding:8px'><a>实际结果：</a>空div被吞了，两者间隔距离只有20(取间隔最大值)</p>
+     <div class="drawer">
+      <div class="box">box1</div>
+      <div class="middle-box" style="height: 0; margin-top:20px;"></div>
+      <div class="middle-box" style="height: 0; margin-top:20px;"></div>
+      <div class="box">box2</div>
+    </div>
+    </div>
+  </div>
+
+  <a>修正方法：</a> 将中间层(middle-box)设置为BFC，通过设置overflow: hidden(或其他方式)，box1或者box2设置为inline-block如下
+
+  ```html
+<div class="drawer">
+      <div class="box" style='display:inline-block;'>box1</div>
+      <div class="middle-box" style="height: 0;margin-top:20px;overflow: hidden;"></div>
+      <div class="middle-box" style="height: 0; margin-top:20px;overflow: hidden;"></div>
+      <div class="box">box2</div>
+</div>
+  ```
+
+<a>修正后效果：</a>
+  <div class="drawer">
+      <div class="box" style='display:inline-block;'>box1</div>
+      <div class="middle-box" style="height: 0; margin-top:20px; overflow: hidden;"></div>
+      <div class="middle-box" style="height: 0; margin-top:20px; overflow: hidden;"></div>
+      <div class="box">box2</div>
+  </div>
+
+#### 2.2.3 案例3 父子元素（块级）
+  
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .drawer {
+        border: 1px solid #dedede;
+      }
       .parent-box {
-        margin-top: 40px;
+        margin-top: 20px;
         background: #dedede;
         width: 200px;
         height: 200px;
@@ -114,62 +493,408 @@ A collapsed margin is considered adjoining to another margin if any of its compo
       .child-box {
         width: 100px;
         height: 100px;
-        margin: 20px;
+        margin: 40px;
         background: #fcc;
-      }
-
-      .none-bfc {
-        margin-top: 20px;
-        margin-bottom: 30px;
       }
     </style>
   </head>
   <body>
-    <h4>
-      案例1：
-      垂直相邻div，margin上下都是20，实际渲染出来两者margin距离只有20(按间隙最大的来计算)
-    </h4>
     <div class="drawer">
-      <div class="box">sss</div>
-      <div class="box">222</div>
-    </div>
-    <h4>
-      案例2：两个div中间插入一个无内容（或者实际渲染高度为0）的div，margin仍被折叠
-    </h4>
-    <p class="c-grey">
-      可以通过将中间的div(.middle-box)设置成BFC，可以解决margin重叠问题
-    </p>
-    <div class="drawer">
-      <div class="box">sss</div>
-      <div class="middle-box" style="height: 0"></div>
-      <div class="box">222</div>
-    </div>
-    <h4>
-      案例3：父子div，父div设置marginTop，子div设置margin，marginTop变成两者之间的较大的值。
-    </h4>
-    <p class="c-grey">可以通过将父div设置成BFC解决margin重叠问题</p>
-    <div class="drawer">
+      <div class="drawer">
       <div class="parent-box">
-        <div class="child-box"></div>
+        <div class="child-box">child</div>
       </div>
     </div>
-
-    <h4>
-      案例4：非BFC盒子，
-      marginTop和marginBottom会重叠，这里渲染的margin高度等于两者中较大值，也就是整体高度等于两者中较大值
-    </h4>
-    <p class="c-grey">可以通过将div设置成BFC解决margin重叠问题</p>
-    <div class="drawer">
-      <div class="none-bfc"></div>
     </div>
   </body>
 </html>
 ```
+ <style>
+      .parent-box {
+        margin-top: 20px;
+        background: #dedede;
+        width: 200px;
+        height: 200px;
+        /* 通过将父元素设置为BFC可以解决margin重叠问题 */
+        /* overflow: hidden; */
+      }
+      .child-box {
+        width: 100px;
+        height: 100px;
+        margin-top:40px;
+        background: #fcc;
+      }
+    </style>
+  <div style='display:flex'>
+     <div style='width:50%'>
+      <p style='padding:8px'><a>预期结果：</a>parent距离drawer顶部边框20px,child具体parent上边距40px</p>
+     </div>
+     <div style='width:50%'>
+     <p style='padding:8px'><a>实际结果：</a>parent和child顶部重合，距离drawer顶部40px（两个margin的较大值）;整体向下塌陷20px;</p>
+     </div>
+  </div>
+ <div style='display:flex'>
+    <div style='width:50%'>
+     <div class="drawer" >
+        <div class="parent-box" style='margin-top:20px; padding-top:40px;'>
+        <div style='position:absolute; margin-left:120px; margin-top:40px;'>parent</div>
+        <div class="child-box" style='margin-top:0px'>child</div>
+      </div>
+    </div>
+    </div>
+    <div style='width:50%'>
+     <div class="drawer">
+      <div class="parent-box">
+        <div style='position:absolute; margin-left:120px; margin-top:80px;'>parent</div>
+        <div class="child-box">child</div>
+      </div>
+    </div>
+    </div>
+  </div>
 
-<a target="_blank" href='./box-model-example.html'>案例效果查看</a>
+  <a>修正办法</a>：将父元素设置为BFC，通过设置overflow: hidden（或其他方式）或者将child元素设置为display:inline-block， 如下：
+  ```html
+   <!-- 办法1 -->
+   <div class="drawer">
+      <div class="parent-box" style='overflow:hidden;'>
+        <div class="child-box">child</div>
+      </div>
+    </div>
+    <!-- 办法2 -->
+    <div class="drawer">
+      <div class="parent-box" >
+        <div class="child-box" style='display:inline-block'>child</div>
+      </div>
+    </div>
+  ```
+   <a>修正后展示：</a>
+  <div style='display:flex'>
+     <div class="drawer" style='width:50%;'>
+      <div class="parent-box" style='overflow:hidden;'>
+        <div style='position:absolute; margin-left:120px; margin-top:80px;'>parent</div>
+        <div class="child-box">child</div>
+      </div>
+      <div style='position:absolute; margin-left:70px;'>办法1</div>
+    </div>
+     <div class="drawer" style='width:50%;'>
+      <div class="parent-box">
+        <div style='position:absolute; margin-left:120px; margin-top:80px;'>parent</div>
+        <div class="child-box"  style='display:inline-block'>child</div>
+      </div>
+      <div style='position:absolute; margin-left:70px;'>办法2</div>
+    </div>
+  </div>
 
-<iframe src='./box-model-example.html'style='height:300px;width:100%'></iframe>
+<br/>
+
+#### 2.2.4 案例4 空的块级元素
+
+```html
+<style>
+.none-bfc {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        background: #fcc;
+        width: 100px;
+        height: 100px;
+      }
+</style>
+ <div class="drawer">
+      <div class="none-bfc"></div>
+  </div>
+```
+
+<style>
+.none-bfc {
+        margin-top: 40px;
+        margin-bottom: 80px;
+        background: #fcc;
+  }
+</style>
+<div style='display:flex'>
+     <div style='width:50%'>
+      <p style='padding:8px'><a>预期结果：</a>none-bfc的父box所占用的高度是上下边距之和40+80=120px</p>
+     </div>
+     <div style='width:50%'>
+     <p style='padding:8px'><a>实际结果：</a>marginTop和marginBottom会重叠，这里渲染的margin高度等于两者中较大值，也就是整体高度等于两者中较大值</p>
+     </div>
+</div>
+ <div style='display:flex;'>
+    <div style='width:50%'>
+     <div class="drawer" >
+        <div style='position:absolute; margin-left:30px; margin-top:30px;'>120px</div>
+        <div class="none-bfc" style='overflow:hidden; height:0;'>
+        </div>
+      </div>
+    </div>
+    <div style='width:50%'>
+     <div class="drawer">
+      <div style='position:absolute; margin-left:30px; margin-top:30px;'>80px</div>
+      <div class="none-bfc" style='height:0;'></div>
+    </div>
+    </div>
+</div>
+
+<a>修正方法：</a>，将盒子设为bfc
+
+```html
+<div class="drawer" >
+        <div style='position:absolute; margin-left:30px; margin-top:30px;'>120px</div>
+        <div class="none-bfc" style='overflow:hidden; height:0;'>
+        </div>
+</div>
+```
+效果如下：
+<div class="drawer" >
+        <div style='position:absolute; margin-left:30px; margin-top:30px;'>120px</div>
+        <div class="none-bfc" style='overflow:hidden; height:0;'>
+        </div>
+</div>
 
 
+## 3. padding 
 
+padding 可以设置固定宽度。
 
+适用于：
+* table格式： 除了table-cell、table-caption支持，其他table格式的都不支持
+* inline不支持
+* 其他格式均支持
+
+<style>
+  .td-box{
+    background:#dedede;
+    overflow:hidden;
+    border:1px solid #bbb;
+  }
+</style>
+<table>
+  <tr>
+    <td>1</td>
+    <td>block</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:block; padding:20px;'>
+         display:block;padding:20px;
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>inline</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline; padding:20px;'>
+          display:inline; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>inline-block</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline-block; padding:20px;'>
+          display:inline-block; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>flex</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:flex; padding:20px;'>
+          display:flex;padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+   <tr>
+    <td>5</td>
+    <td>inline-flex</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline-flex; padding:20px;'>
+          display:inline-flex;padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+   <tr>
+    <td>6</td>
+    <td>grid</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:grid; padding:20px;'>
+          display:grid;padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+   <tr>
+    <td>7</td>
+    <td>inline-grid</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline-grid; padding:20px;'>
+          display:inline-grid;padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>table</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table; padding:20px;'>
+          display:table; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>inline-table</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:inline-table; padding:20px;'>
+          display:inline-table; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>table-row</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-row; padding:20px;'>
+          display:table-row; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>table-row-group</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-row-group; padding:20px;'>
+          display:table-row-group; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>table-cell</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-cell; padding:20px;'>
+          display:table-cell; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+   <tr>
+    <td>13</td>
+    <td>table-caption</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-caption; padding:20px; width:300px;'>
+          display:table-caption; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>table-header-group</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-header-group; padding:20px;'>
+          display:table-header-group; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>table-footer-group</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-footer-group; padding:20px;'>
+          display:table-footer-group; padding:20px; 
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>table-column</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-column; padding:20px;'>
+          display:table-column; padding:20px;
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>table-column-group</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:table-column-group; padding:20px;'>
+          display:table-column-group; padding:20px;
+        </div>
+      </div>
+    </td>
+    <td>不适用</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>list-item</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:list-item; padding:20px;'>
+          display:list-item; padding:20px;
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>run-in</td>
+    <td>
+      <div class='td-box'>
+        <div style='display:run-in; padding:20px;'>
+          display:run-in; padding:20px;
+        </div>
+      </div>
+    </td>
+    <td>适用</td>
+  </tr>
+</table>

@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-28 17:36:05
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-08-28 18:22:23
+ * @LastEditTime: 2024-08-28 18:40:10
  * @FilePath: \jiangmengxia.github.io\css\box-model\box-model-example.html
  * @Description: Description
 -->
@@ -26,7 +26,7 @@
         background: #dedede;
       }
       .parent-box {
-        margin-top: 40px;
+        margin-top: 20px;
         background: #dedede;
         width: 200px;
         height: 200px;
@@ -36,7 +36,7 @@
       .child-box {
         width: 100px;
         height: 100px;
-        margin: 20px;
+        margin: 40px;
         background: #fcc;
       }
 
@@ -68,6 +68,7 @@
     </div>
     <h4>
       案例3：父子div，父div设置marginTop，子div设置margin，marginTop变成两者之间的较大的值。
+      并且这个margin-top会作用到父div上，导致父div整体下移。
     </h4>
     <p class="c-grey">可以通过将父div设置成BFC解决margin重叠问题</p>
     <div class="drawer">
