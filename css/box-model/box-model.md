@@ -54,7 +54,7 @@ margin 可以设置固定宽度、百分比、auto（See the section on calculat
 适用于：
 
 * table格式： 除了table-caption、table、inline-table支持，其他table格式的都不支持
-* inline不支持
+* inline不支持marginTop、marginBottom
 * 其他格式均支持
 
 ![margin对于不同display的支持性](margin.png)
@@ -289,7 +289,28 @@ padding 可以设置固定宽度。
 适用于：
 
 * table格式： 除了table、inline-table、table-cell、table-caption支持，其他table格式的都不支持
-* inline不支持
+* inline不支持paddingTop、paddingBottom
 * 其他格式均支持
 
 ![alt text](padding.png)
+
+
+### padding 奇怪问题
+<br/>
+<br/>
+
+<div>
+  <style>
+      .drawer {
+        border: 1px solid #dedede;
+        width:400px;
+        height:200px;
+      }
+      .box {
+        background: orange;
+      }
+    </style>
+    <div class="drawer">
+      <div class="box" style="padding:20px; display:inline">box</div>
+    </div>
+<div>

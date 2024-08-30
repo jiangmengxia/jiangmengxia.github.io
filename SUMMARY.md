@@ -1,21 +1,25 @@
+<!--
+ * @Author: jiangmengxia jiangmengxia@nnuo.com
+ * @Date: 2024-08-29 18:31:43
+ * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
+ * @LastEditTime: 2024-08-30 11:30:26
+ * @FilePath: \jiangmengxia.github.io\SUMMARY.md
+ * @Description: Description
+-->
 # Table of contents
 
 * [Welcome](README.md)
 * [个人简历](jianli.md)
 
-## 前端术语
-
-* [术语](terms/terms.md)
-
 ## css
-
-* [你不知道的 CSS 之包含块](css/ni-bu-zhi-dao-de-css-zhi-bao-han-kuai.md)
+* [替换元素&非替换元素](css/words/replaced-element&non-replaced-element.md)
+* [你不知道的 CSS 之包含块](css/containing-block.md)
 * [盒模型](css/box-model/box-model.md)
 * [你不知道的 CSS 之 BFC](css/block-formatting-context.md)
 * [你不知道的 CSS 之 IFC](css/block-formatting-context.md)
 
 ## js
-
+* [术语](terms/terms.md)
 * [属性描述符](js/property-descriptor.md)
 * [Object.freeze](js/object-freeze.md)
 * [Object.seal](js/object-seal.md)
