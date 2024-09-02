@@ -1,26 +1,19 @@
-<!--
- * @Author: jiangmengxia jiangmengxia@nnuo.com
- * @Date: 2024-08-29 18:31:43
- * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-09-02 11:28:56
- * @FilePath: \jiangmengxia.github.io\SUMMARY.md
- * @Description: Description
--->
 # Table of contents
 
 * [Welcome](README.md)
 * [个人简历](jianli.md)
 
 ## css
-* [替换元素&非替换元素](css/replaced-element&non-replaced-element/index.md)
-* [分配属性值、层叠和继承](css/assigning-property-values-Cascading-and-Inheritance/index.md)
+
+* [替换元素&非替换元素](css/replaced-element\&non-replaced-element/index.md)
+* [分配属性值、层叠和继承](css/fen-pei-shu-xing-zhi-ceng-die-he-ji-cheng.md)
 * [css处理模型](css/CSS-processing-model/index.md)
 * [你不知道的 CSS 之包含块](css/containing-block.md)
 * [盒模型](css/box-model/box-model.md)
 * [你不知道的 CSS 之 BFC](css/block-formatting-context.md)
-<!-- * [你不知道的 CSS 之 IFC](css/block-formatting-context.md) -->
 
 ## js
+
 * [术语](terms/terms.md)
 * [属性描述符](js/property-descriptor.md)
 * [Object.freeze](js/object-freeze.md)
@@ -61,6 +54,7 @@
 
 ## 面试集锦
 
+* [css面试题合集](mian-shi-ji-jin/css-mian-shi-ti-he-ji.md)
 * [假如有几十个请求，如何去控制并发？](interview-highlights/interface-concurrency.md)
 * [如何让 var \[a, b\] = {a 1, b 2} 解构赋值成功？](interview-highlights/deconstruction-object-to-array.md)
 * [深拷贝的循环引用问题](interview-highlights/deep-copy.md)
@@ -68,3 +62,7 @@
 * [css权重比较问题](interview-highlights/css-selector-weight.md)
 * [如何不借助第三方变量完成上面的交换](interview-highlights/exchange-variable.md)
 * [符号&&](interview-highlights/symbol-&&.md)
+
+***
+
+* [Promise相关面试题](promise-xiang-guan-mian-shi-ti.md)
