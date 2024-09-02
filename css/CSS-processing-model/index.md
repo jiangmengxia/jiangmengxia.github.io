@@ -20,7 +20,7 @@
 > 4. Annotate every element of the document tree by assigning a single value to every property that is applicable to the target media type. Properties are assigned values according to the mechanisms described in the section on cascading and inheritance. <br/>
   Part of the calculation of values depends on the formatting algorithm appropriate for the target media type. For example, if the target medium is the screen, user agents apply the visual formatting model.
 
-  为每个元素的每个属性赋值（属性值适用于目标媒体类型）。这些属性值的是根据`级联`和`继承`结合的某种机制共同确定的。
+  为每个元素的每个属性赋值（属性值适用于目标媒体类型）。这些属性值的是根据`层叠`和`继承`结合的某种机制共同确定的。
   
   部分值的计算依赖于目标媒体类型的格式化算法。例如，如果目标媒体是屏幕，则 UA 应用 `视觉格式化模型`。
 
