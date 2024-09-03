@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-29 18:31:43
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-09-03 09:30:44
+ * @LastEditTime: 2024-09-03 09:34:27
  * @FilePath: \jiangmengxia.github.io\SUMMARY.md
  * @Description: Description
 -->
@@ -13,7 +13,7 @@
 
 ## css
 
-* [替换元素&非替换元素](css/replaced-element-and-non-replaced-element.md)
+* [替换元素&非替换元素](css/replaced-element-and-non-replaced-element/index.md)
 * [分配属性值、层叠和继承](css/fen-pei-shu-xing-zhi-ceng-die-he-ji-cheng/index.md)
 * [css处理模型](css/CSS-processing-model/index.md)
 * [视觉格式化模型](css/visual-formatting-model/index.md)
