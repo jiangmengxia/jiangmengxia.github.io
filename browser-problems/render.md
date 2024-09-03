@@ -15,28 +15,24 @@
 8. 解析JS: 在解析html文件的过程中，如果遇到script标签，会同步加载js文件，阻塞html解析，执行js代码，如果js代码中有修改DOM的操作，会重新构建DOM树，如果js代码中有修改CSS的操作，会重新构建CSSOM树，然后重新构建渲染树，重新布局，重新绘制
 9. Attachment: 计算出DOM树中每个节点的具体样式，生成计算树（ComputedStyle）。
 10. Layout (构建LayoutTree)：计算每个需要显示的节点和这些节点的几何信息，包括位置和大小。
-11. Layer (布局渲染树LayerTree)：通过渲染树，进行分层（根据定位属性、透明属性、transform属性等）生产图层树。查看layout的方式如下，能看到各个分层：&#x20;
+11. Layer (布局渲染树LayerTree)：通过渲染树，进行分层（根据定位属性、透明属性、transform属性等）生产图层树。查看layout的方式如下，能看到各个分层：
 
     <figure><img src="image-1.png" alt=""><figcaption></figcaption></figure>
 12. Painting (绘制渲染树)：将不同的图层进行绘制，转交给合成线程处理， ○ 11.1 Composite (成线程合处理)：合成线程将图层按一定规则切分成小的图块，然后进行栅格化处理，生成位图 如何根据图层进行合成，可以通过选定图层，右键“展示绘制细节”👇🏻，会看到profile的Tab，里面能看到所有该图层的绘制指令。
-
-&#x20;       &#x20;
 
 <figure><img src="image-3.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="image-2.png" alt=""><figcaption></figcaption></figure>
 
-&#x20;      以上的指令列表，最终会交给“合成线程”处理，合成线程将图层按一定规则切分成小的图块，然后进行栅格化处理，生成位图。 这里栅格化也是由合成线程处理的，有专门进行栅格化的线程来处理待栅格化任务的队列。 
+以上的指令列表，最终会交给“合成线程”处理，合成线程将图层按一定规则切分成小的图块，然后进行栅格化处理，生成位图。 这里栅格化也是由合成线程处理的，有专门进行栅格化的线程来处理待栅格化任务的队列。
 
-13. Display (显示)：然后将位图交给GPU进程进行绘制，生成最终的页面  &#x20;
+13. Display (显示)：然后将位图交给GPU进程进行绘制，生成最终的页面
 
 <figure><img src="image-4.png" alt=""><figcaption></figcaption></figure>
 
 14. 用户操作后，事件监听，执行js代码，修改样式、修改DOM的操作，会重新构建渲染树，重新布局，重新绘制，则重新执行：修改DOM树、CSSOM树、9-13步骤
 
 拓展： js 的同步加载和异步加载
-
-&#x20;
 
 <figure><img src="yuque_diagram (10).jpg" alt=""><figcaption></figcaption></figure>
 
@@ -51,7 +47,7 @@ css 的同步加载和异步加载
 （3）  <link defer/> ：异步加载，加载后等待DOM解析完成再执行，不阻塞DOM解析
 ```
 
-总结：&#x20;
+总结：
 
 <figure><img src="yuque_diagram (9).jpg" alt=""><figcaption></figcaption></figure>
 
@@ -147,19 +143,19 @@ css 的同步加载和异步加载
 
 ## 5. 浏览器性能指标
 
-### 5.1  **window.performance**
+### 5.1 **window.performance**
 
 \`window.performance\` 是一个Web API，它提供了关于浏览器性能的信息。它可以帮助开发者了解网页的性能，并找出性能瓶颈。以下是一些常见的 \`window.performance\` 属性和方法：
 
-●  \*\*performance.timing\*\*：这是一个对象，它包含了与页面加载时间相关的信息，如页面开始加载的时间、DNS解析时间、TCP连接时间、请求发送时间、响应接收时间、DOM加载时间、页面完全加载时间等。
+● \*\*performance.timing\*\*：这是一个对象，它包含了与页面加载时间相关的信息，如页面开始加载的时间、DNS解析时间、TCP连接时间、请求发送时间、响应接收时间、DOM加载时间、页面完全加载时间等。
 
 ● \*\*performance.navigation\*\*：这是一个对象，它包含了与页面导航相关的信息，如页面重定向次数、页面加载类型等。
 
-●  \*\*performance.memory\*\*：这是一个对象，它包含了与JavaScript内存使用相关的信息，如JavaScript堆的大小、JavaScript堆的使用量等。
+● \*\*performance.memory\*\*：这是一个对象，它包含了与JavaScript内存使用相关的信息，如JavaScript堆的大小、JavaScript堆的使用量等。
 
 ● \*\*performance.getEntries()\*\*：这是一个方法，它返回一个PerformanceEntry对象的数组，包含了与页面加载时间相关的信息，如资源加载时间、网络请求时间等。
 
-●  \*\*performance.now()\*\*：这是一个方法，它返回一个高精度的时间戳，用于测量时间间隔。
+● \*\*performance.now()\*\*：这是一个方法，它返回一个高精度的时间戳，用于测量时间间隔。
 
 通过使用 \`window.performance\`，开发者可以了解网页的性能，并找出性能瓶颈。例如，开发者可以使用 \`performance.timing\` 来测量页面加载时间，使用 \`performance.getEntries()\` 来测量资源加载时间，使用 \`performance.now()\` 来测量时间间隔。通过优化这些指标，可以提高网页的性能和用户体验。
 
@@ -177,9 +173,9 @@ css 的同步加载和异步加载
 
 ● initial Connect & Connection Start：都表示浏览器开始建立与服务器的连接的时间。两者差异是：
 
-&#x20; initial Connect：这个指标表示浏览器开始建立与服务器的连接的时间，包括DNS解析、TCP连接和TLS握手等步骤。这个指标可以帮助开发者了解网络连接的建立速度，从而优化网页的加载性能。
+initial Connect：这个指标表示浏览器开始建立与服务器的连接的时间，包括DNS解析、TCP连接和TLS握手等步骤。这个指标可以帮助开发者了解网络连接的建立速度，从而优化网页的加载性能。
 
-&#x20;Connection Start：这个指标表示浏览器开始建立与服务器的连接的时间，但不包括DNS解析和TCP连接等步骤。这个指标可以帮助开发者了解网络连接的建立速度，但可能不如 initial Connect 准确。
+Connection Start：这个指标表示浏览器开始建立与服务器的连接的时间，但不包括DNS解析和TCP连接等步骤。这个指标可以帮助开发者了解网络连接的建立速度，但可能不如 initial Connect 准确。
 
 总的来说，initial Connect 和 Connection Start 都是衡量网络连接建立速度的重要指标，但 initial Connect 的范围更广，可能更准确。在优化网页的加载性能时，开发者可以根据需要选择使用这两个指标。
 
@@ -191,7 +187,7 @@ css 的同步加载和异步加载
 
 ● 响应内容下载时间（Time Content Downloaded)
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 ### 5.3 **RAIL衡量模型**
 
@@ -272,4 +268,3 @@ RAIL, 是 Response, Animation, Idle, 和 Load 的首字母缩写，RAIL模型是
 ● \*\*首次输入延迟时间（First Input Delay，FID）\*\*：首次输入延迟时间是用户首次与页面交互（如点击按钮）到浏览器响应该交互的时间。首次输入延迟时间越短，用户体验越好。
 
 ● \*\*累积布局偏移（Cumulative Layout Shift，CLS）\*\*：累积布局偏移是测量页面在加载过程中布局变化的程度。累积布局偏移越低，用户体验越好。
-
