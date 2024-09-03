@@ -1,0 +1,189 @@
+<!--
+ * @Author: jiangmengxia jiangmengxia@nnuo.com
+ * @Date: 2024-09-03 10:53:27
+ * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
+ * @LastEditTime: 2024-09-03 16:37:09
+ * @FilePath: \jiangmengxia.github.io\css\案例集合\float.html
+ * @Description: Description
+-->
+<head>
+    <style>
+    p.box {
+        width: 10em;
+        border: solid aqua;
+        /* overflow: hidden; */
+    }
+    .float-left{
+        float: left;
+    }
+    .span1 {
+        width: 5em;
+        height: 5em;
+        border: solid blue;
+        display: inline;
+    }
+    .span2 {
+        width: 5em;
+        height: 5em;
+        display: inline;
+        border: solid blue;
+    }
+    .clear{
+        clear: both;
+    }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>float设置后，元素会脱离文档流，但是会占据空间</li>
+    </ul>
+    <br />
+    <p class="box">
+        <span class="span1 float-left">this is a content</span>
+        <span class="">Supercalifragilisticexpialidocioussssss</span>
+    </p>
+    
+    <br />
+    <br />
+    <ul>
+        <li>这是一个奇怪的段落，需要将渲染后的节点于代码中的对比后发现差异</li>
+    </ul>
+    <p class="box">
+        <div class="span2 float-left">this is a content</div>
+        <span class="">Supercalifragilisticexpialidocious</span>
+    </p>
+
+   <div>
+    <div class="clear"></div>
+
+    <P style="padding:15px; border:1px solid #dedede; width:240px; ">
+        
+        <IMG 
+         src=img.png
+         alt="This image will illustrate floats" 
+         style="width:100px; height:100px;float:left; margin:20px; background-color: orange;">
+         <span>Some sample text that has no other...Some sample text that has no other Some sample text that has no other</span>
+    </P>
+    <br/>
+
+    <style>
+        .inner-box{
+            margin: 2em;
+            padding: 20px;
+            border: 1px dashed #dedede;
+        }
+        .image{
+            width:100px; 
+            height:100px;
+            float:left; 
+            background-color: orange;
+            margin:10px
+        }
+    </style>
+    <!-- float被文字包裹 -->
+    <div style="width:360px; border:1px solid #dedede;">
+         <p class='inner-box'>
+            <img 
+            class="image"
+            src=img.png 
+           />
+            Some sample text that has no other Some sample text that has no other Some sample text that has no other
+        </p>
+    </div>
+    <br/>
+    <!-- 效果与上面一致 -->
+    <div style="width:360px; border:1px solid #dedede;">
+         <p class='inner-box'>
+            Some sample text 
+           <img 
+            class="image"
+            src=img.png 
+           />
+           that has no other Some sample text that has no other Some sample text that has no other
+        </p>
+    </div>
+     <br/>
+
+     <div style="width:420px; border:1px solid #dedede;">
+         <p class='inner-box' style="height:70px">
+            Some sample text that has no other Some sample 
+           <img 
+            class="image"
+            src=img.png 
+            style="height:200px"
+           />
+           that has no other Some sample text that has no other 
+        </p>
+        <p class='inner-box' style="height:auto">
+            Some sample text that has no other Some sample  
+            that has no other Some sample text that has no other 
+            Some sample text that has no other Some sample  
+            that has no other Some sample text that has no other 
+        </p>
+    </div>
+    <!-- 清除了浮动 -->
+    <div style="width:420px; border:1px solid #dedede;">
+         <p class='inner-box' style="height:70px">
+            Some sample text that has no other Some sample 
+           <img 
+            class="image"
+            src=img.png 
+            style="height:200px"
+           />
+           that has no other Some sample text that has no other 
+        </p>
+        <p class='inner-box clear' style="height:auto">
+            Some sample text that has no other Some sample  
+            that has no other Some sample text that has no other 
+            Some sample text that has no other Some sample  
+            that has no other Some sample text that has no other 
+        </p>
+    </div>
+
+    <br/>
+    <style>
+        .border{
+            border: 1px solid #dedede;
+        }
+    </style>
+    <div class="border" style="width:300px; padding:20px;">
+        <div class="border" style="height:150px; margin-bottom: 20px;">
+            <div style="position: absolute; margin-top:120px;">B1</div>
+        </div>
+        <div class="border" style="height: 100px;width:100px; 
+                         float: left;background-color: #ddd;">
+            <div style="position: absolute; margin-top:70px;">F</div>
+        </div>
+        <div class="border" style="height:150px;margin-top: 60px;">
+            <div style="position: absolute; margin-top:120px;">B2</div>
+        </div>
+    </div>
+
+     <div class="border" style="width:300px; padding:20px;">
+        <div class="border" style="height:150px; margin-bottom: 20px;">
+            <div style="position: absolute; margin-top:120px;">B1</div>
+        </div>
+        <div class="border" style="height: 100px;width:100px; float: left;background-color: #ddd;">
+            <div style="position: absolute; margin-top:70px;">F</div>
+        </div>
+        <div class="border clear" style="height:150px;">
+            <div style="position: absolute; margin-top:120px;">B2</div>
+        </div>
+    </div>
+
+    <style>
+        p.p1    { 
+            display: block;
+        width:300px;
+     }
+        #outer,#inner { display: inline }
+    </style>
+    <P class="p1">Beginning of body contents.
+      <SPAN id="outer"> Start of outer contents.
+      <SPAN id="inner"> Inner contents.</SPAN>
+      End of outer contents.</SPAN>
+      End of body contents.
+    </P>
+</body>
+

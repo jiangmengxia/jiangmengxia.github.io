@@ -1,0 +1,58 @@
+<!--
+ * @Author: jiangmengxia jiangmengxia@nnuo.com
+ * @Date: 2024-09-03 10:24:06
+ * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
+ * @LastEditTime: 2024-09-03 10:29:57
+ * @FilePath: \jiangmengxia.github.io\css\demos\index.html
+ * @Description: Description
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>相对定位案例</title>
+  </head>
+  <style>
+    body {
+      display: block;
+      font-size: 12px;
+      line-height: 200%;
+      width: 200px;
+      height: 400px;
+      position: relative;
+    }
+    p {
+      display: block;
+    }
+    span {
+      display: inline;
+    }
+    #outer {
+      position: relative;
+      color: red;
+      top: -12px;
+    }
+    #inner {
+      position: relative;
+      color: blue;
+      top: 12px;
+    }
+  </style>
+  <body>
+    <p>
+      <a href="http://www.ayqy.net/doc/css2-1/visuren.html#comparison">
+        相对定位案例
+      </a>
+    </p>
+
+    <br /><br />
+    <p>
+      Beginning of body contents.
+      <span id="outer">
+        Start of outer contents.
+        <span id="inner"> Inner contents.</span>
+        End of outer contents.</span
+      >
+      End of body contents.
+    </p>
+  </body>
+</html>
