@@ -15,9 +15,9 @@ In a block formatting context, each box’s left outer edge touches the left edg
 
 浮动元素（float:left|right）、绝对定位元素、如inline-blocks、table-cells、table-captions的非块级盒子的block容器，以及overflow属性不等于visible的block盒子（除了那些值已传播到视口的）会为其内容建立新的块级格式化上下文。
 
-在BFC上下文中，盒子会从包含块的顶部开始，一个接一个地垂直放置。两个兄弟盒子之间的垂直间距由margin属性决定。在一个BFC内部，相邻块级盒子之间的垂直边距会折叠。
+在BFC上下文中，盒子会从包含块的顶部开始，一个接一个地垂直放置。两个兄弟盒子之间的垂直间距由margin属性决定。在一个BFC内部，相邻块级盒子之间的垂直边距会折叠（或称称合并，也就是出现margin塌陷问题）。
 
-在BFC上下文中，每个盒子的左外边缘会与包含块的左边缘接触（对于从右到左的格式化，右边缘会接触）。即使存在浮动，这也是正确的（尽管盒子的行框可能会因为浮动而收缩），除非盒子本身建立了一个新的BFC（在这种情况下，盒子本身可能会因为浮动而变窄）。
+在BFC上下文中，每个盒子的左外边界会与包含块的左外边界接触（对于从右到左的格式化，右外边界会挨着）。即使存在浮动，这也是正确的（尽管盒子的行框可能会因为浮动而收缩），除非盒子本身建立了一个新的BFC（在这种情况下，盒子本身可能会<a href='http://www.ayqy.net/doc/css2-1/visuren.html#bfc-next-to-float'>因为浮动而变窄</a>）。
 
 
 BFC（Block Formatting Context，块级格式化上下文）是CSS中的一个概念，它决定了元素如何布局和渲染。BFC是一个独立的渲染区域，它内部的元素不会影响到外部的元素，反之亦然。

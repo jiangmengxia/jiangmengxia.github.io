@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@nnuo.com
  * @Date: 2024-08-29 18:31:43
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-09-02 11:28:56
+ * @LastEditTime: 2024-09-02 16:03:48
  * @FilePath: \jiangmengxia.github.io\SUMMARY.md
  * @Description: Description
 -->
@@ -15,10 +15,11 @@
 * [替换元素&非替换元素](css/replaced-element&non-replaced-element/index.md)
 * [分配属性值、层叠和继承](css/assigning-property-values-Cascading-and-Inheritance/index.md)
 * [css处理模型](css/CSS-processing-model/index.md)
+* [视觉格式化模型](css/visual-formatting-model/index.md)
 * [你不知道的 CSS 之包含块](css/containing-block.md)
 * [盒模型](css/box-model/box-model.md)
-* [你不知道的 CSS 之 BFC](css/block-formatting-context.md)
-<!-- * [你不知道的 CSS 之 IFC](css/block-formatting-context.md) -->
+* [你不知道的 CSS 之 BFC](css/visual-formatting-model/block-formatting-context.md)
+* [你不知道的 CSS 之 IFC](css/visual-formatting-model/inline-formatting-context.md)
 
 ## js
 * [术语](terms/terms.md)
