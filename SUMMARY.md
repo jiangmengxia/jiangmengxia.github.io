@@ -1,11 +1,3 @@
-<!--
- * @Author: jiangmengxia jiangmengxia@nnuo.com
- * @Date: 2024-08-29 18:31:43
- * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-09-03 09:34:27
- * @FilePath: \jiangmengxia.github.io\SUMMARY.md
- * @Description: Description
--->
 # Table of contents
 
 * [Welcome](README.md)
@@ -20,7 +12,6 @@
 * [你不知道的 CSS 之包含块](css/visual-formatting-model/containing-block.md)
 * [盒模型](css/box-model/index.md)
 * [你不知道的 CSS 之 BFC](css/visual-formatting-model/block-formatting-context.md)
-<!-- * [你不知道的 CSS 之 IFC](css/visual-formatting-model/inline-formatting-context.md) -->
 
 ## js
 
@@ -48,6 +39,8 @@
 * [react fiber](react/react-fiber.md)
 * [react memo](react/memo.md)
 * [react 优化](react/react-optimize.md)
+* [协调（Reconciliation）](react/xie-tiao-reconciliation/README.md)
+  * [Legacy](react/xie-tiao-reconciliation/legacy.md)
 
 ## 工具集合
 
