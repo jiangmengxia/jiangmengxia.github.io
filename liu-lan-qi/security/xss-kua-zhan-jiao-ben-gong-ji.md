@@ -1,20 +1,26 @@
 # XSS 跨站脚本攻击
 
-XSS 攻击是指黑客往 HTML 文件中或者 DOM 中注入恶意脚本，从而在用户浏览页面时利用注入的恶意脚本对用户实施攻击的一种手段。这种攻击可以（1）窃取客户端数据（本地存储）、静态资源中有效信息等（2）模拟用户行为、盗取私密信息（3）攻击数据库、窃取数据库数据等
+XSS 攻击是指黑客往 HTML 文件中或者 DOM 中注入恶意脚本，从而在用户浏览页面时利用注入的恶意脚本对用户实施攻击的一种手段。这种攻击可以
+
+（1）窃取客户端数据（本地存储）、静态资源中有效信息等
+
+（2）模拟用户行为、盗取私密信息
+
+（3）攻击数据库、窃取数据库数据等
 
 ## 1.  常见攻击场景
 
 ### 1.1 可以窃取 Cookie 信息
 
-可以通过“document.cookie”获取 Cookie 信息，然后通过 XMLHttpRequest 或者 Fetch 加上 CORS 功能将数据发送给恶意服务器；恶意服务器拿到用户的 Cookie 信息之后，就可以在其他电脑上模拟用户的登录，然后进行转账等操作。
+可以通过“document.cookie”获取 <mark style="background-color:purple;">Cookie</mark> 信息，然后通过 XMLHttpRequest 或者 Fetch 加上 CORS 功能将数据发送给恶意服务器；恶意服务器拿到用户的 Cookie 信息之后，就可以在其他电脑上<mark style="background-color:purple;">模拟用户的登录</mark>，然后进行转账等操作。
 
 ### 1.2 可以监听用户行为
 
-恶意 JavaScript 可以使用“addEventListener”接口来监听键盘事件，比如可以获取用户输入的信用卡等信息，将其发送到恶意服务器。黑客掌握了这些信息之后，又可以做很多违法的事情。
+恶意 JavaScript 可以使用“addEventListener”接口来监听键盘事件，比如可以获取用户输入的<mark style="color:purple;">信用卡</mark>等信息，将其发送到<mark style="background-color:purple;">恶意服务器</mark>。黑客掌握了这些信息之后，又可以做很多违法的事情。
 
 ### 1.3 伪造登录窗口，窃取用户信息
 
-可以通过修改 DOM 伪造假的登录窗口，用来欺骗用户输入用户名和密码等信息。
+可以通过<mark style="background-color:purple;">修改 DOM 伪造假的登录窗口</mark>，用来欺骗用户输入用户名和密码等信息。
 
 ### 1.4 恶意浮窗广告
 
@@ -26,7 +32,7 @@ XSS 攻击是指黑客往 HTML 文件中或者 DOM 中注入恶意脚本，从�
 
 ### 2.1 存储型 XSS 攻击
 
-也叫持久性XSS攻击，​主要是将XSS代码发送到服务器（不管是数据库、内存还是文件系统等），然后在下次请求页面的时候就不用带上XSS代码了。最典型的就是留言板XSS。用户提交了一条包含XSS代码的留言到数据库。当目标用户查询留言时，那些留言的内容会从服务器解析之后加载出来。浏览器发现有XSS代码，就当做正常的HTML和JS解析执行，XSS攻击就发生了。
+也叫<mark style="background-color:purple;">持久性XSS攻击</mark>，​主要是将XSS代码发送到服务器（不管是数据库、内存还是文件系统等），然后在下次请求页面的时候就不用带上XSS代码了。最典型的就是留言板XSS。用户提交了一条包含XSS代码的留言到数据库。当目标用户查询留言时，那些留言的内容会从服务器解析之后加载出来。<mark style="background-color:purple;">浏览器发现有XSS代码，就当做正常的HTML和JS解析执行，XSS攻击就发生了</mark>。
 
 <figure><img src="../../.gitbook/assets/存储型 XSS 攻击.png" alt=""><figcaption><p>存储型XSS攻击</p></figcaption></figure>
 
@@ -34,15 +40,15 @@ XSS 攻击是指黑客往 HTML 文件中或者 DOM 中注入恶意脚本，从�
 
 攻击过程：
 
-● 首先黑客利用站点漏洞将一段恶意 JavaScript 代码提交到网站的数据库中，如上图Message会当作正常文本存进数据库
+● 首先黑客利用站点漏洞将一段<mark style="background-color:purple;">恶意 JavaScript 代码提交到网站的数据库</mark>中，如上图Message会当作正常文本存进数据库
 
-● ​然后用户向网站下次请求接口获取了包含了恶意 JavaScript 脚本的页面，如上图get\_cookies.js恶意脚本加载后会被执行
+● ​然后用户向网站下次请求<mark style="background-color:purple;">接口获取了包含了恶意 JavaScript 脚本</mark>的页面，如上图get\_cookies.js恶意脚本加载后会被<mark style="background-color:purple;">执行</mark>
 
 
 
 ### 2.2 反射型 XSS 攻击
 
-也称非持久性XSS攻击，反射型XSS将用户输入的内容作为代码让浏览器执行达到攻击目的，一般需要让用户访问攻击者构造的URL。这种类型的攻击只发生在客户端上，并且需要从带有恶意脚本参数的特定URL进入，所以也称为非持久型XSS。
+也称非持久性XSS攻击，反射型XSS<mark style="background-color:purple;">将用户输入的内容作为代码让浏览器执行</mark>达到攻击目的，一般需要<mark style="background-color:purple;">让用户访问攻击者构造的URL</mark>。这种类型的攻击只发生在客户端上，并且需要从带有恶意脚本参数的特定URL进入，所以也称为非持久型XSS。
 
 ● 场景1：在URL中注入JavaScript代码
 
