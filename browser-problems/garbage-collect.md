@@ -162,7 +162,11 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 然后也会使用<mark style="background-color:green;">Scavenge算法</mark>把Eden区、From区中剩余存活对象转移到<mark style="color:red;">**To区**</mark>中，并且把幸存的对象<mark style="color:red;">寿命</mark><mark style="color:red;">**加1**</mark>**。**这个步骤跟“第一次回收”是类似的，采用了<mark style="color:red;">整理算法+压缩技术</mark>，如图
 
+<div align="left">
+
 <figure><img src="../.gitbook/assets/第二次回收-Eden和FROM转移到TO区.svg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 最后与“第一次回收”一样，使用<mark style="background-color:green;">Scavenge算法</mark>交换<mark style="color:orange;">**From**</mark>区和<mark style="color:orange;">**TO**</mark>区的数据，最后得到的内存分布如图。
 
