@@ -1,9 +1,9 @@
 <!--
  * @Author: jiangmengxia jiangmengxia@nnuo.com
- * @Date: 2024-08-29 18:31:43
+ * @Date: 2024-08-28 11:28:35
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-09-03 09:36:49
- * @FilePath: \jiangmengxia.github.io\js\object.preventextensions.md
+ * @LastEditTime: 2024-08-28 11:30:46
+ * @FilePath: \jiangmengxia.github.io\js\Object.preventExtensions.md
  * @Description: Description
 -->
 # Object.preventExtensions
