@@ -96,10 +96,6 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 ·<mark style="background-color:red;">备注：在一些文档或资料中，可能会看到只提到From区和To区，而没有提到Eden区。这是因为Eden区在逻辑上可以看作是From区的一部分，即From区包含了Eden区和部分From区中的对象。这种简化描述是为了简化理解，实际上V8引擎在实现中是包含Eden区的。</mark>
 
-
-
-
-
 #### <mark style="background-color:purple;">3.1.1 第一次回收</mark>
 
 备注：这里把新生代区初始为空，进行初始回收，称做“**第一次回收**”
@@ -128,15 +124,15 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 </div>
 
-然后会使用<mark style="background-color:green;">Scavenge算法</mark>把剩余存活对象转移到<mark style="color:red;">**To区**</mark>中，并且会把幸存的对象<mark style="color:red;">寿命</mark><mark style="color:red;">**加1**</mark>**。**这里我们发现，移到To区的内存已经是<mark style="color:red;">连续的</mark>，这里要得益于<mark style="background-color:green;">Scavenge算法</mark>
+然后会使用<mark style="background-color:green;">Scavenge算法</mark>把剩余存活对象转移到<mark style="color:red;">**To区**</mark>中，并且会把幸存的对象<mark style="color:red;">寿命</mark><mark style="color:red;">**加1**</mark>**。**这里我们发现，移到To区的内存已经是<mark style="color:red;">连续的</mark>，这里要得益于<mark style="background-color:green;">Scavenge算法的整理算法，</mark><mark style="color:red;">同时内存被压缩过。</mark>这里是得益于<mark style="background-color:green;">Scavenge算法</mark>的“<mark style="color:purple;">指针压缩</mark>”技术
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/第一次回收-Eden回收完移到To区.svg" alt=""><figcaption><p>将Eden区暂存对象y转义到To区</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/第一次回收-Eden回收完移到To区.svg" alt=""><figcaption></figcaption></figure>
 
 </div>
 
-之后会使用<mark style="background-color:green;">Scavenge算法</mark>交换<mark style="color:orange;">**From**</mark>区和<mark style="color:orange;">**TO**</mark>区的数据，最后将To区数据清空**，**这里我们会发现，交换后的From区内存更少了，这里是得益于<mark style="background-color:green;">Scavenge算法</mark>的“<mark style="color:purple;">指针压缩</mark>”技术。每次回收后To区清空的**作用（**个人觉得）是：
+之后会使用<mark style="background-color:green;">Scavenge算法</mark>交换<mark style="color:orange;">**From**</mark>区和<mark style="color:orange;">**TO**</mark>区的数据，最后将To区数据清空**，**这里我们会发现，每次回收后To区清空的**作用（**个人觉得）是：
 
 * **使To区始终保持空的，方便下一次回收时From->TO或Eden->TO转移，同时保持回收流程的一致性。**
 
@@ -164,15 +160,11 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 </div>
 
-然后也会使用<mark style="background-color:green;">Scavenge算法</mark>把Eden区、From区中剩余存活对象转移到<mark style="color:red;">**To区**</mark>中，并且把幸存的对象<mark style="color:red;">寿命</mark><mark style="color:red;">**加1**</mark>**。**这个步骤跟“第一次回收”是类似的，如图
-
-<div align="left">
+然后也会使用<mark style="background-color:green;">Scavenge算法</mark>把Eden区、From区中剩余存活对象转移到<mark style="color:red;">**To区**</mark>中，并且把幸存的对象<mark style="color:red;">寿命</mark><mark style="color:red;">**加1**</mark>**。**这个步骤跟“第一次回收”是类似的，采用了<mark style="color:red;">整理算法+压缩技术</mark>，如图
 
 <figure><img src="../.gitbook/assets/第二次回收-Eden和FROM转移到TO区.svg" alt=""><figcaption></figcaption></figure>
 
-</div>
-
-最后与“第一次回收”一样，使用<mark style="background-color:green;">Scavenge算法</mark>交换<mark style="color:orange;">**From**</mark>区和<mark style="color:orange;">**TO**</mark>区的数据，期间使用“<mark style="color:purple;">指针压缩</mark>”技术，最后得到的内存分布如图。
+最后与“第一次回收”一样，使用<mark style="background-color:green;">Scavenge算法</mark>交换<mark style="color:orange;">**From**</mark>区和<mark style="color:orange;">**TO**</mark>区的数据，最后得到的内存分布如图。
 
 <div align="left">
 
