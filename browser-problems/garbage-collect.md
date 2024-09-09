@@ -248,11 +248,9 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 #### <mark style="color:red;">此外，GC任务可以拆的更细，比如标记任务、清除任务、整理任务、复制任务。</mark>
 
-<mark style="background-color:purple;">其中标记与JS执行可能同时使用到同一个变量，是互斥的。但是其他任务并不会与JS执行用到同一变量，因此完全可以并行的。</mark>
+<mark style="background-color:purple;">【个人理解】其中整理任务、复制任务与JS执行可能同时使用到同一个变量，是互斥的。但是其他任务并不会与JS执行用到同一变量，因此完全可以并行的。</mark>
 
 #### 3.3.3 并发机制
-
-
 
 上面讲到的**并行垃圾回收**和**增量垃圾回收**依然会阻塞主线程，接下来讲的**并发垃圾回收**就可以解决这个问题。
 
@@ -268,7 +266,7 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 #### <mark style="color:red;">此外，当GC任务拆的更细时，比如标记任务、清除任务、整理任务、复制任务。</mark>
 
-<mark style="background-color:purple;">其中标记与JS执行可能同时使用到同一个变量，是互斥的，因此需要用到“锁机制”。但是其他任务并不会与JS执行用到同一变量，因此完全不需要为它们并发。</mark>
+<mark style="background-color:purple;">【个人理解】其中整理任务、复制任务与JS执行可能同时使用到同一个变量，是互斥的，因此需要用到“锁机制”。但是其他任务并不会与JS执行用到同一变量，因此完全不需要为它们并发。</mark>
 
 ## 总结
 

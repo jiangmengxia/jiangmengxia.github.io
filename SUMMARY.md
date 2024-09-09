@@ -25,7 +25,8 @@
 
 * [浏览器渲染](browser-problems/render.md)
 * [浏览器渲染原理](browser-problems/render-new.md)
-* [浏览器安全问题](browser-problems/security.md)
+* [浏览器安全问题](liu-lan-qi/security/README.md)
+  * [XSS 跨站脚本攻击](liu-lan-qi/security/xss-kua-zhan-jiao-ben-gong-ji.md)
 * [浏览器跨域方案](browser-problems/cross-domain.md)
 * [浏览器进程线程](browser-problems/process-thread.md)
 * [浏览器缓存](browser-problems/cache.md)
