@@ -43,6 +43,7 @@
 * [react 优化](react/react-optimize.md)
 * [协调（Reconciliation）](react/xie-tiao-reconciliation/README.md)
   * [Legacy](react/xie-tiao-reconciliation/legacy.md)
+  * [concurrent](react/xie-tiao-reconciliation/concurrent.md)
 
 ## 工具集合
 
@@ -68,7 +69,4 @@
 * [如何不借助第三方变量完成上面的交换](mian-shi-ji-jin/exchange-variable.md)
 * [符号&&](mian-shi-ji-jin/symbol-&&.md)
 * [闭包的漏洞](mian-shi-ji-jin/bi-bao-de-lou-dong.md)
-
-***
-
 * [Promise相关面试题](promise-xiang-guan-mian-shi-ti.md)
