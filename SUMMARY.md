@@ -71,3 +71,5 @@
 * [符号&&](mian-shi-ji-jin/symbol-&&.md)
 * [闭包的漏洞](mian-shi-ji-jin/bi-bao-de-lou-dong.md)
 * [Promise相关面试题](promise-xiang-guan-mian-shi-ti.md)
+* [可以重试的请求方法](chong-shi-qing-qiu-fang-fa.md)
+* [css实现瀑布流](css-pu-bu-liu.md)
