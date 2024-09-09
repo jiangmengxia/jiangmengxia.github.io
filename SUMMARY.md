@@ -31,7 +31,8 @@
 * [浏览器跨域方案](liu-lan-qi/cross-domain.md)
 * [浏览器进程线程](liu-lan-qi/process-thread.md)
 * [浏览器缓存](liu-lan-qi/cache.md)
-* [浏览器垃圾回收](liu-lan-qi/garbage-collect.md)
+* [浏览器垃圾回收](liu-lan-qi/garbage-collect/index.md)
+  * [三色标记算法](liu-lan-qi/garbage-collect/san-se-biao-ji-suan-fa.md)
 * [浏览器事件循环机制](liu-lan-qi/event-loop.md)
 
 ## react
