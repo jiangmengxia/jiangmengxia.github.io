@@ -24,15 +24,15 @@
 
 ## 浏览器
 
-* [浏览器渲染](browser-problems/render.md)
-* [浏览器渲染原理](browser-problems/render-new.md)
+* [浏览器渲染](liu-lan-qi/render.md)
+* [浏览器渲染原理](liu-lan-qi/render-new.md)
 * [浏览器安全问题](liu-lan-qi/security/an-quan-wen-ti.md)
   * [XSS 跨站脚本攻击](liu-lan-qi/security/xss-kua-zhan-jiao-ben-gong-ji.md)
-* [浏览器跨域方案](browser-problems/cross-domain.md)
-* [浏览器进程线程](browser-problems/process-thread.md)
-* [浏览器缓存](browser-problems/cache.md)
-* [浏览器垃圾回收](browser-problems/garbage-collect.md)
-* [浏览器事件循环机制](browser-problems/event-loop.md)
+* [浏览器跨域方案](liu-lan-qi/cross-domain.md)
+* [浏览器进程线程](liu-lan-qi/process-thread.md)
+* [浏览器缓存](liu-lan-qi/cache.md)
+* [浏览器垃圾回收](liu-lan-qi/garbage-collect.md)
+* [浏览器事件循环机制](liu-lan-qi/event-loop.md)
 
 ## react
 
