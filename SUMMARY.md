@@ -20,6 +20,7 @@
 * [Object.freeze](js/object-freeze.md)
 * [Object.seal](js/object-seal.md)
 * [Object.preventExtensions](js/object.preventextensions.md)
+* [你不知道的console](js/ni-bu-zhi-dao-de-console.md)
 
 ## 浏览器
 
@@ -66,6 +67,7 @@
 * [css权重比较问题](mian-shi-ji-jin/css-selector-weight.md)
 * [如何不借助第三方变量完成上面的交换](mian-shi-ji-jin/exchange-variable.md)
 * [符号&&](mian-shi-ji-jin/symbol-&&.md)
+* [闭包的漏洞](mian-shi-ji-jin/bi-bao-de-lou-dong.md)
 
 ***
 
