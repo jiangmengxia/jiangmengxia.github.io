@@ -58,13 +58,13 @@
 ## 面试集锦
 
 * [css面试题合集](mian-shi-ji-jin/css-mian-shi-ti-he-ji.md)
-* [假如有几十个请求，如何去控制并发？](interview-highlights/interface-concurrency.md)
-* [如何让 var \[a, b\] = {a 1, b 2} 解构赋值成功？](interview-highlights/deconstruction-object-to-array.md)
-* [深拷贝的循环引用问题](interview-highlights/deep-copy.md)
-* [大整数相加](interview-highlights/big-number-add.md)
-* [css权重比较问题](interview-highlights/css-selector-weight.md)
-* [如何不借助第三方变量完成上面的交换](interview-highlights/exchange-variable.md)
-* [符号&&](interview-highlights/symbol-&&.md)
+* [假如有几十个请求，如何去控制并发？](mian-shi-ji-jin/interface-concurrency.md)
+* [如何让 var \[a, b\] = {a 1, b 2} 解构赋值成功？](mian-shi-ji-jin/deconstruction-object-to-array.md)
+* [深拷贝的循环引用问题](mian-shi-ji-jin/deep-copy.md)
+* [大整数相加](mian-shi-ji-jin/big-number-add.md)
+* [css权重比较问题](mian-shi-ji-jin/css-selector-weight.md)
+* [如何不借助第三方变量完成上面的交换](mian-shi-ji-jin/exchange-variable.md)
+* [符号&&](mian-shi-ji-jin/symbol-&&.md)
 
 ***
 
