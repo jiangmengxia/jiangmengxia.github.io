@@ -6,9 +6,7 @@ HTTP是基于TCP/IP协议的应用层协议，是Client-Service通信的主流�
 
 <mark style="color:purple;">● 未来HTTP3.0</mark>
 
-
-
-## 1.  HTTP 0.9
+## 1. HTTP 0.9
 
 最初版本的HTTP协议并没有版本号，后来为了与之后版本进行区分，才定为版本0.9的。HTTP/0.9 极其简单：请求由单行指令构成，以唯一可用方法GET开头，其后跟目标资源的路径（一旦连接到服务器，协议、服务器、端口号这些都不是必须的）。
 
@@ -26,8 +24,6 @@ HTTP是基于TCP/IP协议的应用层协议，是Client-Service通信的主流�
 
 ● get + 资源名称
 
-
-
 请求头
 
 ```
@@ -40,13 +36,13 @@ GET /mypage.html
 <HTML> 这是一个非常简单的HTML页面 </HTML>
 ```
 
-## 2.  HTTP 1.0
+## 2. HTTP 1.0
 
 由于浏览器和服务器各种不同厂商，急需构建可扩展性，新增了：
 
 * HTTP协议版本
 * User-Agent
-* &#x20;请求的状态码
+* 请求的状态码
 * 引入了HTTP请求头的概念
   * 通过content-type允许传输除了纯文本以外的文本
 
@@ -64,13 +60,9 @@ GET /mypage.html
 
 ● 对头阻塞，规定后一个请求，必须在接受到前一个请求的响应后才能发送。
 
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>http1</p></figcaption></figure>
 
-
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>http1</p></figcaption></figure>
-
-
-
-## 3.  HTTP 1.1 - 标准化的协议
+## 3. HTTP 1.1 - 标准化的协议
 
 HTTP/1.0定义的它存在局限性，并非官方标准。而HTTP/1.1才是官方标准。HTTP/1.1 消除了大量歧义内容并引入了多项改进：
 
@@ -78,9 +70,7 @@ HTTP/1.0定义的它存在局限性，并非官方标准。而HTTP/1.1才是官�
 
 节省了多次打开TCP连接加载网页文档资源的时间,长连接：新增Connection字段，可以设置keep-alive值保持连接不断开， 默认在TCP链接上，可以处理多个请求，也就是链接复用
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.2 管线化技术
 
@@ -104,7 +94,7 @@ http1.1协议Chrome限制一个域名下，最多可以建立6个TCP连接，可
 
 {% embed url="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching" %}
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.5 内容协商机制
 
@@ -116,15 +106,13 @@ http1.1协议Chrome限制一个域名下，最多可以建立6个TCP连接，可
 
 能够使不同域名配置在同一个IP地址的服务器上
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.7 支持断点传输
 
 也叫分块传输、断点续传。
 
 [https://www.jianshu.com/p/cb01c6e11e8f](https://www.jianshu.com/p/cb01c6e11e8f)
-
-
 
 ### 3.8 缺点
 
@@ -176,8 +164,6 @@ HTTP/2.0相比于HTTP/1.1，
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-
-
 ### 4.2 二进制流
 
 在应用层和传输层中间加入了二进制分帧层。于是请求和响应数据分割成了最小单位帧。 这样就可以采用二进制的格式来传输数据，相比之前的文本格式，解析起来更高效。
@@ -194,15 +180,10 @@ HTTP/2.0相比于HTTP/1.1，
 
 ● 并行的请求能在同一个链接中处理，移除了HTTP/1.x中顺序和阻塞的约束。也就是客户端和服务端的通信完全是并发的。
 
-## 5.  未来设想 - HTTP3.0
+## 5. 未来设想 - HTTP3.0
 
 ● TCP就是有阻塞问题，在传输过程中一个数据丢了，要重传，后面的包要在前面的包重传完了之后才能轮到它。
 
 ● 解决了TCP队头阻塞问题：移除了TCP，采用UDP，并且在UDP的上层加了一层QUIK协议。
 
 ● 部署存在很大的问题，还未应用
-
-
-
-
-

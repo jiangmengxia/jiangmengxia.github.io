@@ -339,7 +339,7 @@ span { float: left; width: 5em; height: 5em; border: solid blue; }
 
 IMG盒向左浮动，后面跟着的内容被格式化到浮动（盒）的右边，从浮动（盒）的同一行开始。浮动（盒）右边的行框因为浮动出现而被缩短了，但恢复了浮动（盒）后面的（盒的）“正常”宽度（P元素建立的包含块的宽度）。该文档可能会被格式化成：
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 如果文档是下面这样，格式化将完全相同（exactly the same）：
 
@@ -397,7 +397,7 @@ IMG盒向左浮动，后面跟着的内容被格式化到浮动（盒）的右�
 
 ```
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>浮动的图片盖住了它重叠的块盒的border</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>浮动的图片盖住了它重叠的块盒的border</p></figcaption></figure>
 
 下例描述了用['clear'](http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear)属性来阻止内容挨着浮动（盒）排列
 
@@ -409,7 +409,7 @@ p { clear: left }
 
 格式化后可能像这样：
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>（两个）段落都被设置了'clear: left'，让第二个段落被“推下去”到了浮动（盒）下方的位置—为了完成这种效果（见<a href="http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear">'clear'</a>属性），在它的上外边距上面插入了“空隙（clearance）”</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>（两个）段落都被设置了'clear: left'，让第二个段落被“推下去”到了浮动（盒）下方的位置—为了完成这种效果（见<a href="http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear">'clear'</a>属性），在它的上外边距上面插入了“空隙（clearance）”</p></figcaption></figure>
 
 ### 5.1 浮动定位: ['float'](http://www.ayqy.net/doc/css2-1/visuren.html#propdef-float)属性
 

@@ -53,7 +53,7 @@
   * [发展历程](wang-luo/http/fa-zhan-li-cheng.md)
   * [HTTP常见状态码](wang-luo/http/http-chang-jian-zhuang-tai-ma.md)
 * [cdn](wang-luo/cdn/README.md)
-  * [cdn](wang-luo/cdn/cdn.md)
+  * [CDN](wang-luo/cdn/cdn.md)
 
 ## 工具集合
 
