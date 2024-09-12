@@ -39,31 +39,29 @@
 
 ## 2. 常见垃圾回收机制
 
-* <mark style="color:red;">**引用计数器法**</mark>：当该对象被其他对象使用一次，计数器加1，反之不被引用时，计数器减1，当计数器为0，表示不被使用，该变量可以被回收。&#x20;
+* <mark style="color:red;">**引用计数器法**</mark>：当该对象被其他对象使用一次，计数器加1，反之不被引用时，计数器减1，当计数器为0，表示不被使用，该变量可以被回收。
 
-&#x20;       优点：计算简单、效率高&#x20;
+优点：计算简单、效率高
 
-&#x20;       缺点：存在引用环的时候，无法判断变量是否可以被回收
+缺点：存在引用环的时候，无法判断变量是否可以被回收
 
 * <mark style="color:red;">**标记-清除法（Mark-Sweep ）**</mark>：分为标记阶段和清除阶段。 标记阶段从根节点出发，根据引用关系链，在链上面的变量被认为是在使用的，不再链上面的变量被认为可以回收。 清除阶段将不再引用链上面的变量清除。
 
-&#x20;       优点：解决了引用环的问题&#x20;
+优点：解决了引用环的问题
 
-&#x20;       缺点：清除阶段会带来内存碎片，导致内存空间不连续，影响内存分配效率。
+缺点：清除阶段会带来内存碎片，导致内存空间不连续，影响内存分配效率。
 
-* <mark style="color:red;">**标记-整理-清除（Mark-Compact）**</mark>：或称<mark style="color:red;">**标记-压缩**</mark>算法，可以看作是标记-清除的增强版本，他在标记阶段的操作和标记清除一致，但是清除阶段之前会先执行整理，移动对象位置，对内存空间进行压缩，目的是为将碎片化内存合并成更大的内存。&#x20;
+* <mark style="color:red;">**标记-整理-清除（Mark-Compact）**</mark>：或称<mark style="color:red;">**标记-压缩**</mark>算法，可以看作是标记-清除的增强版本，他在标记阶段的操作和标记清除一致，但是清除阶段之前会先执行整理，移动对象位置，对内存空间进行压缩，目的是为将碎片化内存合并成更大的内存。
 
-&#x20;      优点：解决了内存碎片问题&#x20;
+优点：解决了内存碎片问题
 
-&#x20;      缺点：整理阶段会消耗更多的时间
-
-
+缺点：整理阶段会消耗更多的时间
 
 任何垃圾回收测量，目前都无法完全解决内存碎片问题，也就是内存不连续问题。
 
 <mark style="color:purple;">**如何为新对象分配内存呢，一般有以下三种方式：**</mark>
 
-<figure><img src="../.gitbook/assets/截屏2024-09-05 20.51.44.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/截屏2024-09-05 20.51.44.png" alt=""><figcaption></figcaption></figure>
 
 其中<mark style="color:green;">First-fit是性能最好</mark>的，也是最常用的。
 
@@ -82,8 +80,6 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 * 副垃圾回收器 - Scavenge算法：主要负责新生代的垃圾回收，回收频次高。
 * 主垃圾回收器 - Mark-Sweep & Mark-Compact算法：主要负责老生代的垃圾回收，回收频次低。
-
-
 
 ### 3.1 新生代回收过程
 
@@ -104,15 +100,15 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/v8回收.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/v8回收.svg" alt=""><figcaption></figcaption></figure>
 
 </div>
 
-之后会有越来越多的对象被创建在**Eden** 里，直至**Eden**内存被<mark style="color:red;">占用满（并不是真正没有空间，而是无法再分配给新的对象）</mark>这个时候就会出现一次垃圾回收，新生代的垃圾回收叫做 <mark style="color:red;">**minor GC**</mark>**（**翻译为“小回收”**，**也称为<mark style="color:red;">Young GC</mark>，翻译为新生代回收，是Java虚拟机（JVM）中的一种垃圾回收操作，主要用于新生代（Young Generation）的垃圾回收）
+之后会有越来越多的对象被创建在**Eden** 里，直至**Eden**内存被<mark style="color:red;">占用满（并不是真正没有空间，而是无法再分配给新的对象）</mark>这个时候就会出现一次垃圾回收，新生代的垃圾回收叫做 <mark style="color:red;">**minor GC**</mark>\*\*（**翻译为“小回收”**，\*\*也称为<mark style="color:red;">Young GC</mark>，翻译为新生代回收，是Java虚拟机（JVM）中的一种垃圾回收操作，主要用于新生代（Young Generation）的垃圾回收）
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/第一次回收-Eden满.svg" alt=""><figcaption><p>Eden区饱和</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/第一次回收-Eden满.svg" alt=""><figcaption><p>Eden区饱和</p></figcaption></figure>
 
 </div>
 
@@ -120,25 +116,25 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/第一次回收-Eden满后-回收结果.svg" alt=""><figcaption><p>经过一次标记清除回收Eden区</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/第一次回收-Eden满后-回收结果.svg" alt=""><figcaption><p>经过一次标记清除回收Eden区</p></figcaption></figure>
 
 </div>
 
-然后会使用<mark style="background-color:green;">Scavenge算法</mark>把剩余存活对象转移到<mark style="color:red;">**To区**</mark>中，并且会把幸存的对象<mark style="color:red;">寿命</mark><mark style="color:red;">**加1**</mark>**。**这里我们发现，移到To区的内存已经是<mark style="color:red;">连续的</mark>，这里要得益于<mark style="background-color:green;">Scavenge算法的整理算法，</mark><mark style="color:red;">同时内存被压缩过。</mark>这里是得益于<mark style="background-color:green;">Scavenge算法</mark>的“<mark style="color:purple;">指针压缩</mark>”技术
+然后会使用<mark style="background-color:green;">Scavenge算法</mark>把剩余存活对象转移到<mark style="color:red;">**To区**</mark>中，并且会把幸存的对象<mark style="color:red;">寿命</mark><mark style="color:red;">**加1**</mark>\*\*。\*\*这里我们发现，移到To区的内存已经是<mark style="color:red;">连续的</mark>，这里要得益于<mark style="background-color:green;">Scavenge算法的整理算法，</mark><mark style="color:red;">同时内存被压缩过。</mark>这里是得益于<mark style="background-color:green;">Scavenge算法</mark>的“<mark style="color:purple;">指针压缩</mark>”技术
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/第一次回收-Eden回收完移到To区.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/第一次回收-Eden回收完移到To区.svg" alt=""><figcaption></figcaption></figure>
 
 </div>
 
-之后会使用<mark style="background-color:green;">Scavenge算法</mark>交换<mark style="color:orange;">**From**</mark>区和<mark style="color:orange;">**TO**</mark>区的数据，最后将To区数据清空**，**这里我们会发现，每次回收后To区清空的**作用（**个人觉得）是：
+之后会使用<mark style="background-color:green;">Scavenge算法</mark>交换<mark style="color:orange;">**From**</mark>区和<mark style="color:orange;">**TO**</mark>区的数据，最后将To区数据清空\*\*，**这里我们会发现，每次回收后To区清空的**作用（\*\*个人觉得）是：
 
 * **使To区始终保持空的，方便下一次回收时From->TO或Eden->TO转移，同时保持回收流程的一致性。**
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/第一次回收-Eden回收To区转到From区.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/第一次回收-Eden回收To区转到From区.svg" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -148,7 +144,7 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/第二次回收-Eden满.svg" alt=""><figcaption><p>Eden内存已满，待回收</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/第二次回收-Eden满.svg" alt=""><figcaption><p>Eden内存已满，待回收</p></figcaption></figure>
 
 </div>
 
@@ -156,15 +152,15 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/第二次回收-Eden和FROM被GC.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/第二次回收-Eden和FROM被GC.svg" alt=""><figcaption></figcaption></figure>
 
 </div>
 
-然后也会使用<mark style="background-color:green;">Scavenge算法</mark>把Eden区、From区中剩余存活对象转移到<mark style="color:red;">**To区**</mark>中，并且把幸存的对象<mark style="color:red;">寿命</mark><mark style="color:red;">**加1**</mark>**。**这个步骤跟“第一次回收”是类似的，采用了<mark style="color:red;">整理算法+压缩技术</mark>，如图
+然后也会使用<mark style="background-color:green;">Scavenge算法</mark>把Eden区、From区中剩余存活对象转移到<mark style="color:red;">**To区**</mark>中，并且把幸存的对象<mark style="color:red;">寿命</mark><mark style="color:red;">**加1**</mark>\*\*。\*\*这个步骤跟“第一次回收”是类似的，采用了<mark style="color:red;">整理算法+压缩技术</mark>，如图
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/第二次回收-Eden和FROM转移到TO区.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/第二次回收-Eden和FROM转移到TO区.svg" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -172,7 +168,7 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/第二次回收-To和From交换.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/第二次回收-To和From交换.svg" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -180,13 +176,11 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 假设一个对象的寿命超过了一个域值了，就证明这个对象是比较有价值的，那么就会晋升到老年代中，新生代继续进行**minor GC**策略。
 
-
-
 ### 3.2 新生代回收算法
 
 **minor GC的**算法具体包含：
 
-* <mark style="color:orange;">Mark-Sweep（标记-清除）</mark>&#x20;
+* <mark style="color:orange;">Mark-Sweep（标记-清除）</mark>
 * <mark style="color:orange;">Compact（整理）算法</mark>
 * <mark style="color:orange;">Scavenge算法</mark>
 
@@ -201,8 +195,6 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 * **交换（Swapping）**：在复制阶段完成后，V8引擎会将From区和To区的角色互换。这样，下一次垃圾回收时，From区将作为Eden区，To区将作为From区。
 * **晋升机制**：当对象在From空间中存活了一定的时间后，Scavenge算法会将这些对象晋升到老生代。晋升过程会使用一种称为晋升阈值（Promotion Threshold）的机制，当对象的年龄超过晋升阈值时，Scavenge算法会将对象晋升到老生代。
 
-
-
 ● **优点**：算法简单
 
 ● **缺点**：新生代回收算法，在回收阶段（含清除、空间交换）是依次在复制阶段之后的，因此可以认为是<mark style="color:red;">串行</mark>的，也就是说回收会存在“<mark style="color:red;">卡顿</mark>”，同时进入回收过程（4个阶段）的时候，与<mark style="color:red;">JS执行是互斥的</mark>，JS执行会“卡顿”，综合以上2点，<mark style="color:red;">性能相对差</mark>，但由于新生代的变量都是小变量、内存空间小，因此这点“卡顿”的影响并不明显。
@@ -216,19 +208,15 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 介于新生代的“<mark style="color:red;">卡顿</mark>”问题，由于老生代的变量大、内存空间大，回收时间长，因此若采用与新生代一样的算法，停顿问题将放大（成为严重性能瓶颈），因此老生代会配合<mark style="color:red;">并行、增量、并发机制</mark>结合<mark style="color:red;">标记-清除（</mark>标记用的是三色标记<mark style="color:red;">）、标记-整理算法</mark>进行回收。标记清除、标记整理算法，上面有介绍过，这里不再重复说明，下面主要对多线程中的三个机制：<mark style="color:red;">并行、增量、并发</mark>进行详细说明。
 
-
-
 #### 3.3.1 并行机制
 
 并行机制是指在垃圾回收过程中，启用多个辅助线程来同时进行垃圾回收工作（如图GC任务），以减少垃圾回收的时间。
 
-<figure><img src="../.gitbook/assets/并行回收.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/并行回收.svg" alt=""><figcaption></figcaption></figure>
 
 如上图所示，对于当前GC任务，除了主线程外，另外启用了两个辅助线程来进行GC，由于GC与JS引擎的互斥性，必须等持续时间最长的GC任务（如图中辅助线程1的GC任务）执行完成后，才可以继续后续的JS任务。
 
 由此可见，仅使用并行机制可以在一定程度上提高垃圾回收的效率，但仍然需要暂停JavaScript引擎的执行，当遇到较长时间的GC时，还是需要等待当前所有并行的GC都均完成的。
-
-
 
 #### 3.3.2 增量机制
 
@@ -238,13 +226,11 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 增量GC的效果如图：
 
-<figure><img src="../.gitbook/assets/增量回收 (1).svg" alt=""><figcaption><p>主线程增量</p></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/增量回收 (1).svg" alt=""><figcaption><p>主线程增量</p></figcaption></figure>
 
 当<mark style="color:red;">并行机制与增量机制结合</mark>使用时，GC和JS依旧是互斥的，如图：
 
-<figure><img src="../.gitbook/assets/增量+并行 (2).svg" alt=""><figcaption><p>并行&#x26;增量</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/增量+并行 (2).svg" alt=""><figcaption><p>并行&#x26;增量</p></figcaption></figure>
 
 #### <mark style="color:red;">此外，GC任务可以拆的更细，比如标记任务、清除任务、整理任务、复制任务。</mark>
 
@@ -258,11 +244,7 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 对于<mark style="color:red;">增量回收</mark>，<mark style="color:red;">主线程在执行JS任务，辅助线程在后台完成GC任务时，可能会同时更改或使用同一个变量</mark>，这就需要使用类似“<mark style="background-color:purple;">锁机制</mark>”来<mark style="background-color:purple;">保证数据的完整性和可靠性</mark>，这种机制属于“并发机制”的范畴。
 
-
-
 需要注意的是，<mark style="color:purple;">并发垃圾回收技术并不是所有浏览器都采用的技术</mark>。一些浏览器（如Chrome、Firefox、Safari等）的JavaScript引擎（如V8、SpiderMonkey、JavaScriptCore等）在执行垃圾回收时，仍然需要暂停JavaScript引擎的执行。这是为了保证垃圾回收的正确性和效率，避免在垃圾回收过程中出现数据竞争等问题。
-
-
 
 #### <mark style="color:red;">此外，当GC任务拆的更细时，比如标记任务、清除任务、整理任务、复制任务。</mark>
 
@@ -280,11 +262,9 @@ V8是Google开发的一种高性能JavaScript引擎，它被广泛用于Chrome�
 
 此外，利用多线程机制来提升性能，比如并行、并发、增量都是常用的“多线程”或“多进程”性能提升的机制，了解即可。
 
-
-
 【参考文档】
 
-指针压缩  : [https://cloud.tencent.com/developer/article/2398492](https://cloud.tencent.com/developer/article/2398492)
+指针压缩 : [https://cloud.tencent.com/developer/article/2398492](https://cloud.tencent.com/developer/article/2398492)
 
 #### [https://github.com/yacan8/blog/issues/33](https://github.com/yacan8/blog/issues/33)
 

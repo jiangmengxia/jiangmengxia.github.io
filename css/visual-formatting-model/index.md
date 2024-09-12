@@ -296,7 +296,7 @@ span { float: left; width: 5em; height: 5em; border: solid blue; }
 
 效果可能像这样：
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 几个浮动（盒）可能相邻，并且该模型也适用于同一行里的相邻浮动（盒）
 
@@ -339,7 +339,7 @@ span { float: left; width: 5em; height: 5em; border: solid blue; }
 
 IMG盒向左浮动，后面跟着的内容被格式化到浮动（盒）的右边，从浮动（盒）的同一行开始。浮动（盒）右边的行框因为浮动出现而被缩短了，但恢复了浮动（盒）后面的（盒的）“正常”宽度（P元素建立的包含块的宽度）。该文档可能会被格式化成：
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 如果文档是下面这样，格式化将完全相同（exactly the same）：
 
@@ -397,7 +397,7 @@ IMG盒向左浮动，后面跟着的内容被格式化到浮动（盒）的右�
 
 ```
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>浮动的图片盖住了它重叠的块盒的border</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>浮动的图片盖住了它重叠的块盒的border</p></figcaption></figure>
 
 下例描述了用['clear'](http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear)属性来阻止内容挨着浮动（盒）排列
 
@@ -409,7 +409,7 @@ p { clear: left }
 
 格式化后可能像这样：
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>（两个）段落都被设置了'clear: left'，让第二个段落被“推下去”到了浮动（盒）下方的位置—为了完成这种效果（见<a href="http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear">'clear'</a>属性），在它的上外边距上面插入了“空隙（clearance）”</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>（两个）段落都被设置了'clear: left'，让第二个段落被“推下去”到了浮动（盒）下方的位置—为了完成这种效果（见<a href="http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear">'clear'</a>属性），在它的上外边距上面插入了“空隙（clearance）”</p></figcaption></figure>
 
 ### 5.1 浮动定位: ['float'](http://www.ayqy.net/doc/css2-1/visuren.html#propdef-float)属性
 
@@ -441,7 +441,7 @@ p { clear: left }
 
 如果P元素的宽度足够，a和b将各在一边，就像这样：
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 5.2 控制浮动后的流:['clear'](http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear)属性
 
@@ -493,7 +493,7 @@ _<mark style="color:red;">**注意：**</mark><mark style="color:red;">两种行
 
 <mark style="color:orange;">不考虑B2的'clear'属性，情况如下图所示，B1和B2的外边距合并了（也就是40px），看上去F垂直方向上虽然有高度>0，但看上去未影响B2的位置，看上去像</mark><mark style="color:orange;">`绝对定位`</mark><mark style="color:orange;">。</mark>
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:purple;">当B2设置</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`clear:both`</mark> <mark style="color:purple;"></mark><mark style="color:purple;">清除了浮动后，代码如下</mark>：
 

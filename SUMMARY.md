@@ -33,7 +33,7 @@
 * [浏览器进程线程](liu-lan-qi/process-thread.md)
 * [浏览器缓存](liu-lan-qi/cache.md)
 * [浏览器垃圾回收](liu-lan-qi/garbage-collect/index.md)
-  * [三色标记算法](liu-lan-qi/garbage-collect/san-se-biao-ji-suan-fa.md)
+  * [三色标记算法](liu-lan-qi/index/san-se-biao-ji-suan-fa.md)
 * [浏览器事件循环机制](liu-lan-qi/event-loop.md)
 
 ## react
@@ -47,9 +47,11 @@
   * [Legacy](react/xie-tiao-reconciliation/legacy.md)
   * [concurrent](react/xie-tiao-reconciliation/concurrent.md)
 
-
 ## 网络
-* [http](network/http/index.md)
+
+* [http](wang-luo/index/README.md)
+  * [发展历程](wang-luo/index/fa-zhan-li-cheng.md)
+  * [HTTP常见状态码](wang-luo/index/http-chang-jian-zhuang-tai-ma.md)
 
 ## 工具集合
 
