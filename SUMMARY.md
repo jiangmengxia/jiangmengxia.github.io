@@ -84,3 +84,8 @@
 * [可以重试的请求方法](mian-shi-ji-jin/chong-shi-qing-qiu-fang-fa.md)
 * [css实现瀑布流](mian-shi-ji-jin/css-pu-bu-liu.md)
 * [奇怪表达式](mian-shi-ji-jin/express-value.md)
+* [印象中最深刻的bug](mian-shi-ji-jin/yin-xiang-zhong-zui-shen-ke-de-bug.md)
+* [华为网上搜罗](mian-shi-ji-jin/hua-wei-wang-shang-sou-luo/README.md)
+  * [秒杀活动防止后台崩溃](mian-shi-ji-jin/hua-wei-wang-shang-sou-luo/miao-sha-huo-dong-fang-zhi-hou-tai-beng-kui.md)
+  * [订单分页，查看详情后返回，有新增订单了，改订单的位置可能不同，前后端交互](mian-shi-ji-jin/hua-wei-wang-shang-sou-luo/ding-dan-fen-ye-cha-kan-xiang-qing-hou-fan-hui-you-xin-zeng-ding-dan-le-gai-ding-dan-de-wei-zhi-ke-n.md)
+  * [Page 1](mian-shi-ji-jin/hua-wei-wang-shang-sou-luo/page-1.md)
