@@ -21,6 +21,7 @@
 * [Object.seal](js/object-seal.md)
 * [Object.preventExtensions](js/object.preventextensions.md)
 * [你不知道的console](js/ni-bu-zhi-dao-de-console.md)
+* [对象中的this指向问题](js/dui-xiang-zhong-de-this-zhi-xiang-wen-ti.md)
 
 ## 浏览器
 
