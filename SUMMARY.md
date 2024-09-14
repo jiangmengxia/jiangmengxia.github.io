@@ -26,7 +26,12 @@
 ## 浏览器
 
 * [浏览器渲染](liu-lan-qi/render.md)
-* [浏览器渲染原理](liu-lan-qi/render-new.md)
+* [浏览器渲染原理](liu-lan-qi/render-new/README.md)
+  * [重绘&重排](liu-lan-qi/render-new/zhong-hui-zhong-pai.md)
+  * [浏览器渲染优化思路](liu-lan-qi/render-new/liu-lan-qi-xuan-ran-you-hua-si-lu.md)
+  * [优化资源加载的策略](liu-lan-qi/render-new/you-hua-zi-yuan-jia-zai-de-ce-le.md)
+  * [页面首屏留白问题](liu-lan-qi/render-new/ye-mian-shou-ping-liu-bai-wen-ti.md)
+  * [浏览器性能指标](liu-lan-qi/render-new/liu-lan-qi-xing-neng-zhi-biao.md)
 * [浏览器安全问题](liu-lan-qi/security/an-quan-wen-ti.md)
   * [安全沙箱](liu-lan-qi/security/an-quan-sha-xiang.md)
   * [XSS 跨站脚本攻击](liu-lan-qi/security/xss-kua-zhan-jiao-ben-gong-ji.md)
