@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
+* [Redux](readme-1.md)
 * [个人简历](jianli.md)
 
 ## css
