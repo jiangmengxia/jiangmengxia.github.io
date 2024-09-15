@@ -70,7 +70,7 @@ HTTP/1.0定义的它存在局限性，并非官方标准。而HTTP/1.1才是官�
 
 节省了多次打开TCP连接加载网页文档资源的时间,长连接：新增Connection字段，可以设置keep-alive值保持连接不断开， 默认在TCP链接上，可以处理多个请求，也就是链接复用
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.2 管线化技术
 
@@ -94,7 +94,7 @@ http1.1协议Chrome限制一个域名下，最多可以建立6个TCP连接，可
 
 {% embed url="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching" %}
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.5 内容协商机制
 

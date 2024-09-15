@@ -116,7 +116,7 @@ styleSheet.deleteRule(0);
 
 ### 光栅化（Raster）
 
-光栅化是将每个块变成位图，由GPU进程完成光栅化。 优先处理靠近视口的块。 此过程会用到GPU加速。
+光栅化是将每个块变成位图，由<mark style="background-color:purple;">GPU进程（有的地方说是合成线程，待确认）</mark>完成光栅化。 优先处理靠近视口的块。 此过程会用到GPU加速。
 
 ![alt text](../image-6.png)
 

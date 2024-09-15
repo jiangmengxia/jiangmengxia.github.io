@@ -32,6 +32,7 @@
   * [优化资源加载的策略](liu-lan-qi/render-new/you-hua-zi-yuan-jia-zai-de-ce-le.md)
   * [页面首屏留白问题](liu-lan-qi/render-new/ye-mian-shou-ping-liu-bai-wen-ti.md)
   * [浏览器性能指标](liu-lan-qi/render-new/liu-lan-qi-xing-neng-zhi-biao.md)
+  * [js|css的不同加载方式](liu-lan-qi/render-new/jscss-de-bu-tong-jia-zai-fang-shi.md)
 * [浏览器安全问题](liu-lan-qi/security/an-quan-wen-ti.md)
   * [安全沙箱](liu-lan-qi/security/an-quan-sha-xiang.md)
   * [XSS 跨站脚本攻击](liu-lan-qi/security/xss-kua-zhan-jiao-ben-gong-ji.md)
