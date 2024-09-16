@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [优势](readme-1.md)
 * [个人简历](jianli.md)
 
 ## css
@@ -46,7 +45,19 @@
 
 ## react
 
-* [react hooks](react/hooks.md)
+* [react hooks](react/hooks/README.md)
+  * [useState](react/hooks/usestate.md)
+  * [useReducer](react/hooks/usereducer.md)
+  * [useContext](react/hooks/usecontext.md)
+  * [useEffect](react/hooks/useeffect.md)
+  * [useMemo](react/hooks/usememo.md)
+  * [useCallback](react/hooks/usecallback.md)
+  * [useReducer](react/hooks/usereducer-1.md)
+  * [useRef](react/hooks/useref.md)
+  * [useImperativeHandle](react/hooks/useimperativehandle.md)
+  * [useSyncExternalStore](react/hooks/usesyncexternalstore.md)
+  * [useTransition](react/hooks/usetransition.md)
+  * [useDeferredValue](react/hooks/usedeferredvalue.md)
 * [react 事件机制](react/react-event.md)
 * [react fiber](react/react-fiber.md)
 * [react memo](react/memo.md)
@@ -54,6 +65,21 @@
 * [协调（Reconciliation）](react/xie-tiao-reconciliation/README.md)
   * [Legacy](react/xie-tiao-reconciliation/legacy.md)
   * [concurrent](react/xie-tiao-reconciliation/concurrent.md)
+
+***
+
+* [React-Router](react-router/README.md)
+  * [hooks](react-router/hooks/README.md)
+    * [useHistory](react-router/hooks/usehistory.md)
+    * [useLocation](react-router/hooks/uselocation.md)
+    * [useRouteMatch](react-router/hooks/useroutematch.md)
+    * [useParameters](react-router/hooks/useparameters.md)
+    * [useSearchParams](react-router/hooks/usesearchparams.md)
+    * [useNavigate](react-router/hooks/usenavigate.md)
+* [Redux](readme-1/README.md)
+  * [Redux解决了React的什么痛点](readme-1/redux-jie-jue-le-react-de-shen-me-tong-dian.md)
+  * [flux](readme-1/flux.md)
+  * [redux架构](readme-1/redux-jia-gou.md)
 
 ## 网络
 
