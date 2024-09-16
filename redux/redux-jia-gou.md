@@ -1,6 +1,6 @@
 # redux架构
 
-## 1. 核心
+# 1. 核心
 
 核心概念&工作流程
 
@@ -11,7 +11,7 @@
 * Actions：对象，描述对状态进行怎样的操作。可以是同步action对象，或异步action。
 * Reducers：函数，操作状态后返回新的状态
 
-### disptach
+## disptach
 
 分发，View不能直接修改Store，必须通过以下两种方式修改状态
 
@@ -95,7 +95,7 @@ type MiddlewareAPI = { dispatch: Dispatch, getState: () => State }
 type Middleware = (api: MiddlewareAPI) => (next: Dispatch) => Dispatch
 ```
 
-### subscribe(底层订阅，一般不用）
+## subscribe(底层订阅，一般不用）
 
 意思为订阅，订阅一个监听state变更的listener。当Store中状态发生改变时，就会执行这个listener，从而拿到最新的state。
 
@@ -145,7 +145,7 @@ const unsubscribe = store.subscribe(handleChange)
 unsubscribe()
 ```
 
-### 案例
+## 案例
 
 ```html
 <body>
@@ -157,33 +157,55 @@ unsubscribe()
 
 要求‘+’号button点击后，counter+1，‘-’号button点击后，counter-1。
 
-<pre class="language-javascript"><code class="lang-javascript">const initState = {
+```js
+const initState = {
     count:0
 }
+// 定义reducer
 const reducer = (state=initState,action)=>{
-    (action.type){}
+    (action.type){
+        case 'inc':
+            return {...state, count:state.count+1}
+        case 'dec':
+            return {...state, count:state.count-1}
+        default:
+            return state
+    }
     
 }
-let store = redux.createStore(reducer)
+// 创建store对象
+const store = redux.createStore(reducer)
+// 定义action
 const incrementAction = {type:'inc'}
 const decrementAction = {type:'dec'}
 // '+'按钮的点击事件
 document.getElementById('inc').onClick=()=>{
     const dispatch = store.dispatch
+    // 分发action
     dispatch(incrementAction)
 }
 // '-'按钮的点击事件
 document.getElementById('dec').onClick=()=>{
     dispatch(decrementAction)
 }
-<strong>
-</strong></code></pre>
+// 订阅store
+store.subscribe((prevState, curState)=>{
+    if(prevState.count!==curState.count){
+        document.getElementById('counter').innerText = curState.count;
+    }
+})
+```
 
-## redux for react15
+# 核心API
+![alt text](<截屏2024-09-16 17.59.50.png>)
+
+
+
+# redux for react15
 
 <figure><img src="../.gitbook/assets/yuque_diagram2.jpg" alt=""><figcaption><p>redux for react15</p></figcaption></figure>
 
-## redux for react16
+# redux for react16
 
 <figure><img src="../.gitbook/assets/yuque_diagram (2).jpg" alt=""><figcaption><p>redux for react16</p></figcaption></figure>
 
