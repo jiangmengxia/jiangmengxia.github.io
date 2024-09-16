@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
-  * [个人简历](readme/jianli.md)
+  * [个人简历](welcome/jianli.md)
 * [CSS](css/README.md)
   * [替换元素&非替换元素](css/replaced-element-and-non-replaced-element/index.md)
   * [分配属性值、层叠和继承](css/fen-pei-shu-xing-zhi-ceng-die-he-ji-cheng/index.md)
@@ -66,10 +66,10 @@
     * [useParameters](react-router/hooks/useparameters.md)
     * [useSearchParams](react-router/hooks/usesearchparams.md)
     * [useNavigate](react-router/hooks/usenavigate.md)
-* [Redux](readme-1/README.md)
-  * [Redux解决了React的什么痛点](readme-1/redux-jie-jue-le-react-de-shen-me-tong-dian.md)
-  * [flux](readme-1/flux.md)
-  * [redux架构](readme-1/redux-jia-gou.md)
+* [Redux](redux/README.md)
+  * [Redux解决了React的什么痛点](redux/redux-jie-jue-le-react-de-shen-me-tong-dian.md)
+  * [flux](redux/flux.md)
+  * [redux架构](redux/redux-jia-gou.md)
 * [Webpack](webpack.md)
 * [网络](wang-luo/README.md)
   * [http](wang-luo/http/README.md)
