@@ -90,6 +90,8 @@
   * [redux架构](redux/redux-jia-gou.md)
   * [Redux解决了React的什么痛点](redux/redux-jie-jue-le-react-de-shen-me-tong-dian.md)
   * [flux](redux/flux.md)
+  * [React中使用Redux](redux/react-zhong-shi-yong-redux.md)
+  * [Redxu中间件](redux/redxu-zhong-jian-jian.md)
 * [Webpack](webpack/README.md)
   * [热更新&热重载](webpack/re-geng-xin-re-zhong-zai.md)
   * [webpack proxy跨域](webpack/webpack-proxy-kua-yu.md)
