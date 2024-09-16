@@ -220,7 +220,7 @@ A collapsed margin is considered adjoining to another margin if any of its compo
 </html>
 ```
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```html
  <!-- 办法1 -->
@@ -237,7 +237,7 @@ A collapsed margin is considered adjoining to another margin if any of its compo
   </div>
 ```
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 2.2.4 案例4 空的块级元素
 
@@ -256,7 +256,7 @@ A collapsed margin is considered adjoining to another margin if any of its compo
   </div>
 ```
 
-<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 修正方法：将盒子设为bfc
 
@@ -272,7 +272,7 @@ A collapsed margin is considered adjoining to another margin if any of its compo
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 

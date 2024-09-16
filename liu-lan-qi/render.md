@@ -187,7 +187,7 @@ Connection Start：这个指标表示浏览器开始建立与服务器的连接�
 
 ● 响应内容下载时间（Time Content Downloaded)
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 5.3 **RAIL衡量模型**
 

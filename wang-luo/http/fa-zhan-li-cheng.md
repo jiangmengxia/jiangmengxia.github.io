@@ -60,7 +60,7 @@ GET /mypage.html
 
 ● 对头阻塞，规定后一个请求，必须在接受到前一个请求的响应后才能发送。
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>http1</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>http1</p></figcaption></figure>
 
 ## 3. HTTP 1.1 - 标准化的协议
 
@@ -70,7 +70,7 @@ HTTP/1.0定义的它存在局限性，并非官方标准。而HTTP/1.1才是官�
 
 节省了多次打开TCP连接加载网页文档资源的时间,长连接：新增Connection字段，可以设置keep-alive值保持连接不断开， 默认在TCP链接上，可以处理多个请求，也就是链接复用
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.2 管线化技术
 
@@ -94,7 +94,7 @@ http1.1协议Chrome限制一个域名下，最多可以建立6个TCP连接，可
 
 {% embed url="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching" %}
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.5 内容协商机制
 
@@ -106,7 +106,7 @@ http1.1协议Chrome限制一个域名下，最多可以建立6个TCP连接，可
 
 能够使不同域名配置在同一个IP地址的服务器上
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.7 支持断点传输
 
@@ -118,7 +118,7 @@ http1.1协议Chrome限制一个域名下，最多可以建立6个TCP连接，可
 
 服务器处理多个请求，按<mark style="color:purple;background-color:yellow;">顺序</mark>请求的，导致<mark style="background-color:purple;">队头阻塞</mark>问题
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.9 请求头&响应体
 
@@ -162,7 +162,7 @@ HTTP/2.0相比于HTTP/1.1，
 
 如下图：Header以：开头，如：method，这些冒号开头的请求头，会给它做一个映射表，可以对头部进行压缩。
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### 4.2 二进制流
 

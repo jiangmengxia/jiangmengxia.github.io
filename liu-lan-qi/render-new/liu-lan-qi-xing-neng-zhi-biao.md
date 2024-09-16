@@ -32,7 +32,7 @@
 * 等待服务端响应时间（waiting for server）
 * 响应内容下载时间（Time Content Downloaded)
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 3. **RAIL衡量模型**
 

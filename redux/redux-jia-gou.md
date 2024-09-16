@@ -8,7 +8,7 @@
 
 ## redux for react16
 
-<figure><img src="../.gitbook/assets/yuque_diagram.jpg" alt=""><figcaption><p>redux for react16</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/yuque_diagram (2).jpg" alt=""><figcaption><p>redux for react16</p></figcaption></figure>
 
 react-redux是react的模块之一。
 
