@@ -1,12 +1,4 @@
-<!--
- * @Author: jiangmengxia jiangmengxia@qq.com
- * @Date: 2024-09-09 22:35:11
- * @LastEditors: jiangmengxia jiangmengxia@qq.com
- * @LastEditTime: 2024-09-09 23:01:33
- * @FilePath: /jiangmengxia.github.io/mian-shi-ji-jin/express-value.md
- * @Description: Description
--->
-# 计算表达式值
+# 奇怪表达式
 
 ```js
 // 计算
@@ -35,15 +27,14 @@
 ='nb'
 ```
 
-![alt text](<原始类型和对象类型相加求值.png>)
- 
- 原始类型+对象类型，姜对象类型转化成原始类型，
- * {} 转化成原始类型为“[Object Object]”
- * [] 转化成原始类型为""
-                       
+![alt text](../原始类型和对象类型相加求值.png)
 
-![alt text](<两个对象相加.png>)
+原始类型+对象类型，姜对象类型转化成原始类型，
 
+* {} 转化成原始类型为“\[Object Object]”
+* \[] 转化成原始类型为""
+
+![alt text](../两个对象相加.png)
 
 ```js
 (![] + [])[+!![] + !![] +!![]] + ([]+{})[+!![] + +!![]]

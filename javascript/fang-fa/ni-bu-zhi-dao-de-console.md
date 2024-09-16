@@ -2,13 +2,13 @@
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -33,7 +33,7 @@ console.assert(1 === 2, "1 is not equal to 2");
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -43,7 +43,7 @@ console.assert(1 === 2, "1 is not equal to 2");
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (19).png" alt="" width="401"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19).png" alt="" width="401"><figcaption></figcaption></figure>
 
 </div>
 
@@ -114,7 +114,7 @@ console.dir(document.head);
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (20).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
@@ -126,7 +126,7 @@ console.dirxml(document);
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (21).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
@@ -161,7 +161,7 @@ console.groupEnd(timeline1);
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (22).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
@@ -169,7 +169,7 @@ console.groupEnd(timeline1);
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -179,7 +179,7 @@ console.groupEnd(timeline1);
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (24).png" alt="" width="497"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt="" width="497"><figcaption></figcaption></figure>
 
 </div>
 
@@ -203,7 +203,7 @@ Perfomance或Javascript profile面板中能看到record的profiling。
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (25).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
@@ -213,7 +213,7 @@ Perfomance或Javascript profile面板中能看到record的profiling。
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (26).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
@@ -233,7 +233,7 @@ console.time("myTimer");
 console.timeEnd("myTimer");
 ```
 
-<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 ### 11.trace
 
@@ -241,7 +241,7 @@ console.timeEnd("myTimer");
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (28).png" alt="" width="333"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28).png" alt="" width="333"><figcaption></figcaption></figure>
 
 </div>
 
