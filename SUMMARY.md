@@ -94,6 +94,7 @@
     * [redux-thunk中间件](redux/redux-zhong-jian-jian/reduxthunk-zhong-jian-jian.md)
     * [redux-suga中间件](redux/redux-zhong-jian-jian/reduxsuga-zhong-jian-jian.md)
     * [redux-actions](redux/redux-zhong-jian-jian/redux-actions.md)
+  * [Redux核心源码实现](redux/redux-he-xin-yuan-ma-shi-xian.md)
   * [flux](redux/flux.md)
 * [Webpack](webpack/README.md)
   * [热更新&热重载](webpack/re-geng-xin-re-zhong-zai.md)
