@@ -1,0 +1,56 @@
+<!--
+ * @Author: jiangmengxia jiangmengxia@qq.com
+ * @Date: 2024-09-17 16:20:39
+ * @LastEditors: jiangmengxia jiangmengxia@qq.com
+ * @LastEditTime: 2024-09-17 16:23:23
+ * @FilePath: /jiangmengxia.github.io/redux/demos/redux/index.html
+ * @Description: Description
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/redux/4.0.5/redux.min.js"></script>
+  </head>
+  <body>
+    <button id="btnInc">+</button>
+    <span id="counter">0</span>
+    <button id="btnDec">-</button>
+    <script>
+      // 1. 创建一个 reducer
+      function counter(state = 0, action) {
+        switch (action.type) {
+          case "INCREMENT":
+            return state + 1;
+          case "DECREMENT":
+            return state - 1;
+          default:
+            return state;
+        }
+      }
+
+      // 2. 创建一个 store
+      const store = Redux.createStore(counter);
+
+      // 3. 订阅 store 的变化
+      store.subscribe(() => {
+        console.log(store.getState());
+        document.getElementById("counter").innerText = store.getState();
+      });
+
+      // 4. 发起一个 action
+      //   store.dispatch({ type: "INCREMENT" }); // 1
+      //   store.dispatch({ type: "INCREMENT" }); // 2
+      //   store.dispatch({ type: "DECREMENT" }); // 1
+
+      document.getElementById("btnInc").onclick = () => {
+        store.dispatch({ type: "INCREMENT" });
+      };
+      document.getElementById("btnDec").onclick = () => {
+        store.dispatch({ type: "DECREMENT" });
+      };
+    </script>
+  </body>
+</html>
