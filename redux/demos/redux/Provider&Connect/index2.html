@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-09-17 16:20:39
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-09-18 18:13:11
+ * @LastEditTime: 2024-09-18 18:34:24
  * @FilePath: \jiangmengxia.github.io\redux\demos\redux\Provider&Connect\index2.html
  * @Description: Description
 -->
@@ -211,6 +211,12 @@
             nextState[key] = nextStateForKey;
           }
           // 8. 返回新的state对象
+          console.log(
+            "=====nextState====",
+            nextState,
+            "reducerKeys",
+            reducerKeys
+          );
           return nextState;
         };
       }
@@ -238,85 +244,104 @@
         enhancer
       );
 
-      console.log("React", React);
+      console.log("=====initCombineState====", store.getState());
 
-      // const { createContext, useContext } = React;
-      // function Provider(store) {
-      //   const ReduxProvider = createContext();
-      //   console.log("[Provider] store", store, "ReduxProvider", ReduxProvider);
-      //   return (
-      //     <ReduxProvider.Provider value={store}>{children}</ReduxProvider.Provider>
-      //   );
-      // }
+      const { createContext, useContext } = React;
+      const ReduxProvider = createContext(); // 创建一个上下文对象
+
+      // Provider组件，将store传递给子组件
+      function Provider({ store, children }) {
+        console.log("[Provider] store", store, "ReduxProvider", ReduxProvider);
+        return (
+          <ReduxProvider.Provider value={store}>
+            {children}
+          </ReduxProvider.Provider>
+        );
+      }
 
       // // 高阶函数，返回一个函数，这个函数接受一个组件作为参数，返回一个新的组件
-      // function connect(mapStateToProps, mapDispatchToProps) {
-      //   return function (Component) {
-      //     return function (ownProps) {
-      //       const store = useContext(ReduxProvider);
-      //       const actionsProps = bindActionCreators(
-      //         mapDispatchToProps,
-      //         store.dispatch
-      //       );
-      //       const stateProps = mapStateToProps(store);
-      //       return (
-      //         <Component
-      //           {...ownProps}
-      //           {...stateProps}
-      //           {...actionsProps}
-      //           titile="this is a test"
-      //         />
-      //       );
-      //     };
-      //   };
-      // }
+      // https://www.programfarmer.com/articles/2023/redux-make-provider-and-connect
+      function connect(mapStateToProps, mapDispatchToProps) {
+        return function (Component) {
+          // console.log("Component", Component);
+          return function (ownProps) {
+            const store = useContext(ReduxProvider);
+            const states = store.getState();
+            console.log("===store===", store, "======states========", states);
+            const actionsProps = bindActionCreators(
+              mapDispatchToProps,
+              store.dispatch
+            );
 
-      // function Counter({ increment, decrement, count1, count2, ...otherProps }) {
-      //   console.log("otherProps", otherProps);
-      //   return (
-      //     <div>
-      //       <h1>Counter1: {count1}</h1>
-      //       <button onClick={increment}>Increment</button>
-      //       <button onClick={decrement}>Decrement</button>
-      //       <hr />
-      //       <h1>Counter1: {count2}</h1>
-      //       <button onClick={increment}>Increment</button>
-      //       <button onClick={decrement}>Decrement</button>
-      //     </div>
-      //   );
-      // }
+            const stateProps = mapStateToProps(states);
+            console.log("actionsProps", actionsProps, "stateProps", stateProps);
+            return (
+              <Component
+                {...ownProps}
+                {...stateProps}
+                {...actionsProps}
+                titile="this is a test"
+              />
+            );
+          };
+        };
+      }
 
-      // function App() {
-      //   const mapStateToProps = (state) => {
-      //     return {
-      //       count1: state.counter1.count,
-      //       count2: state.counter2.count,
-      //     };
-      //   };
-      //   const mapDispatchToProps = {
-      //     increment: (dispatch) => {
-      //       console.log("--increment----");
-      //       dispatch(countorRedux.actionCreators.increment());
-      //     },
-      //     decrement: (dispatch) => {
-      //       dispatch(countorRedux.actionCreators.decrement());
-      //     },
-      //     incrementAsync: (dispatch) =>
-      //       dispatch(counter2Redux.actionCreators.incrementAsync()),
-      //     decrementAsync: (dispatch) =>
-      //       dispatch(counter2Redux.actionCreators.decrementAsync()),
-      //   };
+      function Counter({
+        increment,
+        decrement,
+        count1,
+        count2,
+        ...otherProps
+      }) {
+        console.log("otherProps", otherProps);
+        return (
+          <div>
+            <h1>Counter1: {count1}</h1>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
+            <hr />
+            <h1>Counter1: {count2}</h1>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
+          </div>
+        );
+      }
 
-      //   return (
-      //     <Provider store={store}>
-      //       {connect(mapStateToProps, mapDispatchToProps)(Counter)}
-      //     </Provider>
-      //   );
-      // }
+      function WrapedCounter() {
+        const mapStateToProps = (state) => {
+          return {
+            count1: (state && state.counter1 && state.counter1.count) || 0,
+            count2: (state && state.counter2 && state.counter2.count) || 0,
+          };
+        };
+        const mapDispatchToProps = {
+          increment: (dispatch) => {
+            console.log("--increment----");
+            dispatch(countorRedux.actionCreators.increment());
+          },
+          decrement: (dispatch) => {
+            dispatch(countorRedux.actionCreators.decrement());
+          },
+          incrementAsync: (dispatch) =>
+            dispatch(counter2Redux.actionCreators.incrementAsync()),
+          decrementAsync: (dispatch) =>
+            dispatch(counter2Redux.actionCreators.decrementAsync()),
+        };
+        return connect(mapStateToProps, mapDispatchToProps)(Counter)();
+      }
+
+      function App() {
+        return (
+          <Provider store={store}>
+            <WrapedCounter />
+          </Provider>
+        );
+      }
 
       const container = document.getElementById("root");
       console.log("DOM loaded", container);
-      ReactDOM.render(<div>hhh</div>, container);
+      ReactDOM.render(<App />, container);
     </script>
   </body>
 </html>
