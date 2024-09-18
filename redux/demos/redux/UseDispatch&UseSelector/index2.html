@@ -2,8 +2,8 @@
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-09-17 16:20:39
  * @LastEditors: jiangmengxia jiangmengxia@qq.com
- * @LastEditTime: 2024-09-18 21:52:47
- * @FilePath: /jiangmengxia.github.io/redux/demos/redux/Provider&Connect/index2.html
+ * @LastEditTime: 2024-09-18 22:21:00
+ * @FilePath: /jiangmengxia.github.io/redux/demos/redux/UseDispatch&UseSelector/index2.html
  * @Description: Description
 -->
 <!DOCTYPE html>
@@ -233,91 +233,61 @@
         );
       }
 
-      // // 高阶函数，返回一个函数，这个函数接受一个组件作为参数，返回一个新的组件
-      // https://www.programfarmer.com/articles/2023/redux-make-provider-and-connect
-      function connect(mapStateToProps, mapDispatchToProps) {
-        return function (Component) {
-          return function (ownProps) {
-            const store = useContext(ReduxProvider);
-            const states = store.getState();
-            const actionsProps =
-              (mapDispatchToProps &&
-                mapDispatchToProps(store.dispatch, ownProps)) ||
-              {};
-
-            const stateProps =
-              (mapStateToProps && mapStateToProps(states, ownProps)) || {};
-            // 加上下面这段，实现：更新store时，重新渲染Component组件
-            // 由于本组件每次re-render都会重新生成新的stateProps和actionsProps，因此必然会引起子组件的re-render
-            const [_, forceUpdate] = useState({});
-            useEffect(() => {
-              const unsubscribe = store.subscribe(() => {
-                forceUpdate({});
-              });
-              return () => {
-                unsubscribe();
-              };
-            }, [store]);
-            return (
-              <Component
-                {...ownProps}
-                {...stateProps}
-                {...actionsProps}
-                titile="this is a test"
-              />
-            );
+      function useSelector(mapStateToProps) {
+        const store = useContext(ReduxProvider);
+        const states = store.getState();
+        const stateProps = (mapStateToProps && mapStateToProps(states)) || {};
+        // 加上下面这段，实现：更新store时，重新渲染Component组件
+        // 由于本组件每次re-render都会重新生成新的stateProps和actionsProps，因此必然会引起子组件的re-render
+        const [_, forceUpdate] = useState({});
+        useEffect(() => {
+          const unsubscribe = store.subscribe(() => {
+            forceUpdate({});
+          });
+          return () => {
+            unsubscribe();
           };
-        };
+        }, [store]);
+        return stateProps;
       }
 
-      function Counter({
-        increment,
-        decrement,
-        incrementAsync,
-        decrementAsync,
-        count1,
-        count2,
-        ...otherProps
-      }) {
+      function useDispatch() {
+        const store = useContext(ReduxProvider);
+        return store.dispatch;
+      }
+
+      function Counter({}) {
+        const storeData = useSelector((state) => state);
+        const { counter1 = { count: 0 }, counter2 = { count: 100 } } =
+          storeData;
+        const dispatch = useDispatch();
+        const increment = () => {
+          dispatch(countorRedux.actionCreators.increment());
+        };
+        const decrement = () => {
+          dispatch(countorRedux.actionCreators.decrement());
+        };
+        const incrementAsync = () =>
+          dispatch(counter2Redux.actionCreators.incrementAsync());
+        const decrementAsync = () =>
+          dispatch(counter2Redux.actionCreators.decrementAsync());
         return (
           <div>
-            <h1>Counter1: {count1}</h1>
+            <h1>Counter1: {counter1.count}</h1>
             <button onClick={increment}>Increment</button>
             <button onClick={decrement}>Decrement</button>
             <hr />
-            <h1>Counter2: {count2}</h1>
+            <h1>Counter2: {counter2.count}</h1>
             <button onClick={incrementAsync}>incrementAsync</button>
             <button onClick={decrementAsync}>decrementAsync</button>
           </div>
         );
       }
 
-      function WrapedCounter(props) {
-        const mapStateToProps = (state) => {
-          return {
-            count1: (state && state.counter1 && state.counter1.count) || 0,
-            count2: (state && state.counter2 && state.counter2.count) || 0,
-          };
-        };
-        const mapDispatchToProps = (dispatch) => ({
-          increment: () => {
-            dispatch(countorRedux.actionCreators.increment());
-          },
-          decrement: () => {
-            dispatch(countorRedux.actionCreators.decrement());
-          },
-          incrementAsync: () =>
-            dispatch(counter2Redux.actionCreators.incrementAsync()),
-          decrementAsync: () =>
-            dispatch(counter2Redux.actionCreators.decrementAsync()),
-        });
-        return connect(mapStateToProps, mapDispatchToProps)(Counter)();
-      }
-
       function App() {
         return (
           <Provider store={store}>
-            <WrapedCounter />
+            <Counter />
           </Provider>
         );
       }

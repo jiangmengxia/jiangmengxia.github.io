@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-09-17 16:02:16
  * @LastEditors: jiangmengxia jiangmengxia@qq.com
- * @LastEditTime: 2024-09-17 20:38:46
+ * @LastEditTime: 2024-09-18 21:59:09
  * @FilePath: /jiangmengxia.github.io/redux/demos/redux/enhancer/index.js
  * @Description: Description
  */
@@ -31,9 +31,6 @@ function enhancer(createStore) {
     };
   };
 }
-
-import logger from "../../middlewares/logger";
-import thunk from "../../middlewares/thunk";
 
 function createStore(reducer, preloadState, enhancer) {
   // 约束reducer函数类型
