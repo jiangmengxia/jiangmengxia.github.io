@@ -170,4 +170,42 @@ const counterSlice = createSlice({
 
 [https://redux-toolkit-cn.netlify.app/api/createasyncthunk/](https://redux-toolkit-cn.netlify.app/api/createasyncthunk/)
 
-####
+<mark style="background-color:purple;">dispatch(PromiseInstance)</mark>派发异步action，<mark style="background-color:purple;">PromiseInstance</mark>是一个异步action。
+
+createSlice创建的切片中，定义<mark style="background-color:purple;">extraReducers</mark>用来处理异步action返回不同结果的reducer。
+
+如下图，<mark style="background-color:blue;">\[fetchUserById.fulfilled]:(state, action)=>{}</mark> 实现的是当异步action执行成功时的reducer。
+
+```javascript
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { userAPI } from './userAPI'
+
+// 首先, 创建 thunk
+const fetchUserById = createAsyncThunk(
+  'users/fetchByIdStatus',
+  async (userId, thunkAPI) => {
+    const response = await userAPI.fetchById(userId)
+    return response.data
+  }
+)
+
+// 接着, 在你的 reducers 中处理这些 actions:
+const usersSlice = createSlice({
+  name: 'users',
+  initialState: { entities: [], loading: 'idle' },
+  reducers: {
+    // 标准 reducer 逻辑, 带有每个 reducer 自动生成的 action types
+  },
+  extraReducers: {
+    // 在这里添加处理额外 action types 的 reducers, 并且如果有需要的话，也在此处理加载状态
+    [fetchUserById.fulfilled]: (state, action) => {
+      // 把用户添加到 state 数组中
+      state.entities.push(action.payload)
+    }
+  }
+})
+
+// 稍后, 在应用中需要用到的地方派发这个 thunk
+dispatch(fetchUserById(123))
+```
+
