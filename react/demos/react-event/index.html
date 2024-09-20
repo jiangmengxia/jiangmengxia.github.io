@@ -1,0 +1,83 @@
+<!--
+ * @Author: jiangmengxia jiangmengxia@qq.com
+ * @Date: 2024-09-17 16:20:39
+ * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
+ * @LastEditTime: 2024-09-20 14:00:42
+ * @FilePath: \jiangmengxia.github.io\react\demos\react-event\index.html
+ * @Description: Description
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手写实现react-离散事件系统</title>
+    <!-- 引入Babel编译器，用于将JSX转换为JavaScript -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <!-- 所需共用的常量 -->
+    <script src="./consts.js"></script>
+    <!-- 注册系统支持的事件，与React事件名称映射 -->
+    <script src="./regist-events.js"></script>
+    <!-- 合成事件实例化函数 -->
+    <script src="./synthetic-event.js"></script>
+    <!-- 模拟DOM捕获冒泡顺序，依次执行fiber注册的事件，其中注册事件的回调中的event替换为合成事件 -->
+    <script src="./ReactDOMEventListner.js"></script>
+    <!-- 在根节点监听所有系统支持的原生事件 -->
+    <script src="./DOMEventSystem.js"></script>
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+
+    <style>
+      .ancestor {
+        background: #ccc;
+        padding: 30px;
+      }
+      .parent {
+        background: #eee;
+        padding: 30px;
+      }
+      .son {
+        background: #ddd;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const container = document.getElementById("root");
+      const eventHandler = (isCapture, name, e) => {
+        console.log(
+          `${
+            isCapture ? "捕获" : "冒泡"
+          }阶段，---${name}节点被点击了，合成事件`,
+          e
+        );
+      };
+      ReactDOM.render(
+        <div
+          className="ancestor"
+          onClick={eventHandler.bind(null, false, "祖先节点")}
+          onClickCapture={eventHandler.bind(null, true, "祖先节点")}
+        >
+          祖先节点
+          <div
+            className="parent"
+            onClick={eventHandler.bind(null, false, "父亲节点")}
+            onClickCapture={eventHandler.bind(null, true, "父亲节点")}
+          >
+            父亲节点
+            <div
+              className="son"
+              onClick={eventHandler.bind(null, false, "儿子节点")}
+              onClickCapture={eventHandler.bind(null, true, "儿子节点")}
+            >
+              儿子节点
+            </div>
+          </div>
+        </div>,
+        container
+      );
+    </script>
+  </body>
+</html>

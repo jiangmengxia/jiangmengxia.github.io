@@ -1,0 +1,67 @@
+<!--
+ * @Author: jiangmengxia jiangmengxia@qq.com
+ * @Date: 2024-09-17 16:20:39
+ * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
+ * @LastEditTime: 2024-09-19 10:09:25
+ * @FilePath: \jiangmengxia.github.io\react-router\demos\index.html
+ * @Description: Description
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手写实现hash路由</title>
+    <!-- 引入Babel编译器，用于将JSX转换为JavaScript -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <!-- 引入React和React DOM库 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Switch() {
+        const path = window.location.hash.slice(1);
+        const router = routers.find((item) => item.path === path);
+        return router ? router.component : <div>404</div>;
+      }
+
+      function Route() {}
+
+      function App() {
+        return (
+          <Switch>
+            <Route
+              path="/App"
+              component={
+                <div>
+                  <a href="#/home" style="color: red">
+                    home
+                  </a>
+                  <a href="#/about">about</a>
+                  Hello World!
+                </div>
+              }
+            />
+            <Route
+              path="/App"
+              component={
+                <div>
+                  <a href="#/home">home</a>
+                  <a href="#/about" style="color: red">
+                    about
+                  </a>
+                  关于我们
+                </div>
+              }
+            />
+          </Switch>
+        );
+      }
+
+      const container = document.getElementById("root");
+      ReactDOM.render(<App />, container);
+    </script>
+  </body>
+</html>
