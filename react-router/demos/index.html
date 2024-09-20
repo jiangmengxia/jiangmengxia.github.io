@@ -1,8 +1,8 @@
 <!--
  * @Author: jiangmengxia jiangmengxia@qq.com
- * @Date: 2024-09-17 16:20:39
+ * @Date: 2024-09-19 20:37:52
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-09-19 10:09:25
+ * @LastEditTime: 2024-09-20 17:44:02
  * @FilePath: \jiangmengxia.github.io\react-router\demos\index.html
  * @Description: Description
 -->
@@ -11,57 +11,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>手写实现hash路由</title>
+    <title>手写实现redux的Provider&Connect方法</title>
     <!-- 引入Babel编译器，用于将JSX转换为JavaScript -->
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <!-- 引入React和React DOM库 -->
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="./router.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      function Switch() {
-        const path = window.location.hash.slice(1);
-        const router = routers.find((item) => item.path === path);
-        return router ? router.component : <div>404</div>;
-      }
+      const { createContext, useEffect, Fragment, useContext, useState } =
+        React;
 
-      function Route() {}
+      const RouterProvider = createContext();
+      function Router({ children }) {
+        const routerInstance = new RouterManager({ children });
 
-      function App() {
         return (
-          <Switch>
-            <Route
-              path="/App"
-              component={
-                <div>
-                  <a href="#/home" style="color: red">
-                    home
-                  </a>
-                  <a href="#/about">about</a>
-                  Hello World!
-                </div>
-              }
-            />
-            <Route
-              path="/App"
-              component={
-                <div>
-                  <a href="#/home">home</a>
-                  <a href="#/about" style="color: red">
-                    about
-                  </a>
-                  关于我们
-                </div>
-              }
-            />
-          </Switch>
+          <RouterProvider.Provider value={routerInstance}>
+            {children}
+          </RouterProvider.Provider>
         );
       }
 
-      const container = document.getElementById("root");
-      ReactDOM.render(<App />, container);
+      function Route({ children, path, component: Component }) {
+        const [show, setShow] = useState(false);
+        const routerInstance = useContext(RouterProvider);
+        const match = getPathMatch(Component, routerInstance.routes);
+        routerInstance.subscribe(({ currentUrl, hash, showRoutes }) => {
+          setShow(!!showRoutes.find((item) => item.path === match.path));
+        });
+        return <Fragment>{show && <Component>{children}</Component>}</Fragment>;
+      }
+
+      function Home({ children, history }) {
+        return (
+          <div>
+            <ul>
+              <li>HOME</li>
+              <li>About</li>
+              <li>Inbox</li>
+            </ul>
+            <hr />
+            <div>{children}</div>
+          </div>
+        );
+      }
+
+      function About() {
+        return (
+          <div>
+            <h4>About us</h4>
+            <p>
+              Welcome to the GitBook Starter Template! Here you'll get an
+              overview of all the amazing features GitBook offers to help you
+              build beautiful, interactive documentation.
+            </p>
+          </div>
+        );
+      }
+
+      function Inbox({ children }) {
+        return (
+          <div>
+            <h4>Inbox</h4>
+            {children}
+          </div>
+        );
+      }
+
+      function Message() {
+        return <div>this is Message</div>;
+      }
+
+      function App() {
+        return (
+          <Router>
+            <Route path="/" component={Home}>
+              <Route path="about" component={About} />
+              <Route path="inbox" component={Inbox}>
+                <Route path="/messages/:id" component={Message} />
+              </Route>
+            </Route>
+          </Router>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
   </body>
 </html>
