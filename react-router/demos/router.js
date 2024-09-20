@@ -12,6 +12,7 @@ class RouterManager {
     this.hashHistory = [];
     this.init();
     this.listeners = []; // 监听路由变化的回调函数
+    this.validRoutes = []; // 无效路由
   }
 
   init() {
@@ -24,7 +25,7 @@ class RouterManager {
     if (!this.currentUrl.hash) {
       window.location.hash = "#/"; // 设置默认路由
     } else {
-      this.doListeners(this.getValidRoutes()); // 调用监听函数
+      this.validRoutes = this.getValidRoutes(); // 获取当前路由匹配的组件（需要展示的组件）
     }
   }
 
@@ -39,7 +40,7 @@ class RouterManager {
     this.currentUrl = newUrlObj;
     console.log("hashchanged", newUrlObj);
     this.hashHistory.push(this.currentUrl.hash);
-    this.doListeners(this.getValidRoutes()); // 调用监听函数
+    this.doListeners(); // 调用监听函数
   }
 
   // 获取当前路由匹配的组件（需要展示的组件）
@@ -71,12 +72,12 @@ class RouterManager {
     history.pushState(null, null, path); // 不刷新页面，改变url
   }
 
-  doListeners(validRoutes) {
+  doListeners() {
     console.log("doListeners", this.listeners.length);
     this.listeners.forEach((listener) => {
       listener({
         currentUrl: this.currentUrl,
-        showRoutes: validRoutes, // 需要展示路由
+        showRoutes: this.validRoutes, // 需要展示路由
       });
     });
   }

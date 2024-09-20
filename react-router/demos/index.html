@@ -2,7 +2,7 @@
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-09-19 20:37:52
  * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-09-20 17:44:02
+ * @LastEditTime: 2024-09-20 18:04:40
  * @FilePath: \jiangmengxia.github.io\react-router\demos\index.html
  * @Description: Description
 -->
@@ -40,8 +40,16 @@
         const [show, setShow] = useState(false);
         const routerInstance = useContext(RouterProvider);
         const match = getPathMatch(Component, routerInstance.routes);
+        function getShow(showRoutes, match) {
+          return !!showRoutes.find((item) => item.path === match.path);
+        }
+        useEffect(() => {
+          // console.log("match", match, routerInstance.validRoutes);
+          setShow(getShow(routerInstance.validRoutes, match));
+        }, []);
+
         routerInstance.subscribe(({ currentUrl, hash, showRoutes }) => {
-          setShow(!!showRoutes.find((item) => item.path === match.path));
+          setShow(showRoutes, match);
         });
         return <Fragment>{show && <Component>{children}</Component>}</Fragment>;
       }
