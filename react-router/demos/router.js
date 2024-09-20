@@ -83,9 +83,15 @@ class RouterManager {
 
   subscribe(callback) {
     this.listeners.push(callback);
-    console.log("subscribe", this.listeners.length, this.routes.length);
-    if (this.listeners.length === Object.values(this.routes).length) {
-      this.onLoad(); // 调用监听函数
+    console.log(
+      "subscribe",
+      this.listeners.length,
+      Object.values(this.routes).length
+    );
+    if (this.listeners.length >= Object.values(this.routes).length) {
+      setTimeout(() => {
+        this.onLoad(); // 调用监听函数
+      });
     }
   }
 }
