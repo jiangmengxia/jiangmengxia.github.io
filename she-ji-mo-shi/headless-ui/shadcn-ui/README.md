@@ -40,6 +40,28 @@ npx shadcn-ui@latest add button
 
 
 
+### Shadcn UI = Radix UI + Tailwind CSS <a href="#id-0b62" id="id-0b62"></a>
+
+Shadcn UI组合了HeadLess 组件库 Radix UI + Tailwind CSS样式自定义，实现的一套组件集。
+
+选择[Radix UI](https://github.com/radix-ui/primitives) 的优势：
+
+* 是一個 headless component library，这表示它的组件沒有任何的样式，它提供了可以客观样式自定义的方式。
+* Radix UI 的所有组件都符合 [WAI-ARIA](https://www.w3.org/TR/wai-aria-practices-1.2) 的要求，如果你需要建立具有 accessibility 的特殊场景，Radix UI 无疑是最好的选择，当然其他任意场景，Radix UI 也都适用
+* Radix UI 的所有元件都可以单独下载，你不用在一开始就安装整包的 component library，而是安装需要的组件即可：
+
+<pre data-full-width="false"><code>npm install @radix-ui/react-dialog
+<strong>npm install @radix-ui/react-dropdown-menu
+</strong>npm install @radix-ui/react-tooltip
+</code></pre>
+
+选择 Tailwind CSS的优势：
+
+* 原子样式的优势，Tailwind CSS提供了全量的原子样式，上手简单
+* 如果不喜欢Shadcn UI原有样式，随时可以修改Radix UI组件中的样式，把组件变成适合业务的组件
+
+
+
 参考：
 
 [https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/why-shadcn-ui-is-so-popular-in-2023-0f95e66f3ddc](https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/why-shadcn-ui-is-so-popular-in-2023-0f95e66f3ddc)
