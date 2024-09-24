@@ -94,11 +94,11 @@ require(['moduleA', 'moduleB'], function(moduleA, moduleB) {
 
 现在这个AMD已经不太被前端推崇，它只是在前端模块化标准化道路上的一个产物，给模块化提供了一种有效手段。
 
-除此之外，同期出现的还有淘宝推荐的Sea.js+CMD。
-
 ### 3. CMD（Common Module Definition）
 
-CMD规范是Sea.js实现的模块化规范，它和CommonJS类似，但更注重按需加载和依赖管理。
+除此之外，同期出现的还有淘宝推荐的Sea.js+CMD。
+
+CMD规范是<mark style="background-color:purple;">Sea.js</mark>实现的模块化规范，它和CommonJS类似，但更注重按需加载和依赖管理。
 
 ```javascript
 // 定义模块
@@ -156,7 +156,7 @@ UMD规范的实现通常是一个立即执行的函数表达式（IIFE），它�
 }));
 ```
 
-### 最佳实际 (ES Module+CommonJS)
+## 最佳实践 (ES Module+CommonJS)
 
 浏览器端使用：ES Module
 
