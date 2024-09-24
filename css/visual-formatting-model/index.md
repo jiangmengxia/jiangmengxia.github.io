@@ -339,7 +339,7 @@ span { float: left; width: 5em; height: 5em; border: solid blue; }
 
 IMG盒向左浮动，后面跟着的内容被格式化到浮动（盒）的右边，从浮动（盒）的同一行开始。浮动（盒）右边的行框因为浮动出现而被缩短了，但恢复了浮动（盒）后面的（盒的）“正常”宽度（P元素建立的包含块的宽度）。该文档可能会被格式化成：
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 如果文档是下面这样，格式化将完全相同（exactly the same）：
 

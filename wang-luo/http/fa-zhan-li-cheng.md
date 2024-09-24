@@ -94,7 +94,7 @@ http1.1协议Chrome限制一个域名下，最多可以建立6个TCP连接，可
 
 {% embed url="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching" %}
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.5 内容协商机制
 

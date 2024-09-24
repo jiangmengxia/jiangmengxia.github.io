@@ -29,17 +29,17 @@
 1. 首先 webpack-dev-server 会建立一个服务器webpackDevServer服务，并且和浏览器建立 websocket 通信。
 2. webpackDevServer启动后，进行构建，过程中会生成一个Hash值
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 3. 服务器监听（watch机制）到文件的变更，会重新complication，依据模块（文件）依赖关系，完成打包。过程中，会生成新的Hash、新的XXX.hot-update.json文件和XXX.hot-update.js文件。
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;     首先，我们知道Hash值代表每一次编译的标识。其次，根据新生成文件名可以发现，上次输出的Hash值会作为本次编译新生成的文件标识。依次类推，本次输出的Hash值会被作为下次热更新的标识。
 
 &#x20;      此后webpackDevServer会通知浏览器，文件有更新，浏览器则根据上一次的hash值向webpackDevServer进行两次请求，获得本次更新的内容（hot.json和hot.js)。
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 首先看json文件，返回的结果中，h代表本次新生成的Hash值，用于下次文件热更新请求的前缀。c表示当前要热更新的文件对应的是index模块。
 

@@ -117,7 +117,7 @@ A collapsed margin is considered adjoining to another margin if any of its compo
 </html>
 ```
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 【修正方法】：将box设置为非block-level box，比如inline-block，两者间加一个换行符如下：
 
