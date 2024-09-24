@@ -10,7 +10,11 @@
 
 对于webpack而言，webpack里的HMR（hotModuleReplacement）模块实现了热更新，允许在运行时替换、添加、删除各种模块，而无需进行完全刷新重新加载整个页面。
 
-目的：加快开发速度，所以只适用于开发环境下使用 思路：
+
+
+**【目的】**
+
+加快开发速度，所以只适用于开发环境下使用 思路：
 
 1、保留在完全重新加载页面时丢失的应用程序的状态
 
@@ -18,9 +22,13 @@
 
 3、调整样式更加快速，几乎等同于在浏览器调试器中更改样式
 
-使用方法：new webpack.HotModuleReplacementPlugin() 设置devServer选项中的hot字段为true则为热更替，否则是热重载。
+【使用方法】
 
-实现：开发阶段，如果每次文件变更后，都要手动去打包是很不方便的。 通常在开发阶段采用以下三种方式进行热重载 1、webpack的Watch Mode 2、webpack-dev-server 3、webpack-dev-middleware
+new webpack.HotModuleReplacementPlugin() 设置devServer选项中的hot字段为true则为热更替，否则是热重载。
+
+【实现】
+
+开发阶段，如果每次文件变更后，都要手动去打包是很不方便的。 通常在开发阶段采用以下三种方式进行热重载 1、webpack的Watch Mode 2、webpack-dev-server 3、webpack-dev-middleware
 
 
 
