@@ -126,7 +126,7 @@
 * [Redux](redux/README.md)
   * [redux架构](redux/redux-jia-gou.md)
   * [Redux解决了React的什么痛点](redux/redux-jie-jue-le-react-de-shen-me-tong-dian.md)
-  * [React中使用Redux](redux/react-zhong-shi-yong-redux.md)
+  * [React中使用Redux（react-redux）](redux/react-zhong-shi-yong-redux.md)
   * [Redux中间件](redux/redux-zhong-jian-jian/README.md)
     * [redux-thunk中间件](redux/redux-zhong-jian-jian/reduxthunk-zhong-jian-jian.md)
     * [redux-suga中间件](redux/redux-zhong-jian-jian/reduxsuga-zhong-jian-jian.md)
