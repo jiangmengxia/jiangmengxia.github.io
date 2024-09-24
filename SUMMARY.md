@@ -67,6 +67,7 @@
   * [浏览器垃圾回收](liu-lan-qi/garbage-collect/index.md)
     * [三色标记算法](liu-lan-qi/index/san-se-biao-ji-suan-fa.md)
   * [浏览器事件循环机制](liu-lan-qi/event-loop.md)
+  * [Web Component](liu-lan-qi/web-component.md)
 * [React](react/README.md)
   * [虚拟DOM](react/xu-ni-dom.md)
   * [hooks](react/hooks/README.md)
