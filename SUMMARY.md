@@ -159,6 +159,8 @@
         * [长动画帧Timing(LoAF)](qian-duan-xing-neng-you-hua-gong-cheng-hua/zhi-biao-xian-xing-shu-ju-qu-dong/performance-api/performance-timing-shu-ju-lei-xing/chang-dong-hua-zhen-timingloaf.md)
         * [Resource timing](qian-duan-xing-neng-you-hua-gong-cheng-hua/zhi-biao-xian-xing-shu-ju-qu-dong/performance-api/performance-timing-shu-ju-lei-xing/resource-timing.md)
         * [Navigation timing](qian-duan-xing-neng-you-hua-gong-cheng-hua/zhi-biao-xian-xing-shu-ju-qu-dong/performance-api/performance-timing-shu-ju-lei-xing/navigation-timing.md)
+        * [User timing(用户自定义）](qian-duan-xing-neng-you-hua-gong-cheng-hua/zhi-biao-xian-xing-shu-ju-qu-dong/performance-api/performance-timing-shu-ju-lei-xing/user-timing-yong-hu-zi-ding-yi.md)
+        * [Service Timing(不常用）](qian-duan-xing-neng-you-hua-gong-cheng-hua/zhi-biao-xian-xing-shu-ju-qu-dong/performance-api/performance-timing-shu-ju-lei-xing/service-timing-bu-chang-yong.md)
     * [countly](qian-duan-xing-neng-you-hua-gong-cheng-hua/zhi-biao-xian-xing-shu-ju-qu-dong/countly.md)
 * [实用工具](shi-yong-gong-ju/README.md)
   * [console-importer插件](shi-yong-gong-ju/console-importer.md)

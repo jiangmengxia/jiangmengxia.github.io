@@ -46,3 +46,8 @@ observer.observe({ type: "navigation", buffered: true });
 
 For more examples, see the property pages in the [`PerformanceNavigationTiming`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming) reference documentation.
 
+
+
+## Monitoring bfcache blocking reasons
+
+[https://developer.mozilla.org/en-US/docs/Web/API/Performance\_API/Monitoring\_bfcache\_blocking\_reasons](https://developer.mozilla.org/en-US/docs/Web/API/Performance\_API/Monitoring\_bfcache\_blocking\_reasons)
