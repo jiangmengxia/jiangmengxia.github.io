@@ -60,7 +60,7 @@ GET /mypage.html
 
 ● 对头阻塞，规定后一个请求，必须在接受到前一个请求的响应后才能发送。
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>http1</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (2).png" alt=""><figcaption><p>http1</p></figcaption></figure>
 
 ## 3. HTTP 1.1 - 标准化的协议
 
@@ -106,7 +106,7 @@ http1.1协议Chrome限制一个域名下，最多可以建立6个TCP连接，可
 
 能够使不同域名配置在同一个IP地址的服务器上
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.7 支持断点传输
 

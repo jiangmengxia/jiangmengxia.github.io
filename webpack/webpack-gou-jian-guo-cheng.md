@@ -6,7 +6,7 @@
 
 
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 * 【webpack-cli】是webpack的命令行生效所需的依赖
 * 【webpack初始化】webpack读取config文件后，根据配置所进行的初始化，主要有以下三个动作：

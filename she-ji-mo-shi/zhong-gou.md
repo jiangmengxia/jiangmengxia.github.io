@@ -15,9 +15,9 @@
 
 更全面的设计模式总结，可以看 [**java-design-patternsopen in new window**](https://github.com/iluwatar/java-design-patterns) 这个开源项目。
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 为什么要重构？
 

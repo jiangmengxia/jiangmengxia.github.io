@@ -32,7 +32,7 @@
 * 等待服务端响应时间（waiting for server）
 * 响应内容下载时间（Time Content Downloaded)
 
-<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 3. **RAIL衡量模型**
 
@@ -40,7 +40,7 @@ RAIL, 是 Response, Animation, Idle, 和 Load 的首字母缩写，RAIL模型是
 
 该模型分为以下几类指标：
 
-### 3.1 **响应性能指标**
+### 3.1 **响应性能指标(**Response)
 
 浏览器响应性能指标是衡量浏览器响应用户输入的能力的重要指标，它们可以帮助开发者了解网页的响应性能，并找出性能瓶颈。以下是一些常见的浏览器响应性能指标：
 
@@ -52,7 +52,7 @@ RAIL, 是 Response, Animation, Idle, 和 Load 的首字母缩写，RAIL模型是
 * 最大内容绘制时间（Largest Contentful Paint，LCP）：最大内容绘制时间是浏览器从开始加载到最大内容元素渲染完成的时间。最大内容绘制时间越短，用户体验越好。
 * 累积布局偏移（Cumulative Layout Shift，CLS）：累积布局偏移是测量页面在加载过程中布局变化的程度。累积布局偏移越低，用户体验越好。
 
-### 3.2 **动画性能**
+### 3.2 **动画性能(**Animation)
 
 浏览器动画性能指标是衡量浏览器动画性能的重要指标，它们可以帮助开发者了解动画的性能，并找出性能瓶颈。以下是一些常见的浏览器动画性能指标：
 
@@ -64,7 +64,7 @@ RAIL, 是 Response, Animation, Idle, 和 Load 的首字母缩写，RAIL模型是
 * 网络延迟（Network Latency）：网络延迟是指浏览器从服务器获取资源所需的时间。网络延迟越大，动画越卡顿。
 * &#x20;CPU使用率（CPU Usage）：CPU使用率是指CPU处理动画所需的时间。CPU使用率越高，动画越卡顿。
 
-### 3.3 **空闲性能指标**
+### 3.3 **空闲性能指标(Idle)**
 
 浏览器空闲性能指标是衡量浏览器在空闲时间执行后台任务的能力的重要指标，它们可以帮助开发者了解网页的空闲性能，并找出性能瓶颈。以下是一些常见的浏览器空闲性能指标：
 
@@ -74,7 +74,7 @@ RAIL, 是 Response, Animation, Idle, 和 Load 的首字母缩写，RAIL模型是
 * 后台任务执行频率（Background Task Execution Frequency）：后台任务执行频率是浏览器执行后台任务的频率。后台任务执行频率越高，浏览器可以更快地执行后台任务。
 * 后台任务执行延迟（Background Task Execution Delay）：后台任务执行延迟是浏览器执行后台任务的时间间隔。后台任务执行延迟越短，浏览器可以更快地执行后台任务。
 
-### 3.4 **加载性能指标**
+### 3.4 **加载性能指标(load)**
 
 浏览器加载性能指标是衡量浏览器加载网页的能力的重要指标，它们可以帮助开发者了解网页的加载性能，并找出性能瓶颈。以下是一些常见的浏览器加载性能指标：
 
@@ -88,3 +88,5 @@ RAIL, 是 Response, Animation, Idle, 和 Load 的首字母缩写，RAIL模型是
 * &#x20;\*\*首次有效绘制时间（First Meaningful Paint，FMP）\*\*：首次有效绘制时间是浏览器从开始加载到主要内容元素渲染完成的时间。首次有效绘制时间越短，用户体验越好。
 * \*\*首次输入延迟时间（First Input Delay，FID）\*\*：首次输入延迟时间是用户首次与页面交互（如点击按钮）到浏览器响应该交互的时间。首次输入延迟时间越短，用户体验越好。
 * \*\*累积布局偏移（Cumulative Layout Shift，CLS）\*\*：累积布局偏移是测量页面在加载过程中布局变化的程度。累积布局偏移越低，用户体验越好。
+
+更多关于性能优化，移步[前端性能优化工程](../../qian-duan-xing-neng-you-hua-gong-cheng-hua/)

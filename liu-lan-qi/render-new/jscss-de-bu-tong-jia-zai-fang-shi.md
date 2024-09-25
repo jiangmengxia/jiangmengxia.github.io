@@ -2,7 +2,7 @@
 
 ## js 的加载
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 （1）  <script/>      ：同步加载，加载后立即执行，阻塞DOM解析

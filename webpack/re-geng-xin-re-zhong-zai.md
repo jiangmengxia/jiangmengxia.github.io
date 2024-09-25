@@ -37,33 +37,33 @@ new webpack.HotModuleReplacementPlugin() 设置devServer选项中的hot字段为
 1. 首先 webpack-dev-server 会建立一个服务器webpackDevServer服务，并且和浏览器建立 websocket 通信。
 2. webpackDevServer启动后，进行构建，过程中会生成一个Hash值
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 3. 服务器监听（watch机制）到文件的变更，会重新complication，依据模块（文件）依赖关系，完成打包。过程中，会生成新的Hash、新的XXX.hot-update.json文件和XXX.hot-update.js文件。
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;     首先，我们知道Hash值代表每一次编译的标识。其次，根据新生成文件名可以发现，上次输出的Hash值会作为本次编译新生成的文件标识。依次类推，本次输出的Hash值会被作为下次热更新的标识。
 
 &#x20;      此后webpackDevServer会通知浏览器，文件有更新，浏览器则根据上一次的hash值向webpackDevServer进行两次请求，获得本次更新的内容（hot.json和hot.js)。
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 首先看json文件，返回的结果中，h代表本次新生成的Hash值，用于下次文件热更新请求的前缀。c表示当前要热更新的文件对应的是index模块。
 
 再看下生成的js文件，那就是本次修改的代码，重新编译打包后的。
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 \>>>>>>>>>>>>>>>>>>>>>>>>>>> 代码无改动的情况 >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 还有一种情况是，如果没有任何代码改动，直接保存文件，控制台也会输出编译打包信息的。此时只生成了hot-update.json文件，没有生成hot-update.js文件，表示说无内容变更
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 此时浏览器也会发出的请求，可以看到c值为空，代表本次没有需要更新的代码。
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 热更新实现原理
 
@@ -303,17 +303,17 @@ hotEmitter.on("webpackHotUpdate", function(currentHash) {
 
 (1)未配置热更新
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 (2）配置了HotModuleReplacementPlugin或--hot的。
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
 或者在source里也可以看到源码
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 也就是说说HotModuleReplacementPlugin也在编译时，注入了代码。
 
@@ -425,7 +425,7 @@ for (i = 0; i < outdatedSelfAcceptedModules.length; i++) {
 
 ## 总结 <a href="#o0s84" id="o0s84"></a>
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

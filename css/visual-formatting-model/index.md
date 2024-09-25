@@ -296,7 +296,7 @@ span { float: left; width: 5em; height: 5em; border: solid blue; }
 
 效果可能像这样：
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 几个浮动（盒）可能相邻，并且该模型也适用于同一行里的相邻浮动（盒）
 
@@ -339,7 +339,7 @@ span { float: left; width: 5em; height: 5em; border: solid blue; }
 
 IMG盒向左浮动，后面跟着的内容被格式化到浮动（盒）的右边，从浮动（盒）的同一行开始。浮动（盒）右边的行框因为浮动出现而被缩短了，但恢复了浮动（盒）后面的（盒的）“正常”宽度（P元素建立的包含块的宽度）。该文档可能会被格式化成：
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 如果文档是下面这样，格式化将完全相同（exactly the same）：
 
@@ -397,7 +397,7 @@ IMG盒向左浮动，后面跟着的内容被格式化到浮动（盒）的右�
 
 ```
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>浮动的图片盖住了它重叠的块盒的border</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>浮动的图片盖住了它重叠的块盒的border</p></figcaption></figure>
 
 下例描述了用['clear'](http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear)属性来阻止内容挨着浮动（盒）排列
 
@@ -441,7 +441,7 @@ p { clear: left }
 
 如果P元素的宽度足够，a和b将各在一边，就像这样：
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 5.2 控制浮动后的流:['clear'](http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear)属性
 
@@ -493,7 +493,7 @@ _<mark style="color:red;">**注意：**</mark><mark style="color:red;">两种行
 
 <mark style="color:orange;">不考虑B2的'clear'属性，情况如下图所示，B1和B2的外边距合并了（也就是40px），看上去F垂直方向上虽然有高度>0，但看上去未影响B2的位置，看上去像</mark><mark style="color:orange;">`绝对定位`</mark><mark style="color:orange;">。</mark>
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:purple;">当B2设置</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`clear:both`</mark> <mark style="color:purple;"></mark><mark style="color:purple;">清除了浮动后，代码如下</mark>：
 
@@ -511,7 +511,7 @@ _<mark style="color:red;">**注意：**</mark><mark style="color:red;">两种行
     </div>
 ```
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 这时候，这时候B1和B2之间的边距 = Max( B2的marginTop, B1的marginBottom+F的高度），也就是说当B2的marginTop>120px，B2的上边缘与F的底边缘之间才会有空隙。由于代码中B2的marginTop=60px<120px，因此看上去B2的marginTop不生效（塌陷了）。
 
@@ -587,7 +587,7 @@ _outer_和_inner_生成的盒的最终位置在每个示例中都不一样。以
 
 结果如下：
 
-<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -606,7 +606,7 @@ _inner_的内容，作为_outer_的子元素，常规地将紧跟着单词"of ou
 
 注意，_outer_后面跟着的内容没有受到_outer_相对定位的影响
 
-<figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:red;">注意，如果</mark>_<mark style="color:red;">outer</mark>_<mark style="color:red;">的偏移量是'-24px'，</mark>_<mark style="color:red;">outer</mark>_<mark style="color:red;">的文本和body文本将会重叠</mark>
 
@@ -620,7 +620,7 @@ _inner_的内容，作为_outer_的子元素，常规地将紧跟着单词"of ou
 
 文本常规排列，直到_inner_盒，从常规流脱离，并浮动到右边缘（它的['width'](http://www.ayqy.net/doc/css2-1/visudet.html#propdef-width)已经显式赋值了），浮动（盒）左边的行框被缩短了，文档的剩余文本排列在它们里面
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 为了展示['clear'](http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear)属性的效果，我们给示例添了一个_sibling_元素，并设置清除right float，如下
 
@@ -654,7 +654,7 @@ _inner_的内容，作为_outer_的子元素，常规地将紧跟着单词"of ou
 
 如果_sibling_元素上的['clear'](http://www.ayqy.net/doc/css2-1/visuren.html#propdef-clear)属性被设置为'right'（即，生成的_sibling_盒将不会接受一个右侧挨着浮动盒的位置），_sibling_（元素的）内容从浮动（盒）下面开始排列：
 
-<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 8.4 绝对定位
 
@@ -672,7 +672,7 @@ _inner_的内容，作为_outer_的子元素，常规地将紧跟着单词"of ou
 
 会让_outer_盒的顶端相对于其包含块定位。定位元素（positioned）盒的包含块由最近的定位的祖先（或者，如果不存在，就用[初始包含块](http://www.ayqy.net/doc/css2-1/visudet.html#containing-block-details)，正如我们的示例）。_outer_盒的顶端在包含块顶端的下方'200px'处，并且左边离（包含块的）左边为'200px'。_outer_的子级盒相对于其父级常规排列：
 
-<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 9. 分层展示
 
