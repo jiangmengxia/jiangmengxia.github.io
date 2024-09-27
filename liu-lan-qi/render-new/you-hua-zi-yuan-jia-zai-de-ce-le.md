@@ -149,17 +149,54 @@
 
 > 注意：prerender 目前只有Chrome支持的比较好
 
-## ~~preCache 预缓存(无法获得真实性）~~
+## service worker preCache (预缓存)
 
-预缓存是指<mark style="color:red;">预先下载和存储网络资源，以减少未来访问延迟的技术</mark>。这适用于如<mark style="color:red;">视频、网页图像</mark>等大块数据。预缓存能提升用户满意度，**增加页面加载速度，节省流量**，优化用户体验，并提升应用程序运行效率。因此，它被广泛用于各种网络应用，如在线教育、在线游戏和电子商务等，以提高用户体验和满足需求。
+您还可以使用 [Service Worker](https://developer.mozilla.org/docs/Web/API/Service\_Worker\_API) 推测性地预提取资源。 Service Worker 预缓存可以[使用 `Cache` API 提取和保存资源](https://developer.mozilla.org/docs/Web/API/CacheStorage)， 允许浏览器使用 `Cache` API 处理请求，而无需 网络。Service Worker 预缓存使用非常有效的 Service Worker 缓存策略，称为[仅缓存策略](https://developer.chrome.com/docs/workbox/caching-strategies-overview/?hl=zh-cn#cache-only)。这种模式 其有效性，因为一旦资源被放入 Service Worker 缓存，它们 在请求后几乎会立即被提取。
 
+
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>&#x3C;ph type="x-smartling-placeholder"><br>仅缓存策略只会从 网络。安装后，缓存的 只从 Service Worker 缓存中检索资源。</p></figcaption></figure>
+
+
+
+> <mark style="color:blue;">\</ph></mark> <mark style="color:blue;"></mark><mark style="color:blue;">**重要提示**</mark>：计划在不久的将来 该课程详细介绍了各种性能优化 例如 Service Worker [运行时 缓存](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime?hl=zh-cn)。
+
+要使用 Service Worker 预缓存资源，您可以使用 [Workbox](https://developer.chrome.com/docs/workbox/?hl=zh-cn)。如果您 但您可以编写自己的代码来缓存 文件。无论采用哪种方式，您都决定使用 Service Worker 来预缓存 但需要知道，当服务启动[时， 工作器数量](https://developer.chrome.com/docs/workbox/service-worker-lifecycle/?hl=zh-cn#installation)。安装完成后，系统会立即将预缓存的资源 以供 Service Worker 在您网站上控制的任何页面上进行检索。
+
+
+
+> <mark style="color:blue;">\</ph></mark> <mark style="color:blue;"></mark><mark style="color:blue;">**重要提示**</mark>：当然，您可以自行编写 Service Worker，则使用 Workbox 有助于在 其特别之处在于，它可跟踪 缓存的内容如果将来更新 Service Worker，Workbox 自动从缓存中移除过期的条目 自行完成所需的工作量
+
+Workbox 使用[预缓存清单](https://developer.chrome.com/docs/workbox/modules/workbox-precaching/?hl=zh-cn#explanation-of-the-precache-list)来确定应将哪些资源 已预缓存预缓存清单是文件和版本控制信息的列表 用作“可信来源”要预缓存的资源
+
+```javascript
+[{  
+    url: 'script.ffaa4455.js',
+    revision: null
+}, {
+    url: '/index.html',
+    revision: '518747aa'
+}]
 ```
-<link rel="precache" href="https://github.com/JuniorTour/juniortour.js" />
+
+上述代码是包含两个文件的示例清单： `script.ffaa4455.js`和`/index.html`。如果资源包含版本 文件本身包含的信息（称为文件哈希值），则 `revision` 属性可以保留为 `null`，因为文件已进行版本控制（例如， `ffaa4455`，适用于上述代码中的 `script.ffaa4455.js` 资源）。对于 无版本控制的资源，可以在构建时为其生成修订版本。
+
+设置完成后，可使用 Service Worker 预缓存静态页面或其 子资源来加快后续网页导航的速度。
+
+```javascript
+workbox.precaching.precacheAndRoute([
+  '/styles/product-page.ac29.css',
+  '/styles/product-page.39a1.js',
+]);
 ```
 
-rel="precache"  标签是 Service Worker API 的一部分，它需要在 Service Worker 中使用。
+例如，在电子商务商品详情页面上，可以使用 Service Worker 预缓存呈现商品详情页所需的 CSS 和 JavaScript， 让用户更快地导航到商品详情页面在 在前面的示例中，`product-page.ac29.css` 和 `product-page.39a1.js` 是 已预缓存[`workbox-precaching` 中提供的 `precacheAndRoute` 方法](https://developer.chrome.com/docs/workbox/reference/workbox-precaching/?hl=zh-cn#method-precacheAndRoute) 自动注册所需的处理程序，以确保预缓存的资源 会在必要时从 Service Worker API 中提取。
+
+由于[Service Worker 受到广泛支持](https://caniuse.com/serviceworkers)，因此您可以使用 Service Worker 必要时在任何现代浏览器上预缓存。
 
 
+
+更多关于service worker的介绍。可参考[ service worker](../jian-jin-shi-web-ying-yong-pwa/service-worker.md) 小节
 
 ## 其他
 
@@ -177,6 +214,10 @@ rel="precache"  标签是 Service Worker API 的一部分，它需要在 Service
 
 
 【参考】
+
+[https://web.dev/learn/performance/prefetching-prerendering-precaching?hl=zh-cn#service\_worker\_precaching](https://web.dev/learn/performance/prefetching-prerendering-precaching?hl=zh-cn#service\_worker\_precaching)
+
+[https://medium.com/@b09112332/%E8%AA%8D%E8%AD%98service-worker-f2d2e74bd3c0](https://medium.com/@b09112332/%E8%AA%8D%E8%AD%98service-worker-f2d2e74bd3c0)
 
 [https://juejin.cn/book/7306163555449962533/section/7310260645608292352#heading-1](https://juejin.cn/book/7306163555449962533/section/7310260645608292352#heading-1)
 
