@@ -27,7 +27,7 @@ FCP测量从页面开始加载到页面中<mark style="color:red;">任意部分�
 
 如下图中的例子，FCP指标的值为1439毫秒，在这个时刻页面中首次渲染出了文字和图像。
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 按照Chrome官方的推荐标准，FCP指标3个等级的评分分别为：
 
@@ -35,7 +35,7 @@ FCP测量从页面开始加载到页面中<mark style="color:red;">任意部分�
 * 待改进：大于1.8秒且小于3秒
 * 差：大于3秒
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 2. 最大内容绘制 (Largest Contentful Paint，LCP)
 

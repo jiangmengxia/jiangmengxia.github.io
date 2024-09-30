@@ -41,7 +41,7 @@ new webpack.HotModuleReplacementPlugin() 设置devServer选项中的hot字段为
 
 3. 服务器监听（watch机制）到文件的变更，会重新complication，依据模块（文件）依赖关系，完成打包。过程中，会生成新的Hash、新的XXX.hot-update.json文件和XXX.hot-update.js文件。
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;     首先，我们知道Hash值代表每一次编译的标识。其次，根据新生成文件名可以发现，上次输出的Hash值会作为本次编译新生成的文件标识。依次类推，本次输出的Hash值会被作为下次热更新的标识。
 
