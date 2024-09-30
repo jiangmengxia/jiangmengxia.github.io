@@ -69,11 +69,14 @@ class RouterManager {
   }
 
   push(path) {
-    history.pushState(null, null, path); // 不刷新页面，改变url
+    // const url = new URL(window.location.href);
+    // // url.searchParams.set("foo", "bar");
+    // url.hash = path;
+    // history.pushState({}, "", url);
+    window.location.hash = path;
   }
 
   doListeners() {
-    console.log("doListeners", this.listeners.length);
     this.listeners.forEach((listener) => {
       listener({
         currentUrl: this.currentUrl,
@@ -82,17 +85,9 @@ class RouterManager {
     });
   }
 
-  subscribe(callback) {
-    this.listeners.push(callback);
-    console.log(
-      "subscribe",
-      this.listeners.length,
-      Object.values(this.routes).length
-    );
-    if (this.listeners.length >= Object.values(this.routes).length) {
-      setTimeout(() => {
-        this.onLoad(); // 调用监听函数
-      });
+  subscribe(listener) {
+    if (!this.listeners.includes(listener)) {
+      this.listeners.push(listener);
     }
   }
 }

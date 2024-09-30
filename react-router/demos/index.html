@@ -1,9 +1,9 @@
 <!--
  * @Author: jiangmengxia jiangmengxia@qq.com
  * @Date: 2024-09-19 20:37:52
- * @LastEditors: jiangmengxia jiangmengxia@nnuo.com
- * @LastEditTime: 2024-09-20 18:04:40
- * @FilePath: \jiangmengxia.github.io\react-router\demos\index.html
+ * @LastEditors: jiangmengxia jiangmengxia@qq.com
+ * @LastEditTime: 2024-09-20 22:31:05
+ * @FilePath: /jiangmengxia.github.io/react-router/demos/index.html
  * @Description: Description
 -->
 <!DOCTYPE html>
@@ -26,6 +26,7 @@
         React;
 
       const RouterProvider = createContext();
+
       function Router({ children }) {
         const routerInstance = new RouterManager({ children });
 
@@ -44,23 +45,37 @@
           return !!showRoutes.find((item) => item.path === match.path);
         }
         useEffect(() => {
-          // console.log("match", match, routerInstance.validRoutes);
           setShow(getShow(routerInstance.validRoutes, match));
         }, []);
 
         routerInstance.subscribe(({ currentUrl, hash, showRoutes }) => {
+          console.log("【Route】subscribe", match, routerInstance.validRoutes);
           setShow(showRoutes, match);
         });
         return <Fragment>{show && <Component>{children}</Component>}</Fragment>;
+      }
+
+      function Link({ to, children }) {
+        const routerInstance = useContext(RouterProvider);
+        return (
+          <a
+            href="javascript:void(0)"
+            onClick={() => {
+              routerInstance.push(to);
+            }}
+          >
+            {children}
+          </a>
+        );
       }
 
       function Home({ children, history }) {
         return (
           <div>
             <ul>
-              <li>HOME</li>
-              <li>About</li>
-              <li>Inbox</li>
+              <Link to="/">HOME</Link>
+              <Link to="/about">About</Link>
+              <Link to="/inbox">Inbox</Link>
             </ul>
             <hr />
             <div>{children}</div>
