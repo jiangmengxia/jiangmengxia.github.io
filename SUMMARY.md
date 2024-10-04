@@ -11,6 +11,7 @@
     * [ES Module](she-ji-mo-shi/mo-kuai-hua-she-ji-yuan-ze/es-module.md)
     * [模块打包工具](she-ji-mo-shi/mo-kuai-hua-she-ji-yuan-ze/mo-kuai-da-bao-gong-ju/README.md)
       * [webpack快速上手](she-ji-mo-shi/mo-kuai-hua-she-ji-yuan-ze/mo-kuai-da-bao-gong-ju/webpack-kuai-su-shang-shou.md)
+      * [webpack核心工作原理](she-ji-mo-shi/mo-kuai-hua-she-ji-yuan-ze/mo-kuai-da-bao-gong-ju/webpack-he-xin-gong-zuo-yuan-li.md)
   * [重构](she-ji-mo-shi/zhong-gou.md)
   * [开发原则](she-ji-mo-shi/kai-fa-yuan-ze.md)
   * [编程范式](she-ji-mo-shi/bian-cheng-fan-shi.md)
