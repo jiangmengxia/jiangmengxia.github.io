@@ -91,7 +91,7 @@ import createUser from 'user.js'
 
 &#x20;       如下图中，引入处修改name为tome，运行时报错“TypeError”
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzE1TQFEn6QauV49FDUgh%2Fuploads%2FjxYCqWdlbs1byBNr5GMt%2F%E6%88%AA%E5%B1%8F2024-09-28%2013.48.06.png?alt=media&#x26;token=833a6f74-2d59-4773-8f28-a9584a205a7f" alt=""><figcaption></figcaption></figure>
 
 ### 导入注意事项
 
@@ -180,7 +180,7 @@ script标签的新属性<mark style="color:red;">nomudule</mark>，是一个布�
 
 通过 `type=importmap` 的 script 标签，来告诉浏览器可以在哪里找到这些模块。
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzE1TQFEn6QauV49FDUgh%2Fuploads%2FL10p35u9X1HBn5sSLrtX%2Fimage.png?alt=media&#x26;token=1832c216-46fc-410b-9425-764533193edc" alt=""><figcaption></figcaption></figure>
 
 从 [caniuseopen in new window](https://caniuse.com/?search=import-map) 上看，目前主流浏览器对 `import-map` 的支持不一，因此，我们还不能在浏览器中直接使用。
 
@@ -261,8 +261,10 @@ commonModule.hello(); // 输出: Hello, world!
 
 需要注意的是，虽然ES Module和CommonJS可以相互交互，但在某些情况下，你可能需要使用一些适配器库来处理兼容性问题。例如，如果你想要在ES Module中使用一些使用CommonJS编写的第三方库，你可能需要使用`esm`或`babel`等工具来转换这些库。
 
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzE1TQFEn6QauV49FDUgh%2Fuploads%2FbCtTw19AUiSobgV61n0Y%2F%E6%88%AA%E5%B1%8F2024-09-28%2018.41.44.png?alt=media&#x26;token=558216fd-bd55-4d56-a567-33083759bb13" alt=""><figcaption></figcaption></figure>
+
 \
-![](broken-reference)
+
 
 (注意：不同node版本会有差异）
 
@@ -272,15 +274,15 @@ commonModule.hello(); // 输出: Hello, world!
 
 早期NodeJS版本，可以使用Babel去实现将ES Module的兼容。Babel是目前最主流的一款JS**编译器**。它可以将一些使用了新特性的代码编译成当前支持的代码。
 
-[https://www.bilibili.com/video/BV1kP41177wp?p=15\&spm\_id\_from=pageDriver\&vd\_source=36cd504ec13dd4e9f53ea20a7fadae5f](https://www.bilibili.com/video/BV1kP41177wp?p=15\&spm\_id\_from=pageDriver\&vd\_source=36cd504ec13dd4e9f53ea20a7fadae5f)
+{% embed url="https://www.bilibili.com/video/BV1kP41177wp?p=15&spm_id_from=pageDriver&vd_source=36cd504ec13dd4e9f53ea20a7fadae5f" %}
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzE1TQFEn6QauV49FDUgh%2Fuploads%2F47lIvx1MrJIMiaty5VeA%2F%E6%88%AA%E5%B1%8F2024-09-30%2019.42.44.png?alt=media&#x26;token=2bf7411b-5270-4292-99c7-5018f63d3cc5" alt=""><figcaption></figcaption></figure>
 
 它是通过一个插件去实现转化一个新特性转化的。
 
 我们熟知的preset-env就是一些插件集合，在这个插件集合中包含了所有JS的新特性。
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzE1TQFEn6QauV49FDUgh%2Fuploads%2FiLlJyq7GQPpiynr2lnuk%2F%E6%88%AA%E5%B1%8F2024-09-30%2020.38.04.png?alt=media&#x26;token=942e7a95-56d8-4795-9094-9439168f4e10" alt=""><figcaption></figcaption></figure>
 
 使用方式，使用以下代码可以将低版本的JS转化成高版本的JS，当然除了`@babel/preset-env`，也可以选择其他插件。
 
@@ -289,8 +291,6 @@ yarn babel-node index.js --presets = @babel/preset-env
 ```
 
 如果你不想通过命令行指定babel的话，可以采用.babric来指定babel配置。
-
-
 
 
 
