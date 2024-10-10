@@ -2,7 +2,7 @@
 
 ## 1. Console
 
-其他console接口参考 [不一样的console](../../../javascript/fang-fa/ni-bu-zhi-dao-de-console.md)
+其他console接口参考 [不一样的console](../../../qian-duan-ji-chu/javascript/fang-fa/ni-bu-zhi-dao-de-console.md)
 
 * 自定义log样式：占位符
 
